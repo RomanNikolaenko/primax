@@ -1,0 +1,76 @@
+{
+  "id": "SectionMaximumResults",
+  "label": "SectionMaximumResults",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "Uid",
+          "placeholder": ""
+        }
+      },
+      "img": {
+        "type": "Image",
+        "config": {
+          "label": "Img",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "title1": {
+        "type": "Text",
+        "config": {
+          "label": "Title1",
+          "placeholder": ""
+        }
+      },
+      "title2": {
+        "type": "Text",
+        "config": {
+          "label": "Title2",
+          "placeholder": ""
+        }
+      },
+      "title3": {
+        "type": "Text",
+        "config": {
+          "label": "Title3",
+          "placeholder": ""
+        }
+      },
+      "card": {
+        "type": "Group",
+        "config": {
+          "label": "Card",
+          "fields": {
+            "img": {
+              "type": "Image",
+              "config": {
+                "label": "Img",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "title": {
+              "type": "Text",
+              "config": {
+                "label": "Title",
+                "placeholder": ""
+              }
+            },
+            "text": {
+              "type": "Text",
+              "config": {
+                "label": "Text",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

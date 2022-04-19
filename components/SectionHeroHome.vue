@@ -89,7 +89,6 @@ export default {
   background-repeat: no-repeat, repeat;
   background-size: cover;
   background-position-y: center;
-  min-height: 100vh;
 
   &_container {
     display: grid;

@@ -2,7 +2,9 @@
   <main class="main">
     <SectionHeader :data="header.data" />
     <SectionHeroPage :data="heroPage.data" />
-    <slice-zone :components="components" :slices="document.data.slices" />
+    <SectionMaximumResults class="white-block" :data="maximumResults.data" />
+    <SectionForm class="white-block" :data="form.data" />
+    <SliceZone :components="components" :slices="document.data.slices" />
     <SectionFooter :data="footer.data" />
   </main>
 </template>
@@ -10,11 +12,13 @@
 <script>
 import { components } from "~/slices";
 import SectionFooter from '../components/SectionFooter.vue';
+import SectionForm from '../components/SectionForm.vue';
 import SectionHeader from '../components/SectionHeader.vue';
 import SectionHeroPage from '../components/SectionHeroPage.vue';
+import SectionMaximumResults from '../components/SectionMaximumResults.vue';
 
 export default {
-  components: { SectionHeader, SectionFooter, SectionHeroPage },
+  components: { SectionHeader, SectionFooter, SectionHeroPage, SectionMaximumResults, SectionForm },
   data() {
     return {
       components,
@@ -44,8 +48,20 @@ export default {
       { lang: params.lang }
     );
 
-    if (document && header && footer, heroPage) {
-      return { document, header, footer, heroPage };
+    const maximumResults = await $prismic.api.getByUID(
+      "SectionMaximumResults",
+      "sectionmaximumresults",
+      { lang: params.lang }
+    );
+
+    const form = await $prismic.api.getByUID(
+      "SectionForm",
+      "sectionform",
+      { lang: params.lang }
+    );
+
+    if (document && header && footer, heroPage, maximumResults, form) {
+      return { document, header, footer, heroPage, maximumResults, form };
     } else {
       error({ statusCode: 404, message: "Page not found" });
     }

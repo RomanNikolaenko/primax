@@ -65,7 +65,12 @@
             :key="index"
             :field="item.link"
           >
-            <PrismicImage class="socials_icon" :field="item.img" width="54" height="54" />
+            <PrismicImage
+              class="socials_icon"
+              :field="item.img"
+              width="54"
+              height="54"
+            />
           </PrismicLink>
         </div>
 
@@ -115,10 +120,16 @@ export default {
     max-width: 1540px;
     width: 100%;
     margin: 0 auto;
-    padding: 150px 30px 60px;
+    @include toRem("padding-top", 150);
+    @include toRem("padding-bottom", 60);
+    @include toRem("padding-left", 30);
+    @include toRem("padding-right", 30);
 
     @media (max-width: 767.98px) {
-      padding: 80px 30px 40px;
+      @include toRem("padding-top", 80);
+      @include toRem("padding-bottom", 40);
+      @include toRem("padding-left", 30);
+      @include toRem("padding-right", 30);
     }
   }
 
@@ -127,7 +138,7 @@ export default {
     justify-content: space-between;
     grid-template-columns: 345px 1fr;
     @include property("gap", 140, 40, true, 1640, 1200);
-    margin-bottom: 60px;
+    @include toRem("margin-bottom", 60);
     color: var(--tertiary);
 
     @media (max-width: 1199.98px) {
@@ -135,14 +146,14 @@ export default {
     }
 
     @media (max-width: 767.98px) {
-      margin-bottom: 40px;
+      @include toRem("margin-bottom", 40);
     }
   }
 
   &_columns {
     display: grid;
     justify-content: space-between;
-    gap: 40px;
+    @include toRem("gap", 40);
 
     @media (min-width: 992px) and (max-width: 1199.98px) {
       grid-template-columns: 1fr 1fr 1fr;
@@ -156,9 +167,9 @@ export default {
   &_copy {
     display: grid;
     grid-template-columns: 215px 1fr 215px;
-    gap: 20px;
+    @include toRem("gap", 20);
     align-items: center;
-    padding-top: 60px;
+    @include toRem("padding-top", 60);
     border-top: 1px solid #778ab9;
 
     @media (max-width: 1023.98px) {
@@ -166,18 +177,18 @@ export default {
     }
 
     @media (max-width: 767.98px) {
-      padding-top: 40px;
+      @include toRem("padding-top", 40);
       grid-template-columns: 1fr;
     }
 
     > span {
       color: #abafc7;
       font-weight: 600;
-      font-size: 20px;
+      @include toRem("font-size", 20);
       line-height: 160%;
 
       @media (max-width: 767.98px) {
-        font-size: 18px;
+        @include toRem("font-size", 18);
         line-height: 150%;
       }
     }
@@ -185,34 +196,33 @@ export default {
 }
 
 .column {
-  --size: 25px;
-
-  @media (max-width: 767.98px) {
-    --size: 20px;
-  }
-
   &_title {
     font-weight: 600;
-    font-size: var(--size);
+    @include toRem("font-size", 25);
     line-height: 160%;
-    margin-bottom: calc(var(--size) - 5px);
+    @include toRem("margin-bottom", 20);
+
+    @media (max-width: 767.98px) {
+      @include toRem("font-size", 20);
+      @include toRem("margin-bottom", 15);
+    }
   }
 
   &_list {
     &-item {
       &:not(:last-child) {
-        margin-bottom: 10px;
+        @include toRem("margin-bottom", 10);
       }
     }
 
     &-link {
       font-weight: 600;
-      font-size: 20px;
+      @include toRem("font-size", 20);
       line-height: 160%;
       word-break: break-all;
 
       @media (max-width: 767.98px) {
-        font-size: 18px;
+        @include toRem("font-size", 18);
         line-height: 150%;
       }
 
@@ -229,13 +239,13 @@ export default {
 .list {
   &-item {
     &:not(:last-child) {
-      margin-bottom: 10px;
+      @include toRem("margin-bottom", 10);
     }
   }
 
   &-link {
     font-weight: 600;
-    font-size: 20px;
+    @include toRem("font-size", 20);
     line-height: 160%;
     word-break: break-all;
 
@@ -262,7 +272,7 @@ export default {
     }
 
     @media (max-width: 767.98px) {
-      font-size: 18px;
+      @include toRem("font-size", 18);
       line-height: 150%;
     }
 
@@ -319,12 +329,12 @@ export default {
     display: block;
     width: 136px;
     height: 25px;
-    margin-bottom: 20px;
+    @include toRem("margin-bottom", 20);
   }
 
   &-text {
     font-weight: 700;
-    font-size: 16px;
+    @include toRem("font-size", 18);
     line-height: 150%;
   }
 }
@@ -332,7 +342,9 @@ export default {
 .socials {
   display: flex;
   justify-content: center;
-  margin: 0 -7px;
+  margin: 0;
+  @include toRem("margin-left", -7);
+  @include toRem("margin-right", -7);
 
   @media (max-width: 767.98px) {
     justify-content: flex-start;
@@ -341,7 +353,9 @@ export default {
   &_link {
     display: inline-flex;
     border-radius: 50%;
-    margin: 0 7px;
+    margin: 0;
+    @include toRem("margin-left", 7);
+    @include toRem("margin-right", 7);
     background-image: linear-gradient(
       90deg,
       #2f69ff 1.68%,
@@ -365,7 +379,7 @@ export default {
     width: 54px;
     height: 54px;
     fill: var(--base);
-    padding: 15px;
+    @include toRem("padding", 15);
   }
 }
 </style>

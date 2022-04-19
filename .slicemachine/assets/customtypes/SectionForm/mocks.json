@@ -1,0 +1,42 @@
+{
+  "id": "72ab7eac-c102-47e6-bdf8-9709bea6414b",
+  "uid": "quo-qui-consequatur",
+  "type": "SectionForm",
+  "data": {
+    "title": "harness rich communities",
+    "titleRadio": "architect rich e-markets",
+    "titleForm": "exploit magnetic initiatives",
+    "name": "recontextualize magnetic infrastructures",
+    "surname": "engineer intuitive technologies",
+    "email": "exploit magnetic relationships",
+    "phone": "aggregate killer initiatives",
+    "message": "recontextualize synergistic e-markets",
+    "checkbox": "drive world-class bandwidth",
+    "checkboxLink": {
+      "link_type": "Web",
+      "url": "https://slicemachine.dev"
+    },
+    "checkboxLinkTitle": "streamline seamless convergence",
+    "buttonTitle": "streamline back-end communities",
+    "radios": [
+      {
+        "title": "e-enable synergistic e-markets"
+      },
+      {
+        "title": "reintermediate dot-com bandwidth"
+      },
+      {
+        "title": "reinvent global paradigms"
+      },
+      {
+        "title": "transition extensible mindshare"
+      },
+      {
+        "title": "extend cross-platform web services"
+      },
+      {
+        "title": "exploit mission-critical users"
+      }
+    ]
+  }
+}

@@ -77,10 +77,13 @@ export default {
     margin: 0;
     width: 100%;
     font-weight: 700;
-    font-size: 16px;
+    @include toRem("font-size", 16);
     line-height: 150%;
-    padding: 8px 10px;
-    border-radius: 5px;
+    @include toRem("border-radius", 5);
+    @include toRem("padding-top", 8);
+    @include toRem("padding-bottom", 8);
+    @include toRem("padding-left", 10);
+    @include toRem("padding-right", 10);
     line-height: calc(24 / 16);
     cursor: pointer;
 
@@ -98,6 +101,7 @@ export default {
     i {
       font-style: normal;
       font-size: 10px;
+      @include toRem("font-size", 10);
       margin-left: 4px;
       transform: rotate(90deg);
     }
@@ -106,8 +110,8 @@ export default {
       border-radius: 5px 5px 0 0;
 
       @media (max-width: 575.98px) {
-      border-radius: 0 0 5px 5px;
-    }
+        border-radius: 0 0 5px 5px;
+      }
     }
   }
 
@@ -148,10 +152,10 @@ export default {
 
     p {
       font-weight: 700;
-      font-size: 16px;
+      @include toRem("font-size", 16);
       margin-bottom: 0;
-      padding: 8px;
-      border-radius: 4px;
+      @include toRem("padding", 8);
+      @include toRem("border-radius", 4);
       cursor: pointer;
 
       @media (hover) {

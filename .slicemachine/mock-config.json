@@ -7,7 +7,9 @@
     "SectionFooter": {},
     "SectionHeroHome": {},
     "advertisingPage": {},
-    "SectionHeroPage": {}
+    "SectionHeroPage": {},
+    "SectionMaximumResults": {},
+    "SectionForm": {}
   },
   "slices": {
     "SectionCta": {

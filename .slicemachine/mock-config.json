@@ -1,0 +1,58 @@
+{
+  "_cts": {
+    "homePage": {},
+    "SectionHeader": {
+      "linkGroup": {}
+    },
+    "SectionFooter": {},
+    "SectionHeroHome": {},
+    "advertisingPage": {},
+    "SectionHeroPage": {}
+  },
+  "slices": {
+    "SectionCta": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "SectionAbout": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "SectionEveryone": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "SectionHelp": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "SectionAdvantage": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "SectionResults": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "SectionHeroHome": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "SectionHeader": {
+      "default": {
+        "primary": {
+          "select": {
+            "content": "ru"
+          }
+        }
+      }
+    }
+  }
+}

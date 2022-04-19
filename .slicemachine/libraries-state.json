@@ -1,0 +1,987 @@
+{
+  "slices": {
+    "components": {
+      "section_about": {
+        "library": "slices",
+        "id": "section_about",
+        "name": "SectionAbout",
+        "description": "SectionAbout",
+        "model": {
+          "id": "section_about",
+          "type": "SharedSlice",
+          "name": "SectionAbout",
+          "description": "SectionAbout",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "SectionAbout",
+              "primary": {
+                "title": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": ""
+                  }
+                },
+                "titleBlue": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Title Blue",
+                    "placeholder": ""
+                  }
+                },
+                "subtitle": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Subtitle",
+                    "placeholder": ""
+                  }
+                },
+                "subtitle2": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Subtitle2",
+                    "placeholder": ""
+                  }
+                },
+                "link": {
+                  "type": "Link",
+                  "config": {
+                    "label": "Link",
+                    "placeholder": "",
+                    "select": null
+                  }
+                },
+                "linkTitle": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Link Title",
+                    "placeholder": ""
+                  }
+                },
+                "img": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Img",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "section_about",
+            "items": [],
+            "primary": {
+              "title": "engineer 24/7 e-services",
+              "titleBlue": "maximize strategic deliverables",
+              "subtitle": "revolutionize 24/365 systems",
+              "subtitle2": "leverage clicks-and-mortar web services",
+              "link": {
+                "link_type": "Web",
+                "url": "https://prismic.io"
+              },
+              "linkTitle": "repurpose distributed communities",
+              "img": {
+                "dimensions": {
+                  "width": 900,
+                  "height": 500
+                },
+                "alt": "Placeholder image",
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8?w=900&h=500&fit=crop"
+              }
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "vue"
+        },
+        "screenshotPaths": {}
+      },
+      "section_advantage": {
+        "library": "slices",
+        "id": "section_advantage",
+        "name": "SectionAdvantage",
+        "description": "SectionAdvantage",
+        "model": {
+          "id": "section_advantage",
+          "type": "SharedSlice",
+          "name": "SectionAdvantage",
+          "description": "SectionAdvantage",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "SectionAdvantage",
+              "primary": {
+                "title": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "items": {
+                "title": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": ""
+                  }
+                },
+                "text": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Text",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "section_advantage",
+            "items": [
+              {
+                "title": "incentivize collaborative communities",
+                "text": "facilitate dot-com deliverables"
+              },
+              {
+                "title": "envisioneer best-of-breed experiences",
+                "text": "incentivize 24/365 deliverables"
+              },
+              {
+                "title": "incubate leading-edge synergies",
+                "text": "cultivate sticky relationships"
+              },
+              {
+                "title": "innovate web-enabled channels",
+                "text": "maximize front-end markets"
+              }
+            ],
+            "primary": {
+              "title": "scale killer eyeballs"
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "vue"
+        },
+        "screenshotPaths": {}
+      },
+      "section_cta": {
+        "library": "slices",
+        "id": "section_cta",
+        "name": "SectionCta",
+        "description": "SectionCta",
+        "model": {
+          "id": "section_cta",
+          "type": "SharedSlice",
+          "name": "SectionCta",
+          "description": "SectionCta",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "SectionCta",
+              "primary": {
+                "title": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": ""
+                  }
+                },
+                "link": {
+                  "type": "Link",
+                  "config": {
+                    "label": "Link",
+                    "placeholder": "",
+                    "select": null
+                  }
+                },
+                "linkTitle": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Link Title",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "section_cta",
+            "items": [],
+            "primary": {
+              "title": "synergize efficient methodologies",
+              "link": {
+                "link_type": "Web",
+                "url": "https://slicemachine.dev"
+              },
+              "linkTitle": "optimize end-to-end paradigms"
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "vue"
+        },
+        "screenshotPaths": {}
+      },
+      "section_everyone": {
+        "library": "slices",
+        "id": "section_everyone",
+        "name": "SectionEveryone",
+        "description": "SectionEveryone",
+        "model": {
+          "id": "section_everyone",
+          "type": "SharedSlice",
+          "name": "SectionEveryone",
+          "description": "SectionEveryone",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "SectionEveryone",
+              "primary": {
+                "title": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": ""
+                  }
+                },
+                "subtitle": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Subtitle",
+                    "placeholder": ""
+                  }
+                },
+                "linkBg": {
+                  "type": "Link",
+                  "config": {
+                    "label": "Link Bg",
+                    "placeholder": "",
+                    "select": null
+                  }
+                },
+                "linkBgTitle": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Link Bg Title",
+                    "placeholder": ""
+                  }
+                },
+                "linkBorder": {
+                  "type": "Link",
+                  "config": {
+                    "label": "Link Border",
+                    "placeholder": "",
+                    "select": null
+                  }
+                },
+                "linkBorderTitle": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Link Border Title",
+                    "placeholder": ""
+                  }
+                },
+                "img": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Img",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "section_everyone",
+            "items": [],
+            "primary": {
+              "title": "benchmark cross-platform action-items",
+              "subtitle": "incubate world-class web services",
+              "linkBg": {
+                "link_type": "Web",
+                "url": "http://google.com"
+              },
+              "linkBgTitle": "implement next-generation convergence",
+              "linkBorder": {
+                "link_type": "Web",
+                "url": "http://google.com"
+              },
+              "linkBorderTitle": "unleash bricks-and-clicks markets",
+              "img": {
+                "dimensions": {
+                  "width": 900,
+                  "height": 500
+                },
+                "alt": "Placeholder image",
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=900&h=500&fit=crop"
+              }
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "vue"
+        },
+        "screenshotPaths": {}
+      },
+      "section_header": {
+        "library": "slices",
+        "id": "section_header",
+        "name": "SectionHeader",
+        "description": "SectionHeader",
+        "model": {
+          "id": "section_header",
+          "type": "SharedSlice",
+          "name": "SectionHeader",
+          "description": "SectionHeader",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "SectionHeader",
+              "primary": {
+                "linkIn": {
+                  "type": "Link",
+                  "config": {
+                    "label": "Link In",
+                    "placeholder": "",
+                    "select": null
+                  }
+                },
+                "linkInTitle": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Link In Title",
+                    "placeholder": ""
+                  }
+                },
+                "linkAuth": {
+                  "type": "Link",
+                  "config": {
+                    "label": "Link Auth",
+                    "placeholder": "",
+                    "select": null
+                  }
+                },
+                "linkAuthTitle": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Link Auth Title",
+                    "placeholder": ""
+                  }
+                },
+                "select": {
+                  "type": "Select",
+                  "config": {
+                    "label": "Select",
+                    "placeholder": "",
+                    "options": [
+                      "ru",
+                      "en"
+                    ]
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "section_header",
+            "items": [],
+            "primary": {
+              "linkIn": {
+                "link_type": "Web",
+                "url": "https://prismic.io"
+              },
+              "linkInTitle": "innovate one-to-one eyeballs",
+              "linkAuth": {
+                "link_type": "Web",
+                "url": "https://slicemachine.dev"
+              },
+              "linkAuthTitle": "benchmark sexy methodologies",
+              "select": "ru"
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "vue"
+        },
+        "screenshotPaths": {}
+      },
+      "section_help": {
+        "library": "slices",
+        "id": "section_help",
+        "name": "SectionHelp",
+        "description": "SectionHelp",
+        "model": {
+          "id": "section_help",
+          "type": "SharedSlice",
+          "name": "SectionHelp",
+          "description": "SectionHelp",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "SectionHelp",
+              "primary": {
+                "title": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "items": {
+                "img": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Img",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                },
+                "title": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": ""
+                  }
+                },
+                "listItem1": {
+                  "type": "Text",
+                  "config": {
+                    "label": "List Item1",
+                    "placeholder": ""
+                  }
+                },
+                "listItem2": {
+                  "type": "Text",
+                  "config": {
+                    "label": "List Item2",
+                    "placeholder": ""
+                  }
+                },
+                "listItem3": {
+                  "type": "Text",
+                  "config": {
+                    "label": "List Item3",
+                    "placeholder": ""
+                  }
+                },
+                "listItem4": {
+                  "type": "Text",
+                  "config": {
+                    "label": "List Item4",
+                    "placeholder": ""
+                  }
+                },
+                "listItem5": {
+                  "type": "Text",
+                  "config": {
+                    "label": "List Item5",
+                    "placeholder": ""
+                  }
+                },
+                "link": {
+                  "type": "Link",
+                  "config": {
+                    "label": "Link",
+                    "placeholder": "",
+                    "select": null
+                  }
+                },
+                "linkTitle": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Link Title",
+                    "placeholder": ""
+                  }
+                },
+                "flag": {
+                  "type": "Boolean",
+                  "config": {
+                    "label": "Flag",
+                    "default_value": false,
+                    "placeholder_true": "true",
+                    "placeholder_false": "false"
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "section_help",
+            "items": [
+              {
+                "img": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1589321599763-d66926c29613?w=900&h=500&fit=crop"
+                },
+                "title": "deliver back-end blockchains",
+                "listItem1": "incubate end-to-end paradigms",
+                "listItem2": "benchmark robust eyeballs",
+                "listItem3": "monetize cross-platform infomediaries",
+                "listItem4": "expedite cutting-edge methodologies",
+                "listItem5": "iterate customized e-commerce",
+                "link": {
+                  "link_type": "Web",
+                  "url": "http://google.com"
+                },
+                "linkTitle": "transition out-of-the-box methodologies",
+                "flag": false
+              },
+              {
+                "img": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c?w=900&h=500&fit=crop"
+                },
+                "title": "drive ubiquitous content",
+                "listItem1": "visualize cross-media bandwidth",
+                "listItem2": "optimize impactful ROI",
+                "listItem3": "mesh wireless methodologies",
+                "listItem4": "whiteboard intuitive metrics",
+                "listItem5": "benchmark turn-key partnerships",
+                "link": {
+                  "link_type": "Web",
+                  "url": "https://prismic.io"
+                },
+                "linkTitle": "utilize impactful applications",
+                "flag": true
+              },
+              {
+                "img": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1587653915936-5623ea0b949a?w=900&h=500&fit=crop"
+                },
+                "title": "grow global web-readiness",
+                "listItem1": "brand back-end markets",
+                "listItem2": "syndicate cross-platform niches",
+                "listItem3": "transform granular web-readiness",
+                "listItem4": "expedite sexy architectures",
+                "listItem5": "embrace integrated functionalities",
+                "link": {
+                  "link_type": "Web",
+                  "url": "https://prismic.io"
+                },
+                "linkTitle": "transition magnetic functionalities",
+                "flag": false
+              },
+              {
+                "img": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa?w=900&h=500&fit=crop"
+                },
+                "title": "repurpose strategic e-tailers",
+                "listItem1": "architect vertical paradigms",
+                "listItem2": "strategize turn-key portals",
+                "listItem3": "cultivate integrated communities",
+                "listItem4": "embrace open-source supply-chains",
+                "listItem5": "strategize impactful channels",
+                "link": {
+                  "link_type": "Web",
+                  "url": "http://google.com"
+                },
+                "linkTitle": "harness open-source relationships",
+                "flag": true
+              },
+              {
+                "img": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72?w=900&h=500&fit=crop"
+                },
+                "title": "optimize seamless mindshare",
+                "listItem1": "strategize intuitive mindshare",
+                "listItem2": "recontextualize transparent interfaces",
+                "listItem3": "repurpose distributed e-tailers",
+                "listItem4": "grow ubiquitous models",
+                "listItem5": "synergize sticky e-commerce",
+                "link": {
+                  "link_type": "Web",
+                  "url": "http://google.com"
+                },
+                "linkTitle": "benchmark sexy e-markets",
+                "flag": false
+              }
+            ],
+            "primary": {
+              "title": "grow bleeding-edge platforms"
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "vue"
+        },
+        "screenshotPaths": {}
+      },
+      "section_hero_home": {
+        "library": "slices",
+        "id": "section_hero_home",
+        "name": "SectionHeroHome",
+        "description": "SectionHeroHome",
+        "model": {
+          "id": "section_hero_home",
+          "type": "SharedSlice",
+          "name": "SectionHeroHome",
+          "description": "SectionHeroHome",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "SectionHeroHome",
+              "primary": {
+                "title": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": ""
+                  }
+                },
+                "subtitle": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Subtitle",
+                    "placeholder": ""
+                  }
+                },
+                "linkBg": {
+                  "type": "Link",
+                  "config": {
+                    "label": "Link Bg",
+                    "placeholder": "",
+                    "select": null
+                  }
+                },
+                "linkBgTitle": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Link Bg Title",
+                    "placeholder": ""
+                  }
+                },
+                "linkBorder": {
+                  "type": "Link",
+                  "config": {
+                    "label": "Link Border",
+                    "placeholder": "",
+                    "select": null
+                  }
+                },
+                "linkBorderTitle": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Link Border Title",
+                    "placeholder": ""
+                  }
+                },
+                "imgDesc": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Img Desc",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                },
+                "imgMob": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Img Mob",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "section_hero_home",
+            "items": [],
+            "primary": {
+              "title": "evolve holistic methodologies",
+              "subtitle": "expedite plug-and-play systems",
+              "linkBg": {
+                "link_type": "Web",
+                "url": "http://twitter.com"
+              },
+              "linkBgTitle": "redefine virtual platforms",
+              "linkBorder": {
+                "link_type": "Web",
+                "url": "http://google.com"
+              },
+              "linkBorderTitle": "e-enable 24/365 blockchains",
+              "imgDesc": {
+                "dimensions": {
+                  "width": 900,
+                  "height": 500
+                },
+                "alt": "Placeholder image",
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=900&h=500&fit=crop"
+              },
+              "imgMob": {
+                "dimensions": {
+                  "width": 900,
+                  "height": 500
+                },
+                "alt": "Placeholder image",
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=900&h=500&fit=crop"
+              }
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "vue"
+        },
+        "screenshotPaths": {}
+      },
+      "section_results": {
+        "library": "slices",
+        "id": "section_results",
+        "name": "SectionResults",
+        "description": "SectionResults",
+        "model": {
+          "id": "section_results",
+          "type": "SharedSlice",
+          "name": "SectionResults",
+          "description": "SectionResults",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "SectionResults",
+              "primary": {
+                "title": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "items": {
+                "img": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Img",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                },
+                "title": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": ""
+                  }
+                },
+                "text": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Text",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "section_results",
+            "items": [
+              {
+                "img": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab?w=900&h=500&fit=crop"
+                },
+                "title": "syndicate B2C supply-chains",
+                "text": "e-enable enterprise architectures"
+              },
+              {
+                "img": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8?w=900&h=500&fit=crop"
+                },
+                "title": "utilize wireless synergies",
+                "text": "enable holistic methodologies"
+              },
+              {
+                "img": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72?w=900&h=500&fit=crop"
+                },
+                "title": "seize integrated mindshare",
+                "text": "transform frictionless schemas"
+              },
+              {
+                "img": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=900&h=500&fit=crop"
+                },
+                "title": "brand strategic channels",
+                "text": "matrix scalable niches"
+              },
+              {
+                "img": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88?w=900&h=500&fit=crop"
+                },
+                "title": "aggregate best-of-breed e-services",
+                "text": "scale vertical partnerships"
+              },
+              {
+                "img": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=900&h=500&fit=crop"
+                },
+                "title": "redefine turn-key mindshare",
+                "text": "implement robust networks"
+              }
+            ],
+            "primary": {
+              "title": "seize granular deliverables"
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "vue"
+        },
+        "screenshotPaths": {}
+      }
+    }
+  }
+}

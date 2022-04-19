@@ -1,0 +1,20 @@
+@mixin property($property, $maxSize, $minSize, $mediaMin: true, $maxWidth: 1640, $minWidth: 375) {
+    @if $mediaMin {
+      #{$property}: calc(#{$minSize + px} + (#{$maxSize} - #{$minSize}) * ((100vw - #{$minWidth + px}) / (#{$maxWidth - $minWidth})));
+  
+      @media (max-width: #{$minWidth + px}) {
+        #{$property}: #{$minSize + px};
+      }
+  
+      @media (min-width: #{$maxWidth + px}) {
+        #{$property}: #{$maxSize + px};
+      }
+    }
+  
+    @else {
+      @media (max-width: #{$maxWidth + px}) {
+        #{$property}: calc(#{$minSize + px} + (#{$maxSize} - #{$minSize}) * ((100vw - #{$minWidth + px}) / (#{$maxWidth - $minWidth})));
+      }
+    }
+  }
+  

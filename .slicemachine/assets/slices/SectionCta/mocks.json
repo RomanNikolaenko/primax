@@ -1,0 +1,16 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "section_cta",
+    "items": [],
+    "primary": {
+      "title": "synergize efficient methodologies",
+      "link": {
+        "link_type": "Web",
+        "url": "https://slicemachine.dev"
+      },
+      "linkTitle": "optimize end-to-end paradigms"
+    }
+  }
+]

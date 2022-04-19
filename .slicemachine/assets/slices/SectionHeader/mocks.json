@@ -1,0 +1,21 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "section_header",
+    "items": [],
+    "primary": {
+      "linkIn": {
+        "link_type": "Web",
+        "url": "https://prismic.io"
+      },
+      "linkInTitle": "innovate one-to-one eyeballs",
+      "linkAuth": {
+        "link_type": "Web",
+        "url": "https://slicemachine.dev"
+      },
+      "linkAuthTitle": "benchmark sexy methodologies",
+      "select": "ru"
+    }
+  }
+]

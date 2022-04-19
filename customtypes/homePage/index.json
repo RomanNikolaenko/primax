@@ -1,0 +1,49 @@
+{
+  "id": "homePage",
+  "label": "homePage",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "Uid",
+          "placeholder": ""
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "section_cta": {
+              "type": "SharedSlice"
+            },
+            "section_about": {
+              "type": "SharedSlice"
+            },
+            "section_everyone": {
+              "type": "SharedSlice"
+            },
+            "section_help": {
+              "type": "SharedSlice"
+            },
+            "section_advantage": {
+              "type": "SharedSlice"
+            },
+            "section_results": {
+              "type": "SharedSlice"
+            },
+            "section_hero_home": {
+              "type": "SharedSlice"
+            },
+            "section_header": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "section_everyone",
+  "type": "SharedSlice",
+  "name": "SectionEveryone",
+  "description": "SectionEveryone",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "SectionEveryone",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "subtitle": {
+          "type": "Text",
+          "config": {
+            "label": "Subtitle",
+            "placeholder": ""
+          }
+        },
+        "linkBg": {
+          "type": "Link",
+          "config": {
+            "label": "Link Bg",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "linkBgTitle": {
+          "type": "Text",
+          "config": {
+            "label": "Link Bg Title",
+            "placeholder": ""
+          }
+        },
+        "linkBorder": {
+          "type": "Link",
+          "config": {
+            "label": "Link Border",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "linkBorderTitle": {
+          "type": "Text",
+          "config": {
+            "label": "Link Border Title",
+            "placeholder": ""
+          }
+        },
+        "img": {
+          "type": "Image",
+          "config": {
+            "label": "Img",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {},
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

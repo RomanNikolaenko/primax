@@ -1,0 +1,85 @@
+{
+  "id": "SectionHeader",
+  "label": "SectionHeader",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "Uid",
+          "placeholder": ""
+        }
+      },
+      "linkIn": {
+        "type": "Link",
+        "config": {
+          "label": "Link In",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "linkInTitle": {
+        "type": "Text",
+        "config": {
+          "label": "Link In Title",
+          "placeholder": ""
+        }
+      },
+      "linkAuth": {
+        "type": "Link",
+        "config": {
+          "label": "Link Auth",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "linkAuthTitle": {
+        "type": "Text",
+        "config": {
+          "label": "Link Auth Title",
+          "placeholder": ""
+        }
+      },
+      "linkGroup": {
+        "type": "Group",
+        "config": {
+          "label": "Link Group",
+          "fields": {
+            "groupLink": {
+              "type": "Link",
+              "config": {
+                "label": "link",
+                "placeholder": "",
+                "select": null
+              }
+            },
+            "groupLinkText": {
+              "type": "Text",
+              "config": {
+                "label": "text",
+                "placeholder": ""
+              }
+            },
+            "img": {
+              "type": "Image",
+              "config": {
+                "label": "Img",
+                "constraint": {},
+                "thumbnails": []
+              }
+            }
+          }
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {}
+        }
+      }
+    }
+  }
+}

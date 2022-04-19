@@ -1,0 +1,70 @@
+{
+  "id": "section_about",
+  "type": "SharedSlice",
+  "name": "SectionAbout",
+  "description": "SectionAbout",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "SectionAbout",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "titleBlue": {
+          "type": "Text",
+          "config": {
+            "label": "Title Blue",
+            "placeholder": ""
+          }
+        },
+        "subtitle": {
+          "type": "Text",
+          "config": {
+            "label": "Subtitle",
+            "placeholder": ""
+          }
+        },
+        "subtitle2": {
+          "type": "Text",
+          "config": {
+            "label": "Subtitle2",
+            "placeholder": ""
+          }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Link",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "linkTitle": {
+          "type": "Text",
+          "config": {
+            "label": "Link Title",
+            "placeholder": ""
+          }
+        },
+        "img": {
+          "type": "Image",
+          "config": {
+            "label": "Img",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {},
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

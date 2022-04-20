@@ -1,7 +1,7 @@
 <template>
   <header class="header" :class="burger ? 'activeBurger' : ''">
     <div class="header_container">
-      <BaseIcon class="header_logo" name="logoWhite" viewBox="0 0 137 25" />
+      <a href="/"><BaseIcon class="header_logo" name="logoWhite" viewBox="0 0 137 25" /></a>
 
       <button class="header_burger" v-if="device" @click="burgerToggle">
         <i></i><i></i><i></i>

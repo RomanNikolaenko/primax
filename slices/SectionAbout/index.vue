@@ -92,7 +92,7 @@ export default {
     box-shadow: 12px 20px 40px rgba(0, 0, 0, 0.06);
     border-radius: 50px 0 0 50px;
     padding: 0;
-    @include toRem("padding-bottom", 8);
+    @include toRem("padding-left", 10);
 
     @media (max-width: 1199.98px) {
       padding: 0;

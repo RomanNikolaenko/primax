@@ -8,12 +8,12 @@
       </button>
 
       <div v-if="!device" class="header_auth">
-        <PrismicLink class="header_auth-in" :field="data.linkIn">
-          {{ data.linkInTitle }}
+        <PrismicLink class="header_auth-in" :field="data.data.linkIn">
+          {{ data.data.linkInTitle }}
         </PrismicLink>
 
-        <PrismicLink class="header_auth-reg" :field="data.linkAuth">
-          {{ data.linkAuthTitle }}
+        <PrismicLink class="header_auth-reg" :field="data.data.linkAuth">
+          {{ data.data.linkAuthTitle }}
         </PrismicLink>
 
         <span class="header_auth-line"></span>
@@ -31,7 +31,7 @@
             <ul class="list">
               <li
                 class="list_item"
-                v-for="(item, index) in data.linkGroup"
+                v-for="(item, index) in data.data.linkGroup"
                 :key="index"
               >
                 <a :href="item.link" class="list_link">
@@ -42,12 +42,12 @@
             </ul>
 
             <div class="header_auth">
-              <PrismicLink class="header_auth-in" :field="data.linkIn">
-                {{ data.linkInTitle }}
+              <PrismicLink class="header_auth-in" :field="data.data.linkIn">
+                {{ data.data.linkInTitle }}
               </PrismicLink>
 
-              <PrismicLink class="header_auth-reg" :field="data.linkAuth">
-                {{ data.linkAuthTitle }}
+              <PrismicLink class="header_auth-reg" :field="data.data.linkAuth">
+                {{ data.data.linkAuthTitle }}
               </PrismicLink>
 
               <span class="header_auth-line"></span>
@@ -72,14 +72,14 @@ import BaseSelect from "./BaseSelect.vue";
 export default {
   components: { BaseIcon, BaseSelect },
 
-  props: ["data"],
+  props: ["data", "lang"],
 
   data() {
     return {
       burger: false,
       device: false,
-      options: ["ru", "en"],
-      selectedOptions: ["ru"],
+      options: [],
+      selectedOptions: [],
     };
   },
 
@@ -94,6 +94,14 @@ export default {
       }
     },
 
+    optionsLanguage() {
+      this.data.alternate_languages.forEach((element) => {
+        this.options.push(element.lang);
+      });
+
+      this.selectedOptions = this.data.lang;
+    },
+
     resizeHandle() {
       if (window.innerWidth < 576) {
         this.device = true;
@@ -104,12 +112,14 @@ export default {
     },
 
     changeSelect(val) {
-      console.log("sfesd");
+      localStorage.setItem("language", val);
+      document.location.reload();
     },
   },
 
   mounted() {
     this.resizeHandle();
+    this.optionsLanguage();
 
     this.$nextTick(function () {
       window.addEventListener("resize", this.resizeHandle);

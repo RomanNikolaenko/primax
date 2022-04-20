@@ -1,6 +1,6 @@
 <template>
   <main class="main">
-    <SectionHeader :data="header.data" />
+    <SectionHeader :data="header" />
     <SectionHeroHome :data="heroHome.data" />
     <slice-zone :components="components" :slices="document.data.slices" />
     <SectionFooter :data="footer.data" />
@@ -9,9 +9,9 @@
 
 <script>
 import { components } from "~/slices";
-import SectionFooter from '../components/SectionFooter.vue';
-import SectionHeader from '../components/SectionHeader.vue';
-import SectionHeroHome from '../components/SectionHeroHome.vue';
+import SectionFooter from "../components/SectionFooter.vue";
+import SectionHeader from "../components/SectionHeader.vue";
+import SectionHeroHome from "../components/SectionHeroHome.vue";
 
 export default {
   components: { SectionHeader, SectionHeroHome, SectionFooter },
@@ -21,27 +21,29 @@ export default {
     };
   },
 
-  async asyncData({ $prismic, params, error }) {
+  async asyncData({ $prismic, error }) {
+    const language = localStorage.getItem("language");
+
     const document = await $prismic.api.getByUID("homePage", "homepage", {
-      lang: params.lang,
+      lang: language,
     });
 
     const header = await $prismic.api.getByUID(
       "SectionHeader",
       "sectionheader",
-      { lang: params.lang }
+      { lang: language }
     );
 
     const footer = await $prismic.api.getByUID(
       "SectionFooter",
       "sectionfooter",
-      { lang: params.lang }
+      { lang: language }
     );
 
     const heroHome = await $prismic.api.getByUID(
       "SectionHeroHome",
       "sectionherohome",
-      { lang: params.lang }
+      { lang: language }
     );
 
     if (document && header && footer && heroHome) {
@@ -82,10 +84,6 @@ export default {
       } else {
         body.classList.remove("scroll");
       }
-    },
-
-    changeSelect(val) {
-      console.log("sfesd");
     },
   },
 

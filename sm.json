@@ -4,8 +4,12 @@
   "apiOptions": {
     "routes": [
       {
-        "type": "article",
-        "path": "/:lang/:uid"
+        "type": "homepage",
+        "path": "/:lang?"
+      },
+      {
+        "type": "page",
+        "path": "/:lang?/:uid"
       }
     ]
   },

@@ -67,7 +67,6 @@ export default {
     padding-left: max(calc((20 / 18) * 1rem), calc(100% - 1840px) / 2);
     padding-right: calc((20 / 18) * 1rem);
     width: min(100%, 1100px);
-    min-height: 100vh;
 
     &::before {
       content: "";

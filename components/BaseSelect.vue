@@ -9,7 +9,7 @@
       :class="{ active: areOptionsVisible }"
       @click="areOptionsVisible = !areOptionsVisible"
     >
-      {{ options[defaultValue] }} <i>&#9654;</i>
+      {{ options.slice(0, 2)[defaultValue] || selected.slice(0, 2) }} <i>&#9654;</i>
     </p>
     <div class="options" :class="{ active: areOptionsVisible }">
       <p
@@ -17,7 +17,7 @@
         :key="option.value"
         @click="selectOption(option, index)"
       >
-        {{ option }}
+        {{ option.slice(0, 2) }}
       </p>
     </div>
   </div>
@@ -27,11 +27,11 @@
 export default {
   name: "BaseSelect",
 
-  props: ["options", "selected"],
+  props: ["options", "selected", "lang"],
 
   data() {
     return {
-      defaultValue: 0,
+      defaultValue: null,
       areOptionsVisible: false,
     };
   },

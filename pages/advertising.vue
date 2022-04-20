@@ -1,6 +1,6 @@
 <template>
   <main class="main">
-    <SectionHeader :data="header.data" />
+    <SectionHeader :data="header" />
     <SectionHeroPage :data="heroPage.data" />
     <SectionMaximumResults class="white-block" :data="maximumResults.data" />
     <SectionForm class="white-block" :data="form.data" />
@@ -25,39 +25,41 @@ export default {
     };
   },
 
-  async asyncData({ $prismic, params, error }) {
+  async asyncData({ $prismic, error }) {
+    const language = localStorage.getItem("language");
+
     const document = await $prismic.api.getByUID("advertisingPage", "advertisingpage", {
-      lang: params.lang,
+      lang: language,
     });
 
     const header = await $prismic.api.getByUID(
       "SectionHeader",
       "sectionheader",
-      { lang: params.lang }
+      { lang: language }
     );
 
     const footer = await $prismic.api.getByUID(
       "SectionFooter",
       "sectionfooter",
-      { lang: params.lang }
+      { lang: language }
     );
 
     const heroPage = await $prismic.api.getByUID(
       "SectionHeroPage",
       "sectionheropage",
-      { lang: params.lang }
+      { lang: language }
     );
 
     const maximumResults = await $prismic.api.getByUID(
       "SectionMaximumResults",
       "sectionmaximumresults",
-      { lang: params.lang }
+      { lang: language }
     );
 
     const form = await $prismic.api.getByUID(
       "SectionForm",
       "sectionform",
-      { lang: params.lang }
+      { lang: language }
     );
 
     if (document && header && footer, heroPage, maximumResults, form) {
@@ -101,7 +103,7 @@ export default {
     },
 
     changeSelect(val) {
-      console.log("sfesd");
+      // console.log("sfesd");
     },
   },
 

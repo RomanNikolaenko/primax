@@ -90,7 +90,7 @@ export default {
     },
 
     changeSelect(val) {
-      console.log("sfesd");
+      // console.log("sfesd");
     },
   },
 };

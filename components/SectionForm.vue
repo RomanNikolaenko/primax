@@ -12,7 +12,12 @@
             :key="index"
             :for="'radios_' + index"
           >
-            <input type="radio" :id="'radios_' + index" name="mode" :checked="index === 0 ? true : false" />
+            <input
+              type="radio"
+              :id="'radios_' + index"
+              name="mode"
+              :checked="index === 0 ? true : false"
+            />
             <i></i>
             <span>{{ item.title }}</span>
           </label>
@@ -240,6 +245,7 @@ export default {
     display: flex;
     @include toRem("margin-top", 20);
     @include toRem("margin-bottom", 40);
+    user-select: none;
 
     input {
       display: none;

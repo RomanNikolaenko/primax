@@ -11,10 +11,31 @@
       "version": "sktwi1xtmkfgx8626",
       "description": "SectionHelp",
       "primary": {
-        "title": {
+        "title1": {
           "type": "Text",
           "config": {
-            "label": "Title",
+            "label": "Title1",
+            "placeholder": ""
+          }
+        },
+        "title2": {
+          "type": "Text",
+          "config": {
+            "label": "Title2",
+            "placeholder": ""
+          }
+        },
+        "title3": {
+          "type": "Text",
+          "config": {
+            "label": "Title3",
+            "placeholder": ""
+          }
+        },
+        "title4": {
+          "type": "Text",
+          "config": {
+            "label": "Title4",
             "placeholder": ""
           }
         }

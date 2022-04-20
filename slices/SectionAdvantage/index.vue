@@ -46,6 +46,8 @@ export default {
 
   &_title {
     font-weight: 600;
+    @include toRem("font-size", 50);
+    line-height: 110%;
     text-align: center;
     @include toRem("margin-bottom", 70);
     white-space: pre-line;

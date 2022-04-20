@@ -1,7 +1,10 @@
 <template>
   <section class="help white-block">
     <div class="help_container container">
-      <h2 class="help_title">{{ slice.primary.title }}</h2>
+      <h2 class="help_title">
+        {{ slice.primary.title1 }}
+        <span>{{ slice.primary.title2 }}</span>{{ slice.primary.title3 }} <span>{{ slice.primary.title4 }}</span>
+      </h2>
 
       <div class="help_cards">
         <div
@@ -117,9 +120,12 @@ export default {
     max-width: 1110px;
 
     @media (min-width: 768px) {
+      white-space: pre-line;
+    }
+
+    @media (max-width: 767.98px) {
       @include toRem("font-size", 28);
       @include toRem("margin-bottom", 40);
-      white-space: pre-line;
     }
 
     span {
@@ -285,7 +291,7 @@ export default {
     @media (max-width: 767.98px) {
       width: 20px;
       height: 20px;
-      @include toRem("margin-right", 10);
+      @include toRem("margin-right", 0);
     }
   }
 }

@@ -34,45 +34,52 @@ export default {
 @import "@/assets/scss/mixins";
 
 .everyone {
-  @include property("padding-top", 150, 80);
-  @include property("padding-bottom", 160, 80);
+  @include toRem("padding-top", 150);
+  @include toRem("padding-bottom", 160);
+
+  @media (max-width: 767.98px) {
+    @include toRem("padding-top", 80);
+    @include toRem("padding-bottom", 80);
+  }
 
   &_container {
     display: flex;
     flex-direction: column;
     align-items: center;
     max-width: 1480px;
-    padding: 0 20px;
+    padding: 0;
+    @include toRem("padding-left", 20);
+    @include toRem("padding-right", 20);
     margin: 0 auto;
   }
 
   &_title {
     font-weight: 600;
-    font-size: 50px;
+    @include toRem("font-size", 50);
     line-height: 110%;
     text-align: center;
     color: var(--primary);
-    margin-bottom: 30px;
+    @include toRem("margin-bottom", 30);
     max-width: 546px;
 
     @media (max-width: 767.98px) {
-      font-size: 24px;
-      margin-bottom: 20px;
+      @include toRem("font-size", 24);
+      @include toRem("margin-bottom", 20);
     }
   }
 
   &_subtitle {
     font-weight: 600;
-    font-size: 20px;
+    @include toRem("font-size", 20);
     line-height: 160%;
     text-align: center;
     color: var(--secondary);
-    margin-bottom: 50px;
+    @include toRem("margin-bottom", 50);
     max-width: 588px;
 
     @media (max-width: 767.98px) {
-      font-size: 18px;
-      margin-bottom: 30px;
+      @include toRem("font-size", 18);
+      @include toRem("margin-bottom", 30);
     }
   }
 
@@ -80,12 +87,13 @@ export default {
     border: 7px solid #ededff;
     box-shadow: 13.4163px 22.3604px 49.193px rgba(0, 56, 97, 0.1);
     border-radius: 50px;
-    padding: 25px 25px 0;
-    margin-top: 55px;
+    @include toRem("padding", 25);
+    padding-bottom: 0;
+    @include toRem("margin-top", 55);
 
     @media (max-width: 767.98px) {
-      margin-top: 30px;
-      padding: 5px;
+      @include toRem("margin-top", 30);
+      @include toRem("padding", 5);
       border-width: 5px;
       box-shadow: 11.6224px 19.3707px 42.6156px rgba(0, 0, 0, 0.1);
       border-radius: 5px 5px 0;
@@ -96,10 +104,15 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0 -15px;
+    margin: 0;
+    @include toRem("margin-left", -15);
+    @include toRem("margin-right", -15);
 
     > * {
-      margin: 0 15px 20px;
+      margin: 0;
+      @include toRem("margin-left", 15);
+      @include toRem("margin-right", 15);
+      @include toRem("margin-bottom", 20);
     }
   }
 }

@@ -64,8 +64,8 @@ export default {
     background-color: rgba(0, 17, 59, 1);
     @include property("padding-top", 200, 120, true, 1640, 576);
     @include property("padding-bottom", 300, 80);
-    padding-left: max(20px, calc(100% - 1840px) / 2);
-    padding-right: 20px;
+    padding-left: max(calc((20 / 18) * 1rem), calc(100% - 1840px) / 2);
+    padding-right: calc((20 / 18) * 1rem);
     width: min(100%, 1100px);
     min-height: 100vh;
 
@@ -119,7 +119,7 @@ export default {
     }
 
     @media (max-width: 575.98px) {
-      padding-top: 80px;
+      @include toRem("padding-top", 80);
     }
   }
 
@@ -138,39 +138,44 @@ export default {
   &_content {
     &-title {
       font-weight: 600;
-      font-size: 64px;
+      @include toRem("font-size", 64);
       line-height: 110%;
-      margin-bottom: 30px;
+      @include toRem("margin-bottom", 30);
 
       @media (max-width: 767.98px) {
-        font-size: 40px;
-        margin-bottom: 20px;
+        @include toRem("font-size", 40);
+        @include toRem("margin-bottom", 20);
       }
     }
 
     &-subtitle {
       font-weight: 600;
-      font-size: 20px;
+      @include toRem("font-size", 20);
       line-height: 160%;
-      margin-bottom: 30px;
+      @include toRem("margin-bottom", 30);
 
       @media (max-width: 767.98px) {
-        font-size: 18px;
+        @include toRem("font-size", 18);
         line-height: 150%;
-        margin-bottom: 10px;
+        @include toRem("margin-bottom", 10);
       }
     }
 
     &-btns {
       display: flex;
-      margin: 0 -10px;
+      margin: 0;
+      @include toRem("margin-left", -10);
+      @include toRem("margin-right", -10);
 
       @media (max-width: 576px) {
         flex-wrap: wrap;
       }
 
       > * {
-        margin: 20px 10px 0;
+        margin: 0;
+        @include toRem("margin-top", 20);
+        @include toRem("margin-right", 10);
+        @include toRem("margin-left", 10);
       }
     }
   }
@@ -200,11 +205,11 @@ export default {
 
     &:not(:first-child) {
       .hero & {
-        margin-top: 12px;
+        @include toRem("margin-top", 12);
 
         @media (max-width: 1099.98px) {
           margin-top: 0;
-          margin-left: 20px;
+          @include toRem("margin-left", 20);
         }
       }
     }
@@ -214,16 +219,21 @@ export default {
     display: flex;
     align-items: center;
     font-weight: 700;
-    font-size: 16px;
+    @include toRem("font-size", 16);
     line-height: 150%;
     color: var(--white);
 
     .header_collapse & {
-      padding: 20px 0;
+      padding: 0;
+      @include toRem("padding-top", 20);
+      @include toRem("padding-bottom", 20);
     }
 
     .hero & {
-      padding: 12px 18px;
+      @include toRem("padding-top", 12);
+      @include toRem("padding-bottom", 12);
+      @include toRem("padding-left", 18);
+      @include toRem("padding-right", 18);
       background: linear-gradient(
         226.85deg,
         rgba(255, 255, 255, 0.15) -1.71%,
@@ -255,7 +265,7 @@ export default {
       display: block;
       width: 20px;
       height: 20px;
-      margin-right: 15px;
+      @include toRem("margin-right", 15);
     }
   }
 }

@@ -30,7 +30,10 @@ export default {
   background-size: cover;
   box-shadow: 10px 20px 60px rgba(47, 128, 237, 0.2);
   min-height: 640px;
-  padding: 150px 30px;
+  @include toRem("padding-top", 150);
+  @include toRem("padding-bottom", 150);
+  @include toRem("padding-left", 30);
+  @include toRem("padding-right", 30);
 
   @media (orientation: portrait) {
     background-image: url("./static/ctaBgMob.svg"),
@@ -46,28 +49,31 @@ export default {
     border: 7px solid rgba(255, 255, 255, 0.3);
     filter: drop-shadow(10px 20px 60px rgba(47, 128, 237, 0.2));
     border-radius: 50px;
-    padding: 150px 180px;
-    @include property("padding-left", 180, 50, false, 1640, 1024);
-    @include property("padding-right", 180, 50, false, 1640, 1024);
+    @include toRem("padding-top", 150);
+    @include toRem("padding-bottom", 150);
+    @include toRem("padding-left", 180);
+    @include toRem("padding-right", 180);
     max-width: 1440px;
     width: 100%;
     margin: 0 auto;
 
     @media (max-width: 1023.98px) {
       border: none;
-      padding: 50px 0;
+      padding: 0;
+      @include toRem("padding-top", 50);
+      @include toRem("padding-bottom", 50);
     }
   }
 
   &_title {
     font-weight: 600;
-    font-size: 50px;
+    @include toRem("font-size", 50);
     line-height: 110%;
     text-align: center;
-    margin-bottom: 40px;
+    @include toRem("margin-bottom", 40);
 
     @media (max-width: 767.98px) {
-      font-size: 24px;
+      @include toRem("font-size", 24);
     }
   }
 }

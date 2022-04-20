@@ -19,5 +19,5 @@
 }
 
 @mixin toRem($property, $value) {
-  #{$property}: ($value / 18) + rem;
+  #{$property}: calc($value / 18) + rem;
 }

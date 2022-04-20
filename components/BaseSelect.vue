@@ -100,9 +100,8 @@ export default {
 
     i {
       font-style: normal;
-      font-size: 10px;
       @include toRem("font-size", 10);
-      margin-left: 4px;
+      @include toRem("margin-left", 4);
       transform: rotate(90deg);
     }
 

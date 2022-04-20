@@ -31,25 +31,28 @@ export default {
 @import "@/assets/scss/mixins";
 
 .advantage {
-  @include property("padding-top", 150, 80);
-  @include property("padding-bottom", 170, 80);
+  @include toRem("padding-top", 150);
+  @include toRem("padding-bottom", 170);
   background-image: url("./static/resultsBg.svg"),
     linear-gradient(89.02deg, #367bff 1.68%, #26bff7 97.37%);
   background-repeat: no-repeat, repeat;
   background-size: cover;
   background-position-y: center;
 
+  @media (max-width: 767.98px) {
+    @include toRem("padding-top", 80);
+    @include toRem("padding-bottom", 80);
+  }
+
   &_title {
     font-weight: 600;
-    font-size: 50px;
-    line-height: 110%;
     text-align: center;
-    margin-bottom: 70px;
+    @include toRem("margin-bottom", 70);
     white-space: pre-line;
 
     @media (max-width: 767.98px) {
-      font-size: 24px;
-      margin-bottom: 30px;
+      @include toRem("font-size", 24);
+      @include toRem("margin-bottom", 30);
     }
   }
 
@@ -57,7 +60,9 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0 -20px;
+    margin: 0;
+    @include toRem("margin-left", -20);
+    @include toRem("margin-right", -20);
   }
 }
 
@@ -66,13 +71,17 @@ export default {
   border: 7px solid #eef6ff;
   box-shadow: 10px 20px 50px rgba(0, 0, 0, 0.05);
   border-radius: 50px;
-  padding: 50px 40px;
-  margin: 0 20px 20px;
+  @include toRem("padding-top", 50);
+  @include toRem("padding-bottom", 50);
+  @include toRem("padding-right", 40);
+  @include toRem("padding-left", 40);
+  @include toRem("margin", 20);
+  margin-top: 0;
   max-width: 530px;
-  width: calc(33.333% - 40px);
+  width: calc(33.333% - calc((40 / 18) * 1rem));
 
   @media (max-width: 1366px) {
-    width: calc(50% - 40px);
+    width: calc(50% - calc((40 / 18) * 1rem));
   }
 
   @media (max-width: 1024px) {
@@ -81,32 +90,35 @@ export default {
   }
 
   @media (max-width: 767.98px) {
-    padding: 30px 20px;
+    @include toRem("padding-top", 30);
+    @include toRem("padding-bottom", 30);
+    @include toRem("padding-right", 20);
+    @include toRem("padding-left", 20);
   }
 
   &_title {
     font-weight: 600;
-    font-size: 35px;
     line-height: 110%;
     text-align: center;
     color: var(--white);
-    margin-bottom: 20px;
+    @include toRem("font-size", 35);
+    @include toRem("margin-bottom", 20);
 
     @media (max-width: 767.98px) {
-      font-size: 22px;
-      margin-bottom: 15px;
+      @include toRem("font-size", 22);
+      @include toRem("margin-bottom", 15);
     }
   }
 
   &_text {
     font-weight: 600;
-    font-size: 20px;
+    @include toRem("font-size", 20);
     line-height: 160%;
     text-align: center;
     color: var(--white);
 
     @media (max-width: 767.98px) {
-      font-size: 18px;
+      @include toRem("font-size", 18);
     }
   }
 }

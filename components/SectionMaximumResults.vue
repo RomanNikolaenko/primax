@@ -36,8 +36,13 @@ export default {
 @import "@/assets/scss/mixins";
 
 .results {
-  @include property("padding-top", 160, 80);
-  @include property("padding-bottom", 160, 80);
+  @include toRem("padding-top", 160);
+  @include toRem("padding-bottom", 160);
+
+  @media (max-width: 767.98px) {
+    @include toRem("padding-top", 80);
+    @include toRem("padding-bottom", 80);
+  }
 
   &_container {
     display: flex;
@@ -45,7 +50,9 @@ export default {
     justify-content: center;
     max-width: 1720px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0;
+    @include toRem("padding-left", 20);
+    @include toRem("padding-right", 20);
   }
 
   &_img {
@@ -54,81 +61,85 @@ export default {
 
   &_title {
     font-weight: 600;
-    font-size: 50px;
     line-height: 110%;
     text-align: center;
     color: var(--primary);
     max-width: 680px;
-    margin: 0 auto 80px;
+    margin: 0 auto;
+    @include toRem("margin-bottom", 80);
+    @include toRem("font-size", 50);
 
     span {
       color: #367bff;
     }
 
     @media (max-width: 767.98px) {
-      font-size: 24px;
-      margin-bottom: 40px;
+      @include toRem("margin-bottom", 40);
+      @include toRem("font-size", 24);
     }
   }
 
   &_cards {
-    --columns: 4;
-
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0 -20px;
+    margin: 0;
+    @include toRem("margin-right", -20);
+    @include toRem("margin-left", -20);
   }
 
   &_card {
-    margin: 0 20px 40px;
+    margin: 0;
+    @include toRem("margin-right", 20);
+    @include toRem("margin-left", 20);
+    @include toRem("margin-bottom", 40);
     background: var(--white);
     border: 7px solid #eef6ff;
     box-shadow: 12px 20px 40px rgba(0, 0, 0, 0.06);
     border-radius: 50px;
-    max-width: calc(25% - 40px);
+    max-width: calc(25% - calc((40 / 18) * 1rem));
     width: 100%;
     min-width: 390px;
-    padding: 40px;
+    @include toRem("padding", 40);
 
     @media (max-width: 575.98px) {
-      max-width: calc(100% - 40px);
+      max-width: calc(100% - calc((40 / 18) * 1rem));
       min-width: initial;
-      padding: 20px;
+      @include toRem("padding", 20);
     }
 
     &-img {
       display: block;
       width: 40px;
       height: 40px;
-      margin-bottom: 40px;
+      @include toRem("margin-bottom", 40);
 
       @media (max-width: 575.98px) {
-        margin-bottom: 20px;
+        @include toRem("margin-bottom", 20);
       }
     }
 
     &-title {
       font-weight: 600;
-      font-size: 35px;
+      @include toRem("font-size", 35);
       line-height: 110%;
       color: var(--primary);
-      margin-bottom: 20px;
+      @include toRem("margin-bottom", 20);
 
       @media (max-width: 767.98px) {
-        font-size: 24px;
-        margin-bottom: 15px;
+        @include toRem("font-size", 24);
+        @include toRem("margin-bottom", 15);
       }
     }
 
     &-text {
       font-weight: 600;
-      font-size: 20px;
+      @include toRem("font-size", 20);
       line-height: 160%;
       color: var(--secondary);
 
       @media (max-width: 767.98px) {
-        font-size: 18px;
+        @include toRem("font-size", 18);
       }
     }
   }

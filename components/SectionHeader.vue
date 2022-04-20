@@ -123,6 +123,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/scss/mixins";
+
 .header {
   position: fixed;
   top: 0;
@@ -130,15 +132,22 @@ export default {
   right: 0;
   z-index: 20;
   width: 100%;
-  padding: 40px 20px;
+  @include toRem("padding-top", 40);
+  @include toRem("padding-bottom", 40);
+  @include toRem("padding-left", 20);
+  @include toRem("padding-right", 20);
   transition: padding 0.2s linear;
 
   @media (max-width: 575.98px) {
-    padding: 10px 20px;
+    @include toRem("padding-top", 10);
+    @include toRem("padding-bottom", 10);
   }
 
   .fix & {
-    padding: 10px 20px;
+    @include toRem("padding-top", 10);
+    @include toRem("padding-bottom", 10);
+    @include toRem("padding-left", 20);
+    @include toRem("padding-right", 20);
     background-image: linear-gradient(89.02deg, #367bff 1.68%, #26bff7 97.37%);
     backdrop-filter: blur(30px);
     border-bottom: 2px solid rgba(255, 255, 255, 0.3);
@@ -171,11 +180,14 @@ export default {
     margin-top: auto;
 
     &-in {
-      padding: 10px 16px;
+      @include toRem("padding-top", 10);
+      @include toRem("padding-bottom", 10);
+      @include toRem("padding-left", 16);
+      @include toRem("padding-right", 16);
       border: 2px solid var(--white);
       border-radius: 5px;
       font-weight: 700;
-      font-size: 16px;
+      @include toRem("font-size", 16);
       line-height: 150%;
       text-align: center;
 
@@ -202,11 +214,14 @@ export default {
     }
 
     &-reg {
-      padding: 10px 16px;
+      @include toRem("padding-top", 10);
+      @include toRem("padding-bottom", 10);
+      @include toRem("padding-left", 16);
+      @include toRem("padding-right", 16);
       background: rgba(255, 255, 255, 0.2);
       border-radius: 5px;
       font-weight: 700;
-      font-size: 16px;
+      @include toRem("font-size", 16);
       line-height: 150%;
       text-align: center;
 
@@ -257,7 +272,7 @@ export default {
     align-items: center;
     justify-content: center;
     gap: 5px;
-    padding: 12px;
+    @include toRem("padding", 12);
     width: 48px;
     height: 48px;
     background-color: rgba(255, 255, 255, 0.2);
@@ -335,7 +350,7 @@ export default {
     background-image: linear-gradient(89.02deg, #367bff 1.68%, #26bff7 97.37%);
     width: 100%;
     height: 100vh;
-    padding-top: 67px;
+    @include toRem("padding-top", 67);
 
     @media (min-height: 620px) {
       background-image: url("./static/lineMenu.svg"),
@@ -351,7 +366,7 @@ export default {
     flex-direction: column;
     height: 100%;
     margin-left: auto;
-    padding: 20px;
+    @include toRem("padding", 20);
   }
 }
 
@@ -369,7 +384,7 @@ export default {
 .list {
   .header_collapse & {
     overflow: auto;
-    margin-bottom: 20px;
+    @include toRem("margin-bottom", 20);
   }
 
   .hero & {
@@ -391,11 +406,11 @@ export default {
 
     &:not(:first-child) {
       .hero & {
-        margin-top: 12px;
+        @include toRem("margin-top", 12);
 
         @media (max-width: 1365.98px) {
           margin-top: 0;
-          margin-left: 20px;
+          @include toRem("margin-left", 20);
         }
       }
     }
@@ -405,16 +420,21 @@ export default {
     display: flex;
     align-items: center;
     font-weight: 700;
-    font-size: 16px;
+    @include toRem("font-size", 16);
     line-height: 150%;
     color: var(--white);
 
     .header_collapse & {
-      padding: 20px 0;
+      padding: 0;
+      @include toRem("padding-top", 20);
+      @include toRem("padding-bottom", 20);
     }
 
     .hero & {
-      padding: 12px 18px;
+      @include toRem("padding-top", 12);
+      @include toRem("padding-bottom", 12);
+      @include toRem("padding-left", 18);
+      @include toRem("padding-right", 18);
       background: linear-gradient(
         226.85deg,
         rgba(255, 255, 255, 0.15) -1.71%,
@@ -446,7 +466,7 @@ export default {
       display: block;
       width: 20px;
       height: 20px;
-      margin-right: 15px;
+      @include toRem("margin-right", 15);
     }
   }
 }

@@ -64,7 +64,7 @@ export default {
     &::before {
       content: "";
       position: absolute;
-      bottom: 130px;
+      @include toRem("bottom", 130);
       right: 0;
       background: radial-gradient(
         41.58% 29.82% at 64.98% 54.56%,
@@ -86,7 +86,7 @@ export default {
     &::after {
       content: "";
       position: absolute;
-      top: 80px;
+      @include toRem("top", 80);
       left: 0;
       background: radial-gradient(
         41.58% 29.82% at 64.98% 54.56%,
@@ -108,15 +108,17 @@ export default {
 
   &_title {
     font-weight: 600;
-    @include property("font-size", 50, 28, true, 1640, 768);
+    @include toRem("font-size", 50);
     line-height: 110%;
     text-align: center;
     color: var(--primary);
     margin: 0 auto;
-    @include property("margin-bottom", 80, 40, true, 1640, 768);
+    @include toRem("margin-bottom", 80);
     max-width: 1110px;
 
     @media (min-width: 768px) {
+      @include toRem("font-size", 28);
+      @include toRem("margin-bottom", 40);
       white-space: pre-line;
     }
 
@@ -134,10 +136,14 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0 -20px;
+    margin: 0;
+    @include toRem("margin-left", -20);
+    @include toRem("margin-right", -20);
 
     @media (max-width: 767.98px) {
-      margin: 0 -10px;
+      margin: 0;
+      @include toRem("margin-left", -10);
+      @include toRem("margin-right", -10);
     }
   }
 }
@@ -146,11 +152,15 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 70px 55px;
+  @include toRem("padding-top", 70);
+  @include toRem("padding-bottom", 70);
+  @include toRem("padding-left", 55);
+  @include toRem("padding-right", 55);
   border: 7px solid #e1edfc;
   box-shadow: 10px 20px 50px rgba(0, 0, 0, 0.05);
   border-radius: 50px;
-  margin: 0 20px 20px;
+  @include toRem("margin", 20);
+  margin-top: 0;
   max-width: 533px;
   width: 100%;
 
@@ -163,34 +173,42 @@ export default {
   }
 
   @media (max-width: 767.98px) {
-    margin: 0 10px 20px;
-    padding: 30px 23px;
+    margin: 0;
     border-radius: 20px;
+
+    @include toRem("padding-top", 30);
+    @include toRem("padding-bottom", 30);
+    @include toRem("padding-left", 23);
+    @include toRem("padding-right", 23);
+
+    @include toRem("margin-bottom", 20);
+    @include toRem("margin-left", 10);
+    @include toRem("margin-right", 10);
   }
 
   img {
     display: block;
     width: 192px;
     height: 192px;
-    margin-bottom: 42px;
+    @include toRem("margin-bottom", 42);
 
     @media (max-width: 767.98px) {
       width: 100px;
       height: 100px;
-      margin-bottom: 28px;
+      @include toRem("margin-bottom", 28);
     }
   }
 
   &_title {
     font-weight: 600;
-    font-size: 35px;
+    @include toRem("font-size", 35);
     line-height: 110%;
     text-align: center;
-    margin-bottom: 25px;
+    @include toRem("margin-bottom", 25);
 
     @media (max-width: 767.98px) {
-      margin-bottom: 20px;
-      font-size: 22px;
+      @include toRem("margin-bottom", 20);
+      @include toRem("font-size", 22);
     }
 
     .blue & {
@@ -204,10 +222,10 @@ export default {
 
   &_list {
     width: 100%;
-    margin-bottom: 45px;
+    @include toRem("margin-bottom", 15);
 
     @media (max-width: 767.98px) {
-      margin-bottom: 30px;
+      @include toRem("margin-bottom", 30);
     }
   }
 }
@@ -216,19 +234,19 @@ export default {
   display: flex;
   align-items: center;
   font-weight: 600;
-  font-size: 25px;
+  @include toRem("font-size", 25);
   line-height: 160%;
 
   @media (max-width: 767.98px) {
-    font-size: 18px;
+    @include toRem("font-size", 18);
     line-height: 150%;
   }
 
   &:not(:last-child) {
-    margin-bottom: 20px;
+    @include toRem("margin-bottom", 20);
 
     @media (max-width: 767.98px) {
-      margin-bottom: 12px;
+      @include toRem("margin-bottom", 12);
     }
   }
 
@@ -261,13 +279,13 @@ export default {
     width: 36px;
     height: 36px;
     flex: 0 0 auto;
-    margin-right: 20px;
+    @include toRem("margin-right", 20);
     background-size: contain;
 
     @media (max-width: 767.98px) {
       width: 20px;
       height: 20px;
-      margin-right: 10px;
+      @include toRem("margin-right", 10);
     }
   }
 }

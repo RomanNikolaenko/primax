@@ -12,7 +12,7 @@
             :key="index"
             :for="'radios_' + index"
           >
-            <input type="radio" :id="'radios_' + index" name="mode" />
+            <input type="radio" :id="'radios_' + index" name="mode" :checked="index === 0 ? true : false" />
             <i></i>
             <span>{{ item.title }}</span>
           </label>
@@ -80,8 +80,13 @@ export default {
 @import "@/assets/scss/mixins";
 
 .form {
-  @include property("padding-top", 160, 80);
-  @include property("padding-bottom", 160, 80);
+  @include toRem("padding-top", 160);
+  @include toRem("padding-bottom", 160);
+
+  @media (max-width: 767.98px) {
+    @include toRem("padding-top", 160);
+    @include toRem("padding-bottom", 160);
+  }
 
   &_title {
     font-weight: 600;
@@ -90,8 +95,8 @@ export default {
     text-align: center;
     color: var(--primary);
     margin: 0 auto;
-    @include toRem("max-width", 680);
     @include toRem("margin-bottom", 80);
+    max-width: 680px;
 
     @media (max-width: 767.98px) {
       @include toRem("font-size", 24);
@@ -102,7 +107,6 @@ export default {
   &_form {
     background: var(--white);
     border: 7px solid #ededff;
-    box-sizing: border-box;
     box-shadow: 13.4163px 22.3604px 49.193px rgba(0, 56, 97, 0.1),
       10px 20px 50px rgba(0, 0, 0, 0.05);
     @include toRem("border-radius", 50);
@@ -116,13 +120,17 @@ export default {
     }
 
     @media (max-width: 419.98px) {
-      margin: 0 -20px;
+      margin: 0;
+      @include toRem("margin-left", -20);
+      @include toRem("margin-right", -20);
     }
 
     > fieldset {
       display: flex;
       flex-wrap: wrap;
-      margin: 0 -20px;
+      margin: 0;
+      @include toRem("margin-left", -20);
+      @include toRem("margin-right", -20);
 
       input {
         display: none;
@@ -168,8 +176,8 @@ export default {
           top: 50%;
           left: 0;
           transform: translateY(-50%);
-          @include toRem("width", 24);
-          @include toRem("height", 24);
+          width: 24px;
+          height: 24px;
           background-image: url("./static/radio.svg");
           background-size: 100% 100%;
         }
@@ -197,9 +205,12 @@ export default {
       @include toRem("min-height", 150);
     }
 
+    input {
+      line-height: 40px;
+    }
+
     input,
     textarea {
-      @include toRem("line-height", 40);
       width: 100%;
       color: var(--secondary);
 
@@ -256,8 +267,8 @@ export default {
         top: 50%;
         left: 0;
         transform: translateY(-50%);
-        @include toRem("width", 20);
-        @include toRem("height", 20);
+        width: 20px;
+        height: 20px;
         background: url("./static/Checkmark.svg");
         background-size: 100% 100%;
       }

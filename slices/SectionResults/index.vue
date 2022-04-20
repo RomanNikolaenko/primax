@@ -4,7 +4,11 @@
       <h2 class="results_title">{{ slice.primary.title }}</h2>
 
       <div class="results_cards">
-        <div v-for="(item, i) in slice.items" :key="`slice-item-${i}`" class="card">
+        <div
+          v-for="(item, i) in slice.items"
+          :key="`slice-item-${i}`"
+          class="card"
+        >
           <PrismicImage :field="item.img" width="250" height="250" />
           <h3 class="card_title">{{ item.title }}</h3>
           <p class="card_text">{{ item.text }}</p>
@@ -28,26 +32,31 @@ export default {
 @import "@/assets/scss/mixins";
 
 .results {
-  @include property("padding-top", 150, 80);
-  @include property("padding-bottom", 150, 80);
+  @include toRem("padding-top", 150);
+  @include toRem("padding-bottom", 150);
   background-image: url("./static/resultsBg.svg"),
     linear-gradient(89.02deg, #367bff 1.68%, #26bff7 97.37%);
   background-repeat: no-repeat, repeat;
   background-size: cover;
   background-position-y: center;
 
+  @media (max-width: 767.98px) {
+    @include toRem("padding-top", 80);
+    @include toRem("padding-bottom", 80);
+  }
+
   &_title {
     font-weight: 600;
-    font-size: 50px;
+    @include toRem("font-size", 50);
     line-height: 110%;
     text-align: center;
     margin: 0 auto;
-    margin-bottom: 80px;
+    @include toRem("margin-bottom", 80);
     max-width: 690px;
 
     @media (max-width: 767.98px) {
-      font-size: 24px;
-      margin-bottom: 40px;
+      @include toRem("font-size", 24);
+      @include toRem("margin-bottom", 40);
     }
   }
 
@@ -55,21 +64,27 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0 -20px;
+    margin: 0;
+    @include toRem("margin-right", -20);
+    @include toRem("margin-left", -20);
   }
 }
 
 .card {
-  padding: 50px 40px;
+  @include toRem("padding-top", 50);
+  @include toRem("padding-bottom", 50);
+  @include toRem("padding-right", 40);
+  @include toRem("padding-left", 40);
   background: var(--white);
   border: 7px solid #eef6ff;
   box-shadow: 10px 20px 50px rgba(0, 0, 0, 0.05);
   border-radius: 50px;
-  margin: 0 20px 20px;
-  width: calc(33.333% - 40px);
+  @include toRem("margin", 20);
+  margin-top: 0;
+  width: calc(33.333% - calc((40 / 18) * 1rem));
 
   @media (max-width: 1366px) {
-    width: calc(50% - 40px);
+    width: calc(50% - calc((40 / 18) * 1rem));
   }
 
   @media (max-width: 1024px) {
@@ -78,7 +93,8 @@ export default {
   }
 
   @media (max-width: 767.98px) {
-    padding: 30px 30px 50px;
+    @include toRem("padding", 30);
+    @include toRem("padding-bottom", 50);
     border: 5px solid #eef6ff;
     border-radius: 20px;
   }
@@ -88,31 +104,31 @@ export default {
     margin: 0 auto;
     max-height: 250px;
     object-fit: contain;
-    margin-bottom: 20px;
+    @include toRem("margin-bottom", 20);
   }
 
   &_title {
     font-weight: 600;
-    font-size: 35px;
+    @include toRem("font-size", 35);
+    @include toRem("margin-bottom", 20);
     line-height: 110%;
     text-align: center;
     color: var(--primary);
-    margin-bottom: 20px;
 
     @media (max-width: 767.98px) {
-      font-size: 22px;
+      @include toRem("font-size", 22);
     }
   }
 
   &_text {
     font-weight: 600;
-    font-size: 20px;
+    @include toRem("font-size", 20);
     line-height: 160%;
     text-align: center;
     color: var(--secondary);
 
     @media (max-width: 767.98px) {
-      font-size: 18px;
+      @include toRem("font-size", 18);
       line-height: 150%;
     }
   }

@@ -20,8 +20,12 @@
           <p class="hero_content-subtitle">{{ data.subtitle }}</p>
 
           <div class="hero_content-btns">
-            <PrismicLink class="link orangeBg" :field="data.linkBg">{{ data.linkBgTitle }}</PrismicLink>
-            <PrismicLink class="link whiteBorder" :field="data.linkBorder">{{ data.linkBorderTitle }}</PrismicLink>
+            <PrismicLink class="link orangeBg" :field="data.linkBg">{{
+              data.linkBgTitle
+            }}</PrismicLink>
+            <PrismicLink class="link whiteBorder" :field="data.linkBorder">{{
+              data.linkBorderTitle
+            }}</PrismicLink>
           </div>
         </div>
       </div>
@@ -51,7 +55,7 @@ export default {
   data() {
     return {
       device: false,
-    }
+    };
   },
 
   methods: {
@@ -82,13 +86,19 @@ export default {
 @import "@/assets/scss/mixins";
 
 .hero {
-  @include property("padding-top", 200, 80);
-  @include property("padding-bottom", 300, 80);
+  @include toRem("padding-top", 200);
+  @include toRem("padding-bottom", 300);
+
   background-image: url("./static/resultsBg.svg"),
     linear-gradient(89.02deg, #367bff 1.68%, #26bff7 97.37%);
   background-repeat: no-repeat, repeat;
   background-size: cover;
   background-position-y: center;
+
+  @media (max-width: 767.98px) {
+    @include toRem("padding-top", 80);
+    @include toRem("padding-bottom", 80);
+  }
 
   &_container {
     display: grid;
@@ -97,7 +107,9 @@ export default {
     gap: 70px 35px;
     max-width: 1880px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0;
+    @include toRem("padding-left", 20);
+    @include toRem("padding-right", 20);
 
     @media (max-width: 1365.98px) {
       grid-template-columns: 1fr;
@@ -129,39 +141,44 @@ export default {
   &_content {
     &-title {
       font-weight: 600;
-      font-size: 64px;
+      @include toRem("font-size", 64);
       line-height: 110%;
-      margin-bottom: 30px;
+      @include toRem("margin-bottom", 30);
 
       @media (max-width: 767.98px) {
-        font-size: 40px;
-        margin-bottom: 20px;
+        @include toRem("font-size", 40);
+        @include toRem("margin-bottom", 20);
       }
     }
 
     &-subtitle {
       font-weight: 600;
-      font-size: 20px;
+      @include toRem("font-size", 20);
       line-height: 160%;
-      margin-bottom: 30px;
+      @include toRem("margin-bottom", 30);
 
       @media (max-width: 767.98px) {
-        font-size: 18px;
         line-height: 150%;
-        margin-bottom: 10px;
+        @include toRem("font-size", 18);
+        @include toRem("margin-bottom", 10);
       }
     }
 
     &-btns {
       display: flex;
-      margin: 0 -10px;
+      margin: 0;
+      @include toRem("margin-left", -10);
+      @include toRem("margin-right", -10);
 
       @media (max-width: 576px) {
         flex-wrap: wrap;
       }
 
       > * {
-        margin: 20px 10px 0;
+        margin: 0;
+        @include toRem("margin-left", 10);
+        @include toRem("margin-right", 10);
+        @include toRem("margin-top", 20);
       }
     }
   }
@@ -191,11 +208,11 @@ export default {
 
     &:not(:first-child) {
       .hero & {
-        margin-top: 12px;
+        @include toRem("margin-top", 12);
 
         @media (max-width: 1365.98px) {
           margin-top: 0;
-          margin-left: 20px;
+          @include toRem("margin-left", 20);
         }
       }
     }
@@ -205,16 +222,21 @@ export default {
     display: flex;
     align-items: center;
     font-weight: 700;
-    font-size: 16px;
+    @include toRem("font-size", 16);
     line-height: 150%;
     color: var(--white);
 
     .header_collapse & {
-      padding: 20px 0;
+      padding: 0;
+      @include toRem("padding-top", 20);
+      @include toRem("padding-bottom", 20);
     }
 
     .hero & {
-      padding: 12px 18px;
+      @include toRem("padding-top", 12);
+      @include toRem("padding-bottom", 12);
+      @include toRem("padding-right", 18);
+      @include toRem("padding-left", 18);
       background: linear-gradient(
         226.85deg,
         rgba(255, 255, 255, 0.15) -1.71%,
@@ -246,7 +268,7 @@ export default {
       display: block;
       width: 20px;
       height: 20px;
-      margin-right: 15px;
+      @include toRem("margin-right", 15);
     }
   }
 }

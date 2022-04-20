@@ -128,8 +128,6 @@ export default {
     @media (max-width: 767.98px) {
       @include toRem("padding-top", 80);
       @include toRem("padding-bottom", 40);
-      @include toRem("padding-left", 30);
-      @include toRem("padding-right", 30);
     }
   }
 
@@ -292,7 +290,7 @@ export default {
 
   span {
     display: inline-block;
-    margin-right: 10px;
+    @include toRem("margin-right", 10);
   }
 
   &-link {

@@ -1,4 +1,4 @@
-@mixin property($property, $maxSize, $minSize, $mediaMin: true, $maxWidth: 1640, $minWidth: 375) {
+@mixin property($property, $maxSize, $minSize, $mediaMin: true, $maxWidth: 1640, $minWidth: 320) {
   @if $mediaMin {
     #{$property}: calc(#{$minSize + px} + (#{$maxSize} - #{$minSize}) * ((100vw - #{$minWidth + px}) / (#{$maxWidth - $minWidth})));
 

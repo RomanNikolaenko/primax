@@ -5,86 +5,68 @@
     "slice_type": "section_results",
     "items": [
       {
-        "img": {
-          "dimensions": {
-            "width": 900,
-            "height": 500
-          },
-          "alt": "Placeholder image",
-          "copyright": null,
-          "url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab?w=900&h=500&fit=crop"
-        },
-        "title": "syndicate B2C supply-chains",
-        "text": "e-enable enterprise architectures"
+        "lists": [
+          {
+            "type": "paragraph",
+            "text": "Laborum laboris velit non.",
+            "spans": []
+          }
+        ]
       },
       {
-        "img": {
-          "dimensions": {
-            "width": 900,
-            "height": 500
-          },
-          "alt": "Placeholder image",
-          "copyright": null,
-          "url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8?w=900&h=500&fit=crop"
-        },
-        "title": "utilize wireless synergies",
-        "text": "enable holistic methodologies"
+        "lists": [
+          {
+            "type": "paragraph",
+            "text": "Eu dolore aliquip quis. Proident mollit veniam ex.",
+            "spans": []
+          }
+        ]
       },
       {
-        "img": {
-          "dimensions": {
-            "width": 900,
-            "height": 500
-          },
-          "alt": "Placeholder image",
-          "copyright": null,
-          "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72?w=900&h=500&fit=crop"
-        },
-        "title": "seize integrated mindshare",
-        "text": "transform frictionless schemas"
+        "lists": [
+          {
+            "type": "paragraph",
+            "text": "Ea ea est sunt aliquip occaecat amet. Aliquip duis cupidatat consequat excepteur incididunt aliqua eiusmod nostrud.",
+            "spans": []
+          }
+        ]
       },
       {
-        "img": {
-          "dimensions": {
-            "width": 900,
-            "height": 500
-          },
-          "alt": "Placeholder image",
-          "copyright": null,
-          "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=900&h=500&fit=crop"
-        },
-        "title": "brand strategic channels",
-        "text": "matrix scalable niches"
+        "lists": [
+          {
+            "type": "paragraph",
+            "text": "Ad sunt amet aute cillum. Occaecat fugiat voluptate sunt exercitation ea eu labore ex culpa sit dolor ex.",
+            "spans": []
+          }
+        ]
       },
       {
-        "img": {
-          "dimensions": {
-            "width": 900,
-            "height": 500
-          },
-          "alt": "Placeholder image",
-          "copyright": null,
-          "url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88?w=900&h=500&fit=crop"
-        },
-        "title": "aggregate best-of-breed e-services",
-        "text": "scale vertical partnerships"
+        "lists": [
+          {
+            "type": "paragraph",
+            "text": "Elit qui est aliqua non est do non incididunt est commodo deserunt. Tempor elit enim in magna sit est ipsum sint Lorem laboris id velit eiusmod.",
+            "spans": []
+          }
+        ]
       },
       {
-        "img": {
-          "dimensions": {
-            "width": 900,
-            "height": 500
-          },
-          "alt": "Placeholder image",
-          "copyright": null,
-          "url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=900&h=500&fit=crop"
-        },
-        "title": "redefine turn-key mindshare",
-        "text": "implement robust networks"
+        "lists": [
+          {
+            "type": "paragraph",
+            "text": "Magna reprehenderit dolor ex.",
+            "spans": []
+          }
+        ]
       }
     ],
     "primary": {
-      "title": "seize granular deliverables"
+      "title": [
+        {
+          "type": "paragraph",
+          "text": "Cillum deserunt officia reprehenderit labore aliqua veniam ea dolor labore Lorem eu adipisicing non. Id do amet minim pariatur sit.",
+          "spans": []
+        }
+      ]
     }
   }
 ]

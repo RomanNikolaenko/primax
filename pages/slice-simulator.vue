@@ -1,22 +1,22 @@
 <template>
-  <SliceSimulator :state="state" #default="props">
-    <SliceZone v-bind="props" />
+  <SliceSimulator v-slot="{ slices }" :state="state">
+    <SliceZone :slices="slices" :components="components" />
   </SliceSimulator>
 </template>
 
 <script>
-import { SliceSimulator } from '@prismicio/slice-simulator-vue';
-import SliceZone from 'vue-slicezone';
+import { SliceSimulator } from '@prismicio/slice-simulator-vue'
+import { components } from '~/slices'
 
-import state from '~/.slicemachine/libraries-state.json';
+import state from '~~/.slicemachine/libraries-state.json'
 
 export default {
+  nuxtI18n: false,
   components: {
-    SliceSimulator,
-    SliceZone,
+    SliceSimulator
   },
-  data() {
-    return { state }
-  },
+  data () {
+    return { state, components }
+  }
 }
 </script>

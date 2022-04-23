@@ -1,28 +1,26 @@
 <template>
   <header class="header" :class="burger ? 'activeBurger' : ''">
     <div class="header_container">
-      <a href="/"><BaseIcon class="header_logo" name="logoWhite" viewBox="0 0 137 25" /></a>
+      <a href="/" class="header_logo">
+        <BaseIcon name="logoWhite" viewBox="0 0 137 25" />
+      </a>
 
       <button class="header_burger" v-if="device" @click="burgerToggle">
         <i></i><i></i><i></i>
       </button>
 
       <div v-if="!device" class="header_auth">
-        <PrismicLink class="header_auth-in" :field="data.data.linkIn">
-          {{ data.data.linkInTitle }}
+        <PrismicLink class="header_auth-in" :field="header.data.linkIn">
+          {{ header.data.linkInTitle }}
         </PrismicLink>
 
-        <PrismicLink class="header_auth-reg" :field="data.data.linkAuth">
-          {{ data.data.linkAuthTitle }}
+        <PrismicLink class="header_auth-reg" :field="header.data.linkAuth">
+          {{ header.data.linkAuthTitle }}
         </PrismicLink>
 
         <span class="header_auth-line"></span>
 
-        <BaseSelect
-          :options="options"
-          :selected="selectedOptions"
-          @select="changeSelect"
-        />
+        <BaseSelect />
       </div>
 
       <transition name="burger">
@@ -31,32 +29,35 @@
             <ul class="list">
               <li
                 class="list_item"
-                v-for="(item, index) in data.data.linkGroup"
+                v-for="(item, index) in navigation.data.lists"
                 :key="index"
               >
-                <a :href="item.link" class="list_link">
-                  <PrismicImage :field="item.img" width="20" height="20" />
-                  {{ item.groupLinkText }}
-                </a>
+                <PrismicLink
+                  v-if="$prismic.asLink(item.link)"
+                  :field="item.link"
+                  class="list_link"
+                >
+                  <PrismicImage v-if="item.img.url" :field="item.img" />
+                  {{ item.linkTitle }}
+                </PrismicLink>
               </li>
             </ul>
 
             <div class="header_auth">
-              <PrismicLink class="header_auth-in" :field="data.data.linkIn">
-                {{ data.data.linkInTitle }}
+              <PrismicLink class="header_auth-in" :field="header.data.linkIn">
+                {{ header.data.linkInTitle }}
               </PrismicLink>
 
-              <PrismicLink class="header_auth-reg" :field="data.data.linkAuth">
-                {{ data.data.linkAuthTitle }}
+              <PrismicLink
+                class="header_auth-reg"
+                :field="header.data.linkAuth"
+              >
+                {{ header.data.linkAuthTitle }}
               </PrismicLink>
 
               <span class="header_auth-line"></span>
 
-              <BaseSelect
-                :options="options"
-                :selected="selectedOptions"
-                @select="changeSelect"
-              />
+              <BaseSelect />
             </div>
           </div>
         </div>
@@ -72,14 +73,17 @@ import BaseSelect from "./BaseSelect.vue";
 export default {
   components: { BaseIcon, BaseSelect },
 
-  props: ["data", "lang"],
+  props: {
+    header: {
+      type: Object,
+      required: true,
+    },
+  },
 
   data() {
     return {
       burger: false,
       device: false,
-      options: [],
-      selectedOptions: [],
     };
   },
 
@@ -94,14 +98,6 @@ export default {
       }
     },
 
-    optionsLanguage() {
-      this.data.alternate_languages.forEach((element) => {
-        this.options.push(element.lang);
-      });
-
-      this.selectedOptions = this.data.lang;
-    },
-
     resizeHandle() {
       if (window.innerWidth < 576) {
         this.device = true;
@@ -110,16 +106,16 @@ export default {
         this.burger = false;
       }
     },
+  },
 
-    changeSelect(val) {
-      localStorage.setItem("language", val);
-      document.location.reload();
+  computed: {
+    navigation() {
+      return this.$store.state.prismic.navigation;
     },
   },
 
   mounted() {
     this.resizeHandle();
-    this.optionsLanguage();
 
     this.$nextTick(function () {
       window.addEventListener("resize", this.resizeHandle);
@@ -142,22 +138,15 @@ export default {
   right: 0;
   z-index: 20;
   width: 100%;
-  @include toRem("padding-top", 40);
-  @include toRem("padding-bottom", 40);
+  @include property("padding-top", 40, 20);
+  @include property("padding-bottom", 40, 20);
   @include toRem("padding-left", 20);
   @include toRem("padding-right", 20);
   transition: padding 0.2s linear;
 
-  @media (max-width: 575.98px) {
-    @include toRem("padding-top", 10);
-    @include toRem("padding-bottom", 10);
-  }
-
   .fix & {
     @include toRem("padding-top", 10);
     @include toRem("padding-bottom", 10);
-    @include toRem("padding-left", 20);
-    @include toRem("padding-right", 20);
     background-image: linear-gradient(89.02deg, #367bff 1.68%, #26bff7 97.37%);
     backdrop-filter: blur(30px);
     border-bottom: 2px solid rgba(255, 255, 255, 0.3);
@@ -177,9 +166,11 @@ export default {
   }
 
   &_logo {
+    position: relative;
+    z-index: 3;
     display: block;
-    width: 127px;
-    height: 27px;
+    @include property("width", 127, 114);
+    @include property("height", 27, 21);
   }
 
   &_auth {
@@ -188,6 +179,10 @@ export default {
     justify-content: space-between;
     gap: 18px;
     margin-top: auto;
+
+    @media (max-width: 374.98px) {
+      justify-content: space-evenly;
+    }
 
     &-in {
       @include toRem("padding-top", 10);
@@ -210,8 +205,10 @@ export default {
       }
 
       .scroll & {
-        color: #2f69ff;
-        border-color: #2f69ff;
+        @media (min-width: 576px) {
+          color: #2f69ff;
+          border-color: #2f69ff;
+        }
 
         @media (hover) {
           &:hover {
@@ -244,13 +241,15 @@ export default {
       }
 
       .scroll & {
-        color: #2f69ff;
-        border-color: #2f69ff;
-        background-image: linear-gradient(
-          89.02deg,
-          rgba(55, 125, 255, 0.1) 1.68%,
-          rgba(44, 183, 249, 0.1) 97.37%
-        );
+        @media (min-width: 576px) {
+          color: #2f69ff;
+          border-color: #2f69ff;
+          background-image: linear-gradient(
+            89.02deg,
+            rgba(55, 125, 255, 0.1) 1.68%,
+            rgba(44, 183, 249, 0.1) 97.37%
+          );
+        }
 
         @media (hover) {
           &:hover {
@@ -273,11 +272,16 @@ export default {
           rgba(44, 183, 249, 0.1) 97.37%
         );
       }
+
+      @media (max-width: 374.98px) {
+        display: none;
+      }
     }
   }
 
   &_burger {
     position: relative;
+    z-index: 3;
     display: grid;
     align-items: center;
     justify-content: center;
@@ -287,6 +291,16 @@ export default {
     height: 48px;
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 50%;
+
+    .scroll & {
+      @media (max-width: 575.98px) {
+        background: linear-gradient(
+          89.02deg,
+          rgba(55, 125, 255, 0.1) 1.68%,
+          rgba(44, 183, 249, 0.1) 97.37%
+        );
+      }
+    }
 
     &::before {
       content: "";
@@ -310,6 +324,12 @@ export default {
       i {
         width: 24px !important;
         transition: top 0.2s, width 0.2s, transform 0.3s 0.2s, opacity 0.2s 0.2s;
+
+        .scroll & {
+          @media (max-width: 575.98px) {
+            background: var(--white);
+          }
+        }
 
         &:nth-child(1) {
           top: 9px;
@@ -337,6 +357,12 @@ export default {
       transition: top 0.2s 0.2s, width 0.2s 0.2s, transform 0.2s,
         opacity 0.2s 0.2s;
 
+      .scroll & {
+        @media (max-width: 575.98px) {
+          background: linear-gradient(89.02deg, #367bff 1.68%, #26bff7 97.37%);
+        }
+      }
+
       &:nth-of-type(1) {
         width: 12px;
       }
@@ -356,11 +382,10 @@ export default {
     position: fixed;
     top: 0;
     right: 0;
-    z-index: -1;
     background-image: linear-gradient(89.02deg, #367bff 1.68%, #26bff7 97.37%);
     width: 100%;
     height: 100vh;
-    @include toRem("padding-top", 67);
+    @include toRem("padding-top", 110);
 
     @media (min-height: 620px) {
       background-image: url("./static/lineMenu.svg"),
@@ -381,10 +406,10 @@ export default {
 }
 
 .burger-enter-active {
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 .burger-leave-active {
-  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+  transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
 }
 .burger-enter,
 .burger-leave-to {
@@ -427,12 +452,16 @@ export default {
   }
 
   &_link {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
     display: flex;
     align-items: center;
     font-weight: 700;
     @include toRem("font-size", 16);
     line-height: 150%;
     color: var(--white);
+    text-decoration: none;
 
     .header_collapse & {
       padding: 0;
@@ -440,35 +469,25 @@ export default {
       @include toRem("padding-bottom", 20);
     }
 
-    .hero & {
-      @include toRem("padding-top", 12);
-      @include toRem("padding-bottom", 12);
-      @include toRem("padding-left", 18);
-      @include toRem("padding-right", 18);
-      background: linear-gradient(
-        226.85deg,
-        rgba(255, 255, 255, 0.15) -1.71%,
-        rgba(255, 255, 255, 0) 103.92%
-      );
-      background-size: 200% 100%;
-      backdrop-filter: blur(10px);
-      border-radius: 8px;
-      border: 2px solid rgba(255, 255, 255, 0.3);
+    &.nuxt-link-active {
+      color: #ffd862;
+    }
 
-      @media (max-width: 1365.98px) {
-        white-space: nowrap;
-        width: max-content;
-      }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: -1;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background-color: rgba(250, 250, 250, 0.2);
+    }
 
-      @media (hover) {
-        &:hover {
-          text-decoration: none;
-          background: linear-gradient(
-            226.85deg,
-            rgba(255, 255, 255, 0.3) -1.71%,
-            rgba(255, 255, 255, 0.15) 103.92%
-          );
-        }
+    &:focus {
+      &::before {
+        animation: clickLink 0.5s linear 0s forwards;
       }
     }
 
@@ -478,6 +497,32 @@ export default {
       height: 20px;
       @include toRem("margin-right", 15);
     }
+  }
+}
+
+@keyframes clickLink {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    width: 0;
+    height: 0;
+  }
+  10% {
+    transform: translate(-50%, -50%) scale(1);
+    width: 16px;
+    height: 16px;
+  }
+  85% {
+    width: 16px;
+    height: 16px;
+    transform: translate(-50%, -50%) scale(25);
+  }
+  95% {
+    width: 16px;
+    height: 16px;
+    transform: translate(-50%, -50%) scale(25);
+  }
+  100% {
+    opacity: 0;
   }
 }
 </style>

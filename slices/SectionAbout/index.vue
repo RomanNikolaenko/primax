@@ -2,20 +2,33 @@
   <section class="about white-block">
     <div class="about_container">
       <div class="about_content">
-        <h2 class="about_title">
-          {{ slice.primary.title }} <span>{{ slice.primary.titleBlue }}</span>
-        </h2>
-        <p class="about_subtitle">{{ slice.primary.subtitle }}</p>
-        <p class="about_subtitle">{{ slice.primary.subtitle2 }}</p>
+        <PrismicRichText
+          v-if="$prismic.asText(slice.primary.title)"
+          wrapper="h2"
+          :field="slice.primary.title"
+          class="about_title"
+        />
+        <PrismicRichText
+          v-if="$prismic.asText(slice.primary.subTitle)"
+          :field="slice.primary.subTitle"
+          wrapper="div"
+          class="about_subtitle"
+        />
         <div class="about_btns">
-          <PrismicLink class="link orangeBg" :field="slice.primary.link">{{
-            slice.primary.linkTitle
-          }}</PrismicLink>
+          <PrismicLink
+            v-if="$prismic.asLink(slice.primary.link)"
+            :field="slice.primary.link"
+            class="link orangeBg"
+            >{{ slice.primary.linkTitle }}</PrismicLink
+          >
         </div>
       </div>
 
       <div class="about_image">
-        <PrismicImage :field="slice.primary.img" width="1700" height="893" />
+        <PrismicImage
+          v-if="slice.primary.img.url"
+          :field="slice.primary.img"
+        />
       </div>
     </div>
   </section>
@@ -31,58 +44,49 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 @import "@/assets/scss/mixins";
 
 .about {
-  @include toRem("padding-top", 150);
-  @include toRem("padding-bottom", 90);
-
-  @media (max-width: 767.98px) {
-    @include toRem("padding-top", 80);
-    @include toRem("padding-bottom", 80);
-  }
+  @include property("padding-top", 150, 80);
+  @include property("padding-bottom", 90, 80);
 
   &_container {
     display: grid;
     @include property("gap", 190, 50, true, 1640, 1200);
     padding-left: max(calc((20 / 18) * 1rem), calc((100% - 1640px) / 2));
 
-    @media (min-width: 1200px) {
+    @media (min-width: 1024px) {
+      grid-template-columns: calc(530px + (681 - 530) * ((100vw - 1024px) / (1640 - 1024))) 1fr;
+    }
+
+    @media (min-width: 1640px) {
       grid-template-columns: 681px 1fr;
     }
 
-    @media (max-width: 1199.98px) {
+    @media (max-width: 1023.98px) {
       padding: 0 calc((20 / 18) * 1rem);
     }
   }
 
   &_title {
     font-weight: 600;
-    @include toRem("font-size", 50);
+    @include property("font-size", 50, 22);
     line-height: 110%;
     color: var(--primary);
-    @include toRem("margin-bottom", 30);
+    @include property("margin-bottom", 30, 20);
 
-    span {
+    strong {
+      font-weight: inherit;
       color: #367bff;
-    }
-
-    @media (max-width: 767.98px) {
-      @include toRem("font-size", 24);
-      @include toRem("margin-bottom", 20);
     }
   }
 
   &_subtitle {
     font-weight: 600;
-    @include toRem("font-size", 20);
+    @include property("font-size", 20, 16);
     line-height: 160%;
     color: var(--secondary);
-
-    @media (max-width: 767.98px) {
-      @include toRem("font-size", 18);
-    }
   }
 
   &_image {
@@ -94,7 +98,7 @@ export default {
     padding: 0;
     @include toRem("padding-left", 10);
 
-    @media (max-width: 1199.98px) {
+    @media (max-width: 1023.98px) {
       padding: 0;
       @include toRem("padding-left", 5);
       @include toRem("padding-right", 5);
@@ -105,19 +109,14 @@ export default {
 
     img {
       display: block;
-      margin-top: -2px;
       object-fit: cover;
-      height: calc(100% + 2px);
+      height: 100%;
       object-position: left top;
     }
   }
 
   &_btns {
-    @include toRem("margin-top", 30);
-
-    @media (max-width: 767.98px) {
-      @include toRem("margin-top", 20);
-    }
+    @include property("margin-top", 30, 20);
   }
 }
 </style>

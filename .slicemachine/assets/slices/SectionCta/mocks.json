@@ -5,12 +5,18 @@
     "slice_type": "section_cta",
     "items": [],
     "primary": {
-      "title": "synergize efficient methodologies",
+      "title": [
+        {
+          "type": "paragraph",
+          "text": "Occaecat cupidatat qui sunt minim officia officia deserunt mollit est id laborum officia. Aliqua cupidatat laborum eiusmod.",
+          "spans": []
+        }
+      ],
       "link": {
         "link_type": "Web",
         "url": "https://slicemachine.dev"
       },
-      "linkTitle": "optimize end-to-end paradigms"
+      "linkTitle": "incubate leading-edge models"
     }
   }
 ]

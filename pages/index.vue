@@ -1,56 +1,44 @@
 <template>
   <main class="main">
-    <SectionHeader :data="header" />
-    <SectionHeroHome :data="heroHome.data" />
-    <slice-zone :components="components" :slices="document.data.slices" />
-    <SectionFooter :data="footer.data" />
+    <SectionHeader v-if="header.data" :header="header" />
+    <SliceZone :slices="page.data.slices" :components="components" />
+    <SectionFooter v-if="footer.data" :footer="footer" />
   </main>
 </template>
 
 <script>
 import { components } from "~/slices";
+
 import SectionFooter from "../components/SectionFooter.vue";
 import SectionHeader from "../components/SectionHeader.vue";
-import SectionHeroHome from "../components/SectionHeroHome.vue";
 
 export default {
-  components: { SectionHeader, SectionHeroHome, SectionFooter },
+  components: { SectionHeader, SectionFooter },
+
   data() {
     return {
       components,
     };
   },
 
-  async asyncData({ $prismic, error }) {
-    const language = localStorage.getItem("language");
+  computed: {
+    header() {
+      return this.$store.state.prismic.header;
+    },
+    footer() {
+      return this.$store.state.prismic.footer;
+    },
+  },
 
-    const document = await $prismic.api.getByUID("homePage", "homepage", {
-      lang: language,
-    });
+  async asyncData({ $prismic, store, i18n }) {
+    const lang = i18n.locale;
 
-    const header = await $prismic.api.getByUID(
-      "SectionHeader",
-      "sectionheader",
-      { lang: language }
-    );
+    const page = await $prismic.api.getByUID("page", "home", { lang });
+    await store.dispatch("prismic/load", { lang, page });
 
-    const footer = await $prismic.api.getByUID(
-      "SectionFooter",
-      "sectionfooter",
-      { lang: language }
-    );
-
-    const heroHome = await $prismic.api.getByUID(
-      "SectionHeroHome",
-      "sectionherohome",
-      { lang: language }
-    );
-
-    if (document && header && footer && heroHome) {
-      return { document, header, footer, heroHome };
-    } else {
-      error({ statusCode: 404, message: "Page not found" });
-    }
+    return {
+      page,
+    };
   },
 
   methods: {
@@ -65,24 +53,20 @@ export default {
         body.classList.remove("scroll");
       }
 
-      if (window.innerWidth >= 576) {
-        for (let index = 0; index < sections.length; index++) {
-          const element = sections[index];
+      for (let index = 0; index < sections.length; index++) {
+        const element = sections[index];
 
-          if (
-            window.scrollY > element.offsetTop &&
-            element.classList.contains("white-block")
-          ) {
-            body.classList.add("scroll");
-          } else if (
-            window.scrollY > element.offsetTop &&
-            !element.classList.contains("white-block")
-          ) {
-            body.classList.remove("scroll");
-          }
+        if (
+          window.scrollY > element.offsetTop &&
+          element.classList.contains("white-block")
+        ) {
+          body.classList.add("scroll");
+        } else if (
+          window.scrollY > element.offsetTop &&
+          !element.classList.contains("white-block")
+        ) {
+          body.classList.remove("scroll");
         }
-      } else {
-        body.classList.remove("scroll");
       }
     },
   },

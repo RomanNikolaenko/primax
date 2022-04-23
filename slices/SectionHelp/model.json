@@ -11,111 +11,17 @@
       "version": "sktwi1xtmkfgx8626",
       "description": "SectionHelp",
       "primary": {
-        "title1": {
-          "type": "Text",
-          "config": {
-            "label": "Title1",
-            "placeholder": ""
-          }
-        },
-        "title2": {
-          "type": "Text",
-          "config": {
-            "label": "Title2",
-            "placeholder": ""
-          }
-        },
-        "title3": {
-          "type": "Text",
-          "config": {
-            "label": "Title3",
-            "placeholder": ""
-          }
-        },
-        "title4": {
-          "type": "Text",
-          "config": {
-            "label": "Title4",
-            "placeholder": ""
-          }
-        }
-      },
-      "items": {
-        "img": {
-          "type": "Image",
-          "config": {
-            "label": "Img",
-            "constraint": {},
-            "thumbnails": []
-          }
-        },
         "title": {
-          "type": "Text",
+          "type": "StructuredText",
           "config": {
             "label": "Title",
-            "placeholder": ""
-          }
-        },
-        "listItem1": {
-          "type": "Text",
-          "config": {
-            "label": "List Item1",
-            "placeholder": ""
-          }
-        },
-        "listItem2": {
-          "type": "Text",
-          "config": {
-            "label": "List Item2",
-            "placeholder": ""
-          }
-        },
-        "listItem3": {
-          "type": "Text",
-          "config": {
-            "label": "List Item3",
-            "placeholder": ""
-          }
-        },
-        "listItem4": {
-          "type": "Text",
-          "config": {
-            "label": "List Item4",
-            "placeholder": ""
-          }
-        },
-        "listItem5": {
-          "type": "Text",
-          "config": {
-            "label": "List Item5",
-            "placeholder": ""
-          }
-        },
-        "link": {
-          "type": "Link",
-          "config": {
-            "label": "Link",
             "placeholder": "",
-            "select": null
-          }
-        },
-        "linkTitle": {
-          "type": "Text",
-          "config": {
-            "label": "Link Title",
-            "placeholder": ""
-          }
-        },
-        "flag": {
-          "type": "Boolean",
-          "config": {
-            "label": "Flag",
-            "default_value": false,
-            "placeholder_true": "true",
-            "placeholder_false": "false"
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         }
       },
+      "items": {},
       "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
     }
   ]

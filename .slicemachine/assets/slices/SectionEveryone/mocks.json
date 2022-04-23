@@ -5,18 +5,30 @@
     "slice_type": "section_everyone",
     "items": [],
     "primary": {
-      "title": "benchmark cross-platform action-items",
-      "subtitle": "incubate world-class web services",
+      "title": [
+        {
+          "type": "paragraph",
+          "text": "Deserunt cupidatat laborum laborum sint quis amet deserunt enim nostrud.",
+          "spans": []
+        }
+      ],
+      "subTitle": [
+        {
+          "type": "paragraph",
+          "text": "Consequat tempor proident voluptate magna aute qui culpa cillum in et in veniam dolore officia. Aliqua exercitation nulla dolor nulla cillum aliquip excepteur ex veniam. Cillum et culpa fugiat ut sit Lorem eu labore dolor nulla laboris irure aliqua aute ullamco.",
+          "spans": []
+        }
+      ],
       "linkBg": {
         "link_type": "Web",
         "url": "http://google.com"
       },
-      "linkBgTitle": "implement next-generation convergence",
+      "linkBgTitle": "architect strategic communities",
       "linkBorder": {
         "link_type": "Web",
-        "url": "http://google.com"
+        "url": "http://twitter.com"
       },
-      "linkBorderTitle": "unleash bricks-and-clicks markets",
+      "linkBorderTitle": "architect scalable e-markets",
       "img": {
         "dimensions": {
           "width": 900,
@@ -24,7 +36,7 @@
         },
         "alt": "Placeholder image",
         "copyright": null,
-        "url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=900&h=500&fit=crop"
+        "url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa?w=900&h=500&fit=crop"
       }
     }
   }

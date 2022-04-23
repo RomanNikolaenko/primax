@@ -9,26 +9,22 @@
       :class="{ active: areOptionsVisible }"
       @click="areOptionsVisible = !areOptionsVisible"
     >
-      {{ options.slice(0, 2)[defaultValue] || selected.slice(0, 2) }} <i>&#9654;</i>
+      {{ language.slice(0, 2) }} <i>&#9654;</i>
     </p>
     <div class="options" :class="{ active: areOptionsVisible }">
-      <p
-        v-for="(option, index) in options"
-        :key="option.value"
-        @click="selectOption(option, index)"
+      <PrismicLink
+        v-for="lang in alternateLanguages"
+        :key="lang.lang"
+        :field="{ ...lang, link_type: 'Document' }"
       >
-        {{ option.slice(0, 2) }}
-      </p>
+        {{ lang.lang.slice(0, 2) }}
+      </PrismicLink>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "BaseSelect",
-
-  props: ["options", "selected", "lang"],
-
   data() {
     return {
       defaultValue: null,
@@ -36,13 +32,16 @@ export default {
     };
   },
 
-  methods: {
-    selectOption(option, index) {
-      this.$emit("select", option);
-      this.defaultValue = index;
-      this.areOptionsVisible = false;
+  computed: {
+    language() {
+      return this.$store.state.prismic.language;
     },
+    alternateLanguages() {
+      return this.$store.state.prismic.alternateLanguages;
+    },
+  },
 
+  methods: {
     hideSelect() {
       this.areOptionsVisible = false;
     },
@@ -68,6 +67,17 @@ export default {
   color: var(--white);
   min-width: 55px;
   text-transform: uppercase;
+
+  @media (max-width: 374.98px) {
+    position: fixed;
+    z-index: 10;
+    top: 24px;
+    right: 85px;
+
+    .fix & {
+      top: 14px;
+    }
+  }
 
   .title {
     display: flex;
@@ -125,9 +135,9 @@ export default {
     background: rgba(255, 255, 255, 0.2);
     opacity: 0;
     visibility: hidden;
-    transition: all 0.4s ease-out;
+    transition: all 0.2s ease-out;
 
-    @media (max-width: 575.98px) {
+    @media (min-width: 375px) and (max-width: 575.98px) {
       top: initial;
       bottom: 100%;
       border-radius: 5px 5px 0 0;
@@ -149,17 +159,18 @@ export default {
       visibility: visible;
     }
 
-    p {
+    a {
+      display: block;
       font-weight: 700;
       @include toRem("font-size", 16);
       margin-bottom: 0;
       @include toRem("padding", 8);
       @include toRem("border-radius", 4);
-      cursor: pointer;
 
       @media (hover) {
-        transition: all 0.4s ease-out;
+        transition: all 0.2s ease-out;
         &:hover {
+          text-decoration: none;
           background: linear-gradient(
             89.02deg,
             rgba(55, 125, 255, 0.1) 1.68%,

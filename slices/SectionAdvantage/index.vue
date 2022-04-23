@@ -1,16 +1,19 @@
 <template>
   <section class="advantage">
     <div class="advantage_container container">
-      <h2 class="advantage_title">{{ slice.primary.title }}</h2>
+      <PrismicRichText
+        v-if="$prismic.asText(slice.primary.title)"
+        :field="slice.primary.title"
+        class="advantage_title"
+      />
 
       <div class="advantage_cards">
         <div
           v-for="(item, i) in slice.items"
           :key="`slice-item-${i}`"
-          class="card"
+          class="advantage_card"
         >
-          <h3 class="card_title">{{ item.title }}</h3>
-          <p class="card_text">{{ item.text }}</p>
+          <PrismicRichText :field="item.lists" />
         </div>
       </div>
     </div>
@@ -27,35 +30,25 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "@/assets/scss/mixins";
 
 .advantage {
-  @include toRem("padding-top", 150);
-  @include toRem("padding-bottom", 170);
+  @include property('padding-top', 150, 80);
+  @include property('padding-bottom', 170, 80);
   background-image: url("./static/resultsBg.svg"),
     linear-gradient(89.02deg, #367bff 1.68%, #26bff7 97.37%);
   background-repeat: no-repeat, repeat;
   background-size: cover;
   background-position-y: center;
 
-  @media (max-width: 767.98px) {
-    @include toRem("padding-top", 80);
-    @include toRem("padding-bottom", 80);
-  }
-
   &_title {
     font-weight: 600;
-    @include toRem("font-size", 50);
+    @include property('font-size', 50, 24);
+    @include property('margin-bottom', 70, 30);
     line-height: 110%;
     text-align: center;
-    @include toRem("margin-bottom", 70);
     white-space: pre-line;
-
-    @media (max-width: 767.98px) {
-      @include toRem("font-size", 24);
-      @include toRem("margin-bottom", 30);
-    }
   }
 
   &_cards {
@@ -63,64 +56,56 @@ export default {
     flex-wrap: wrap;
     justify-content: center;
     margin: 0;
-    @include toRem("margin-left", -20);
-    @include toRem("margin-right", -20);
-  }
-}
-
-.card {
-  background: rgba(255, 255, 255, 0.1);
-  border: 7px solid #eef6ff;
-  box-shadow: 10px 20px 50px rgba(0, 0, 0, 0.05);
-  border-radius: 50px;
-  @include toRem("padding-top", 50);
-  @include toRem("padding-bottom", 50);
-  @include toRem("padding-right", 40);
-  @include toRem("padding-left", 40);
-  @include toRem("margin", 20);
-  margin-top: 0;
-  max-width: 530px;
-  width: calc(33.333% - calc((40 / 18) * 1rem));
-
-  @media (max-width: 1366px) {
-    width: calc(50% - calc((40 / 18) * 1rem));
+    @include property('margin-left', -20, -10, true, 1640, 1024);
+    @include property('margin-right', -20, -10, true, 1640, 1024);
   }
 
-  @media (max-width: 1024px) {
-    width: 100%;
-    max-width: 100%;
-  }
+  &_card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 7px solid #eef6ff;
+    box-shadow: 10px 20px 50px rgba(0, 0, 0, 0.05);
+    @include property('border-radius', 50, 25);
+    @include property('padding-top', 50, 30, true, 1640, 1024);
+    @include property('padding-bottom', 50, 30, true, 1640, 1024);
+    @include property('padding-right', 40, 20, true, 1640, 1024);
+    @include property('padding-left', 40, 20, true, 1640, 1024);
 
-  @media (max-width: 767.98px) {
-    @include toRem("padding-top", 30);
-    @include toRem("padding-bottom", 30);
-    @include toRem("padding-right", 20);
-    @include toRem("padding-left", 20);
-  }
+    @include property('margin-left', 20, 10, true, 1640, 1024);
+    @include property('margin-right', 20, 10, true, 1640, 1024);
+    @include property('margin-bottom', 42, 20, true, 1640, 1024);
+    max-width: 530px;
+    width: calc(33.333% - calc(20px + (40 - 20) * ((100vw - 1024px) / (1640 - 1024))));
 
-  &_title {
-    font-weight: 600;
-    line-height: 110%;
-    text-align: center;
-    color: var(--white);
-    @include toRem("font-size", 35);
-    @include toRem("margin-bottom", 20);
-
-    @media (max-width: 767.98px) {
-      @include toRem("font-size", 22);
-      @include toRem("margin-bottom", 15);
+    @media (max-width: 1024px) {
+      width: calc(33.333% - 20px);
+      min-width: 300px;
     }
-  }
 
-  &_text {
-    font-weight: 600;
-    @include toRem("font-size", 20);
-    line-height: 160%;
-    text-align: center;
-    color: var(--white);
+    @media (min-width: 1640px) {
+      width: calc(33.333% - 40px);
+    }
 
-    @media (max-width: 767.98px) {
-      @include toRem("font-size", 18);
+    @media (max-width: 575.98px) {
+      width: 100%;
+      min-width: auto;
+      max-width: 310px;
+    }
+
+    h3 {
+      font-weight: 600;
+      line-height: 110%;
+      text-align: center;
+      color: var(--white);
+      @include property('font-size', 35, 22, true, 1640, 1024);
+      @include property('margin-bottom', 20, 15);
+    }
+
+    p {
+      font-weight: 600;
+      @include property('font-size', 20, 14, true, 1640, 1024);
+      line-height: 160%;
+      text-align: center;
+      color: var(--white);
     }
   }
 }

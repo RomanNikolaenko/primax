@@ -1,4 +1,4 @@
-# prismic-primax
+# primax
 
 ## Build Setup
 

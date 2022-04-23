@@ -1,0 +1,120 @@
+{
+  "id": "ddb0c016-457e-47b8-96c8-02ad06a0ef16",
+  "uid": "voluptatem-natus-praesentium",
+  "type": "footer",
+  "data": {
+    "text": [
+      {
+        "type": "paragraph",
+        "text": "Eiusmod fugiat nisi ipsum do duis culpa consequat fugiat non aliqua deserunt aliqua. Veniam Lorem sit eu enim magna eiusmod cupidatat velit amet culpa id velit.",
+        "spans": []
+      }
+    ],
+    "listTitle1": [
+      {
+        "type": "paragraph",
+        "text": "Esse sint cupidatat eu cillum officia excepteur reprehenderit dolor in sint cillum qui id. Culpa cillum magna mollit excepteur id in commodo qui. Aliqua laborum exercitation ut deserunt ea ullamco.",
+        "spans": []
+      }
+    ],
+    "listTitle2": [
+      {
+        "type": "paragraph",
+        "text": "Anim qui reprehenderit cupidatat pariatur pariatur tempor magna pariatur irure aliqua id. Ullamco et quis esse nisi elit mollit adipisicing mollit anim fugiat. Anim ullamco esse esse duis ea sit sit nulla qui ipsum aliquip aliqua quis.",
+        "spans": []
+      }
+    ],
+    "listTitle3": [
+      {
+        "type": "paragraph",
+        "text": "Voluptate ex anim in aliquip qui eu dolor anim et elit qui. Eiusmod adipisicing aute ex eu consequat mollit mollit ea aliqua culpa ea aute velit do ad. Tempor elit adipisicing aliquip enim adipisicing quis exercitation esse et veniam eiusmod laboris.",
+        "spans": []
+      }
+    ],
+    "list2": [
+      {
+        "link": {
+          "link_type": "Web",
+          "url": "http://google.com"
+        },
+        "linkTitle": "unleash bricks-and-clicks e-commerce"
+      },
+      {
+        "link": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        },
+        "linkTitle": "synthesize open-source deliverables"
+      },
+      {
+        "link": {
+          "link_type": "Web",
+          "url": "http://twitter.com"
+        },
+        "linkTitle": "deploy 24/365 convergence"
+      },
+      {
+        "link": {
+          "link_type": "Web",
+          "url": "http://google.com"
+        },
+        "linkTitle": "architect synergistic communities"
+      }
+    ],
+    "list3": [
+      {
+        "link": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        },
+        "linkTitle": "scale B2B models"
+      },
+      {
+        "link": {
+          "link_type": "Web",
+          "url": "http://google.com"
+        },
+        "linkTitle": "embrace 24/365 web-readiness"
+      },
+      {
+        "link": {
+          "link_type": "Web",
+          "url": "https://prismic.io"
+        },
+        "linkTitle": "transform magnetic supply-chains"
+      }
+    ],
+    "socials": [
+      {
+        "img": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=900&h=500&fit=crop"
+        },
+        "link": {
+          "link_type": "Web",
+          "url": "https://prismic.io"
+        }
+      },
+      {
+        "img": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43?w=900&h=500&fit=crop"
+        },
+        "link": {
+          "link_type": "Web",
+          "url": "http://twitter.com"
+        }
+      }
+    ]
+  }
+}

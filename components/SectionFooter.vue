@@ -4,50 +4,73 @@
       <div class="footer_wrap">
         <div class="primax">
           <BaseIcon class="primax-icon" name="logoWhite" viewBox="0 0 137 25" />
-          <p class="primax-text">{{ data.text }}</p>
+          <PrismicRichText
+            v-if="$prismic.asText(footer.data.text)"
+            :field="footer.data.text"
+            class="primax-text"
+          />
         </div>
 
         <div class="footer_columns">
           <div class="column">
-            <h3 class="column_title">{{ data.list1Title }}</h3>
+            <PrismicRichText
+              v-if="$prismic.asText(footer.data.listTitle1)"
+              wrapper="h3"
+              :field="footer.data.listTitle1"
+              class="column_title"
+            />
             <ul class="column_list">
               <li
                 class="list-item"
-                v-for="(item, index) in data.list1"
+                v-for="(item, index) in navigation.data.lists"
+                :key="index"
+              >
+                <PrismicLink
+                  v-if="$prismic.asLink(item.link)"
+                  :field="item.link"
+                  class="list-link"
+                >
+                  {{ item.linkTitle }}
+                </PrismicLink>
+              </li>
+            </ul>
+          </div>
+
+          <div class="column">
+            <PrismicRichText
+              v-if="$prismic.asText(footer.data.listTitle2)"
+              wrapper="h3"
+              :field="footer.data.listTitle2"
+              class="column_title"
+            />
+            <ul class="column_list">
+              <li
+                class="list-item"
+                v-for="(item, index) in footer.data.list2"
                 :key="index"
               >
                 <PrismicLink class="list-link" :field="item.link">{{
-                  item.title
+                  item.linkTitle
                 }}</PrismicLink>
               </li>
             </ul>
           </div>
 
           <div class="column">
-            <h3 class="column_title">{{ data.list2Title }}</h3>
+            <PrismicRichText
+              v-if="$prismic.asText(footer.data.listTitle3)"
+              wrapper="h3"
+              :field="footer.data.listTitle3"
+              class="column_title"
+            />
             <ul class="column_list">
               <li
                 class="list-item"
-                v-for="(item, index) in data.list2"
+                v-for="(item, index) in footer.data.list3"
                 :key="index"
               >
                 <PrismicLink class="list-link" :field="item.link">{{
-                  item.title
-                }}</PrismicLink>
-              </li>
-            </ul>
-          </div>
-
-          <div class="column">
-            <h3 class="column_title">{{ data.list3Title }}</h3>
-            <ul class="column_list">
-              <li
-                class="list-item"
-                v-for="(item, index) in data.list3"
-                :key="index"
-              >
-                <PrismicLink class="list-link" :field="item.link">{{
-                  item.title
+                  item.linkTitle
                 }}</PrismicLink>
               </li>
             </ul>
@@ -60,10 +83,10 @@
 
         <div class="socials">
           <PrismicLink
-            class="socials_link"
-            v-for="(item, index) in data.socials"
+            v-for="(item, index) in footer.data.socials"
             :key="index"
             :field="item.link"
+            class="socials_link"
           >
             <PrismicImage
               class="socials_icon"
@@ -100,9 +123,18 @@ import BaseIcon from "./BaseIcon.vue";
 export default {
   components: { BaseIcon },
 
-  props: ["data"],
+  props: {
+    footer: {
+      type: Object,
+      required: true,
+    },
+  },
 
   computed: {
+    navigation() {
+      return this.$store.state.prismic.navigation;
+    },
+
     localeDate() {
       return new Date().getFullYear();
     },
@@ -120,15 +152,10 @@ export default {
     max-width: 1540px;
     width: 100%;
     margin: 0 auto;
-    @include toRem("padding-top", 150);
-    @include toRem("padding-bottom", 60);
-    @include toRem("padding-left", 30);
-    @include toRem("padding-right", 30);
-
-    @media (max-width: 767.98px) {
-      @include toRem("padding-top", 80);
-      @include toRem("padding-bottom", 40);
-    }
+    @include property('padding-top', 150, 80);
+    @include property('padding-bottom', 60, 40);
+    @include property('padding-left', 30, 20);
+    @include property('padding-right', 30, 20);
   }
 
   &_wrap {
@@ -136,15 +163,11 @@ export default {
     justify-content: space-between;
     grid-template-columns: 345px 1fr;
     @include property("gap", 140, 40, true, 1640, 1200);
-    @include toRem("margin-bottom", 60);
+    @include property('margin-bottom', 60, 40);
     color: var(--tertiary);
 
     @media (max-width: 1199.98px) {
       grid-template-columns: 1fr;
-    }
-
-    @media (max-width: 767.98px) {
-      @include toRem("margin-bottom", 40);
     }
   }
 
@@ -167,7 +190,7 @@ export default {
     grid-template-columns: 215px 1fr 215px;
     @include toRem("gap", 20);
     align-items: center;
-    @include toRem("padding-top", 60);
+    @include property('padding-top', 60, 40);
     border-top: 1px solid #778ab9;
 
     @media (max-width: 1023.98px) {
@@ -175,18 +198,16 @@ export default {
     }
 
     @media (max-width: 767.98px) {
-      @include toRem("padding-top", 40);
       grid-template-columns: 1fr;
     }
 
     > span {
       color: #abafc7;
       font-weight: 600;
-      @include toRem("font-size", 20);
+      @include property('font-size', 20, 16);
       line-height: 160%;
 
       @media (max-width: 767.98px) {
-        @include toRem("font-size", 18);
         line-height: 150%;
       }
     }
@@ -196,14 +217,9 @@ export default {
 .column {
   &_title {
     font-weight: 600;
-    @include toRem("font-size", 25);
+    @include property('font-size', 28, 18);
     line-height: 160%;
-    @include toRem("margin-bottom", 20);
-
-    @media (max-width: 767.98px) {
-      @include toRem("font-size", 20);
-      @include toRem("margin-bottom", 15);
-    }
+    @include property('margin-bottom', 20, 15);
   }
 
   &_list {
@@ -215,12 +231,11 @@ export default {
 
     &-link {
       font-weight: 600;
-      @include toRem("font-size", 20);
+      @include property('font-size', 20, 16);
       line-height: 160%;
       word-break: break-all;
 
       @media (max-width: 767.98px) {
-        @include toRem("font-size", 18);
         line-height: 150%;
       }
 
@@ -243,7 +258,7 @@ export default {
 
   &-link {
     font-weight: 600;
-    @include toRem("font-size", 20);
+    @include property('font-size', 20, 16);
     line-height: 160%;
     word-break: break-all;
 
@@ -270,7 +285,6 @@ export default {
     }
 
     @media (max-width: 767.98px) {
-      @include toRem("font-size", 18);
       line-height: 150%;
     }
 
@@ -286,7 +300,10 @@ export default {
 .designed {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  
+  @media (max-width: 767.98px) {
+    @include toRem("margin-top", 10)
+  }
 
   span {
     display: inline-block;
@@ -317,7 +334,7 @@ export default {
     width: 100px;
 
     stop {
-      transition: all 0.4s ease-in-out;
+      transition: all 0.2s ease-in-out;
     }
   }
 }
@@ -332,13 +349,14 @@ export default {
 
   &-text {
     font-weight: 700;
-    @include toRem("font-size", 18);
+    @include property('font-size', 18, 16);
     line-height: 150%;
   }
 }
 
 .socials {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin: 0;
   @include toRem("margin-left", -7);
@@ -346,6 +364,10 @@ export default {
 
   @media (max-width: 767.98px) {
     justify-content: flex-start;
+  }
+
+  @media (max-width: 767.98px) {
+    justify-content: space-between;
   }
 
   &_link {

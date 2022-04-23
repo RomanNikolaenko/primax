@@ -18,7 +18,7 @@ export const _Default = () => ({
   },
   data() {
     return {
-      mock: {"variation":"default","name":"Default","slice_type":"section_about","items":[],"primary":{"title":"engineer 24/7 e-services","titleBlue":"maximize strategic deliverables","subtitle":"revolutionize 24/365 systems","subtitle2":"leverage clicks-and-mortar web services","link":{"link_type":"Web","url":"https://prismic.io"},"linkTitle":"repurpose distributed communities","img":{"dimensions":{"width":900,"height":500},"alt":"Placeholder image","copyright":null,"url":"https://images.unsplash.com/photo-1576662712957-9c79ae1280f8?w=900&h=500&fit=crop"}},"id":"_Default"}
+      mock: {"variation":"default","name":"Default","slice_type":"section_about","items":[],"primary":{"title":[{"type":"paragraph","text":"Magna aliquip veniam fugiat nulla ex magna nisi aliqua anim sint sint Lorem non dolor. Laborum ea laboris magna consequat.","spans":[]}],"subTitle":[{"type":"paragraph","text":"Sint veniam commodo in consequat magna commodo nostrud culpa incididunt. Pariatur consequat minim eu aute laborum labore nisi enim reprehenderit exercitation Lorem adipisicing sit est eu. Aliqua id exercitation deserunt et cupidatat ea do est adipisicing exercitation non id dolore commodo do.","spans":[]}],"link":{"link_type":"Web","url":"http://google.com"},"linkTitle":"architect clicks-and-mortar niches","img":{"dimensions":{"width":1700,"height":893},"alt":"Placeholder image","copyright":null,"url":"https://images.unsplash.com/photo-1607582278043-57198ac8da43?w=1700&h=893&fit=crop"}},"id":"_Default"}
     }
   },
   template: '<SliceZone :slices="[mock]" :resolver="resolve" />'

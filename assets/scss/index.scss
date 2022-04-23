@@ -11,24 +11,26 @@
 }
 
 @import "./fonts";
+@import "./mixins";
 @import "./reset";
 
 .link {
     display: inline-flex;
     align-items: center;
     font-weight: 700;
-    font-size: 20px;
+    @include property("font-size", 20, 16);
     line-height: 130%;
-    padding: 20px 35px;
+    @include property("padding-top", 20, 15, true, 1024);
+    @include property("padding-bottom", 20, 15, true, 1024);
+    @include property("padding-left", 35, 15, true, 1024);
+    @include property("padding-right", 35, 15, true, 1024);
     border-radius: 10px;
     border: 3px solid;
     text-align: center;
 
     @media (max-width: 575.98px) {
         display: block;
-        font-size: 18px;
         width: 100%;
-        padding: 20px 25px;
     }
 
     &.orangeBg {
@@ -123,10 +125,12 @@
     .header & {
         .scroll & {
             fill: #00113b;
+        }
+    }
 
-            @media (max-width: 576px) {
-                fill: var(--base);
-            }
+    .activeBurger & {
+        .scroll & {
+            fill: var(--base);
         }
     }
 }

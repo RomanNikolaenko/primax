@@ -5,35 +5,47 @@
     "slice_type": "section_hero_home",
     "items": [],
     "primary": {
-      "title": "evolve holistic methodologies",
-      "subtitle": "expedite plug-and-play systems",
+      "title": [
+        {
+          "type": "paragraph",
+          "text": "Lorem reprehenderit do cupidatat irure minim enim aliquip ex amet ex occaecat minim amet. Amet in nostrud sit.",
+          "spans": []
+        }
+      ],
+      "subTitle": [
+        {
+          "type": "paragraph",
+          "text": "Nisi id Lorem dolor laborum laborum ut magna nisi occaecat et ut labore irure. Id voluptate non excepteur sint incididunt dolore adipisicing ipsum ut.",
+          "spans": []
+        }
+      ],
       "linkBg": {
         "link_type": "Web",
-        "url": "http://twitter.com"
+        "url": "https://prismic.io"
       },
-      "linkBgTitle": "redefine virtual platforms",
+      "linkBgTitle": "target end-to-end channels",
       "linkBorder": {
         "link_type": "Web",
-        "url": "http://google.com"
+        "url": "https://prismic.io"
       },
-      "linkBorderTitle": "e-enable 24/365 blockchains",
-      "imgDesc": {
+      "linkBorderTitle": "enhance value-added channels",
+      "img1": {
         "dimensions": {
-          "width": 900,
-          "height": 500
+          "width": 696,
+          "height": 319
         },
         "alt": "Placeholder image",
         "copyright": null,
-        "url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=900&h=500&fit=crop"
+        "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=696&h=319&fit=crop"
       },
-      "imgMob": {
+      "img2": {
         "dimensions": {
-          "width": 900,
-          "height": 500
+          "width": 370,
+          "height": 240
         },
         "alt": "Placeholder image",
         "copyright": null,
-        "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=900&h=500&fit=crop"
+        "url": "https://images.unsplash.com/photo-1587840171670-8b850147754e?w=370&h=240&fit=crop"
       }
     }
   }

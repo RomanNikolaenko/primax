@@ -1,15 +1,26 @@
 {
   "_cts": {
-    "homePage": {},
-    "SectionHeader": {
-      "linkGroup": {}
+    "page": {},
+    "footer": {
+      "list2": {},
+      "socials": {}
     },
-    "SectionFooter": {},
-    "SectionHeroHome": {},
-    "advertisingPage": {},
-    "SectionHeroPage": {},
-    "SectionMaximumResults": {},
-    "SectionForm": {}
+    "header": {},
+    "navigation": {
+      "lists": {}
+    },
+    "helpCard": {
+      "lists1": {
+        "boolean": {
+          "content": true
+        }
+      },
+      "lists2": {
+        "boolean": {
+          "content": true
+        }
+      }
+    }
   },
   "slices": {
     "SectionCta": {
@@ -19,39 +30,167 @@
     },
     "SectionAbout": {
       "default": {
-        "primary": {}
-      }
-    },
-    "SectionEveryone": {
-      "default": {
-        "primary": {}
-      }
-    },
-    "SectionHelp": {
-      "default": {
-        "primary": {}
-      }
-    },
-    "SectionAdvantage": {
-      "default": {
-        "primary": {}
+        "primary": {
+          "subTitle": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          },
+          "title": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
       }
     },
     "SectionResults": {
       "default": {
+        "primary": {},
+        "items": {
+          "lists": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "SectionEveryone": {
+      "default": {
+        "primary": {
+          "title": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "SectionAdvantage": {
+      "default": {
+        "primary": {
+          "title": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        },
+        "items": {
+          "lists": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "SectionHelp": {
+      "default": {
+        "primary": {
+          "title": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        },
+        "items": {}
+      }
+    },
+    "SectionFooter": {
+      "default": {
         "primary": {}
+      }
+    },
+    "SectionMaxResults": {
+      "default": {
+        "primary": {
+          "title": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        },
+        "items": {
+          "lists": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "SectionForm": {
+      "default": {
+        "primary": {
+          "title": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          },
+          "cabinetModeTitle": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          },
+          "aboutYouTitle": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          },
+          "privacyPolicy": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "SectionHeroPage": {
+      "default": {
+        "primary": {
+          "title": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          },
+          "subTitle": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
       }
     },
     "SectionHeroHome": {
       "default": {
-        "primary": {}
-      }
-    },
-    "SectionHeader": {
-      "default": {
         "primary": {
-          "select": {
-            "content": "ru"
+          "title": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          },
+          "subTitle": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
           }
         }
       }

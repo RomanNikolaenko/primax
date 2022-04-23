@@ -1,0 +1,61 @@
+{
+  "id": "07ee7a22-35da-43a1-b2a8-4a89dc13cedd",
+  "uid": "repellendus-minus-in",
+  "type": "helpCard",
+  "data": {
+    "lists1Img": {
+      "dimensions": {
+        "width": 192,
+        "height": 192
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1560457079-9a6532ccb118?w=192&h=192&fit=crop"
+    },
+    "listsTitle1": "seize viral solutions",
+    "linkBg": {
+      "link_type": "Web",
+      "url": "http://twitter.com"
+    },
+    "linkBgTitle": "syndicate collaborative bandwidth",
+    "lists2Img": {
+      "dimensions": {
+        "width": 192,
+        "height": 192
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=192&h=192&fit=crop"
+    },
+    "listsTitle2": "unleash back-end bandwidth",
+    "linkBorder": {
+      "link_type": "Web",
+      "url": "http://google.com"
+    },
+    "linkBorderTitle": "transition killer experiences",
+    "lists1": [
+      {
+        "title": "optimize transparent solutions",
+        "boolean": true
+      },
+      {
+        "title": "reintermediate intuitive eyeballs",
+        "boolean": true
+      }
+    ],
+    "lists2": [
+      {
+        "title": "productize bleeding-edge e-markets",
+        "boolean": true
+      },
+      {
+        "title": "e-enable magnetic deliverables",
+        "boolean": true
+      },
+      {
+        "title": "enable end-to-end functionalities",
+        "boolean": true
+      }
+    ]
+  }
+}

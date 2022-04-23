@@ -12,31 +12,21 @@
       "description": "SectionAbout",
       "primary": {
         "title": {
-          "type": "Text",
+          "type": "StructuredText",
           "config": {
             "label": "Title",
-            "placeholder": ""
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
-        "titleBlue": {
-          "type": "Text",
+        "subTitle": {
+          "type": "StructuredText",
           "config": {
-            "label": "Title Blue",
-            "placeholder": ""
-          }
-        },
-        "subtitle": {
-          "type": "Text",
-          "config": {
-            "label": "Subtitle",
-            "placeholder": ""
-          }
-        },
-        "subtitle2": {
-          "type": "Text",
-          "config": {
-            "label": "Subtitle2",
-            "placeholder": ""
+            "label": "Sub Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
         "link": {
@@ -58,7 +48,10 @@
           "type": "Image",
           "config": {
             "label": "Img",
-            "constraint": {},
+            "constraint": {
+              "width": 1700,
+              "height": 893
+            },
             "thumbnails": []
           }
         }

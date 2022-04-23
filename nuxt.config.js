@@ -1,55 +1,78 @@
-import { apiEndpoint } from './sm.json'
+import Prismic from '@prismicio/client'
 
-export default {
-  // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
-  ssr: false,
+import sm from './sm.json'
 
-  // Target: https://go.nuxtjs.dev/config-target
-  target: 'static',
+export default async () => {
+  const client = await Prismic.getApi(sm.apiEndpoint)
+  const locales = client.languages.map(lang => lang.id)
+  const defaultLocale = locales[0]
 
-  // Global page headers: https://go.nuxtjs.dev/config-head
-  head: {
-    title: 'primax',
-    htmlAttrs: {
-      lang: 'en'
+  return {
+    // Target: https://go.nuxtjs.dev/config-target
+    target: 'static',
+
+    // Global page headers: https://go.nuxtjs.dev/config-head
+    head: {
+      title: 'primax',
+      htmlAttrs: {
+        lang: 'en'
+      },
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { hid: 'description', name: 'description', content: '' },
+        { name: 'format-detection', content: 'telephone=no' }
+      ],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      ]
     },
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+
+    // Global CSS: https://go.nuxtjs.dev/config-css
+    css: [
+      '~/assets/scss/index.scss'
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
-  },
 
-  // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-    '~/assets/scss/index.scss'
-  ],
+    // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
+    plugins: [
+    ],
 
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+    // Auto import components: https://go.nuxtjs.dev/config-components
+    components: true,
 
-  // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+    // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
+    buildModules: [
+    ],
 
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    '@nuxtjs/prismic'
-  ],
+    // Modules: https://go.nuxtjs.dev/config-modules
+    modules: [
+      '@nuxtjs/i18n',
+      '@nuxtjs/prismic'
+    ],
 
-  // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+    // Build Configuration: https://go.nuxtjs.dev/config-build
+    build: {
+      transpile: ['@prismicio/vue']
+    },
 
-  prismic: {
-    endpoint: apiEndpoint,
-    modern: true
-    /* see configuration for more */
-  },
+    i18n: {
+      locales,
+      defaultLocale
+    },
 
-  build: {
-    transpile: ["@prismicio/vue"],
-  },
+    prismic: {
+      endpoint: sm.apiEndpoint,
+      modern: true,
+      linkResolver: (doc) => {
+        const prefix = doc.lang === 'en-us' ? '' : `/${doc.lang}`
+
+        switch (doc.type) {
+          case 'page':
+            return doc.uid === 'home' ? prefix || '/' : `${prefix}/${doc.uid}`
+          default:
+            return prefix || '/'
+        }
+      }
+    }
+  }
 }

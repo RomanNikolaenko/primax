@@ -1,33 +1,53 @@
 <template>
   <section class="help white-block">
     <div class="help_container container">
-      <h2 class="help_title">
-        {{ slice.primary.title1 }}
-        <span>{{ slice.primary.title2 }}</span>{{ slice.primary.title3 }} <span>{{ slice.primary.title4 }}</span>
-      </h2>
+      <PrismicRichText
+        v-if="$prismic.asText(slice.primary.title)"
+        :field="slice.primary.title"
+        class="help_title"
+      />
 
       <div class="help_cards">
-        <div
-          v-for="(item, i) in slice.items"
-          :key="`slice-item-${i}`"
-          :class="item.flag ? 'blue' : 'white'"
-          class="card"
-        >
-          <PrismicImage :field="item.img" width="192" height="192" />
-          <h3 class="card_title">{{ item.title }}</h3>
-          <ul class="card_list">
-            <li v-if="item.listItem1" class="item">{{ item.listItem1 }}</li>
-            <li v-if="item.listItem2" class="item">{{ item.listItem2 }}</li>
-            <li v-if="item.listItem3" class="item">{{ item.listItem3 }}</li>
-            <li v-if="item.listItem4" class="item">{{ item.listItem4 }}</li>
-            <li v-if="item.listItem5" class="item">{{ item.listItem5 }}</li>
+        <div class="help_card blue">
+          <PrismicImage :field="helpCard.data.lists1Img" />
+
+          <h3 class="help_card-title">{{ helpCard.data.listsTitle1 }}</h3>
+
+          <ul class="help_card-list">
+            <li
+              v-for="(item, i) in helpCard.data.lists1"
+              :key="`slice-item-${i}`"
+              :class="item.boolean ? '' : 'none'"
+              class="help_card-item"
+            >
+              {{ item.title }}
+            </li>
           </ul>
-          <PrismicLink
-            class="link"
-            :class="item.flag ? 'whiteBg' : 'blueBorder'"
-            :field="item.link"
-            >{{ item.linkTitle }}</PrismicLink
-          >
+
+          <PrismicLink :field="helpCard.data.linkBg" class="link whiteBg">{{
+            helpCard.data.linkBgTitle
+          }}</PrismicLink>
+        </div>
+
+        <div class="help_card white">
+          <PrismicImage :field="helpCard.data.lists2Img" />
+
+          <h3 class="help_card-title">{{ helpCard.data.listsTitle2 }}</h3>
+
+          <ul class="help_card-list">
+            <li
+              v-for="(item, i) in helpCard.data.lists2"
+              :key="`slice-item-${i}`"
+              :class="item.boolean ? '' : 'none'"
+              class="help_card-item"
+            >
+              {{ item.title }}
+            </li>
+          </ul>
+
+          <PrismicLink :field="helpCard.data.linkBorder" class="link blueBorder">{{
+            helpCard.data.linkBorderTitle
+          }}</PrismicLink>
         </div>
       </div>
     </div>
@@ -41,10 +61,16 @@ export default {
   name: "SectionHelp",
   // The array passed to `getSliceComponentProps` is purely optional and acts as a visual hint for you
   props: getSliceComponentProps(["slice", "index", "slices", "context"]),
+
+  computed: {
+    helpCard() {
+      return this.$store.state.prismic.helpCard;
+    },
+  },
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "@/assets/scss/mixins";
 
 .help {
@@ -80,7 +106,7 @@ export default {
       height: 1093px;
       z-index: -1;
 
-      @media (max-width: 767.98px) {
+      @media (max-width: 1023.98px) {
         right: 50%;
         transform: matrix(-1, 0, 0, 1, 0, 0) translateX(-50%);
       }
@@ -102,7 +128,7 @@ export default {
       height: 973px;
       z-index: -1;
 
-      @media (max-width: 767.98px) {
+      @media (max-width: 1023.98px) {
         left: 50%;
         transform: matrix(-1, 0, 0, 1, 0, 0) translateX(50%);
       }
@@ -111,24 +137,19 @@ export default {
 
   &_title {
     font-weight: 600;
-    @include toRem("font-size", 50);
+    @include property("font-size", 50, 24);
     line-height: 110%;
     text-align: center;
     color: var(--primary);
     margin: 0 auto;
-    @include toRem("margin-bottom", 80);
+     @include property("margin-bottom", 80, 40);
     max-width: 1110px;
 
     @media (min-width: 768px) {
       white-space: pre-line;
     }
 
-    @media (max-width: 767.98px) {
-      @include toRem("font-size", 28);
-      @include toRem("margin-bottom", 40);
-    }
-
-    span {
+    strong {
       &:nth-of-type(1) {
         color: #367bff;
       }
@@ -146,152 +167,125 @@ export default {
     @include toRem("margin-left", -20);
     @include toRem("margin-right", -20);
 
-    @media (max-width: 767.98px) {
+    @media (max-width: 1023.98px) {
       margin: 0;
       @include toRem("margin-left", -10);
       @include toRem("margin-right", -10);
     }
   }
-}
 
-.card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  @include toRem("padding-top", 70);
-  @include toRem("padding-bottom", 70);
-  @include toRem("padding-left", 55);
-  @include toRem("padding-right", 55);
-  border: 7px solid #e1edfc;
-  box-shadow: 10px 20px 50px rgba(0, 0, 0, 0.05);
-  border-radius: 50px;
-  @include toRem("margin", 20);
-  margin-top: 0;
-  max-width: 533px;
-  width: 100%;
-
-  &.blue {
-    background: linear-gradient(89.02deg, #367bff 1.68%, #26bff7 97.37%);
-  }
-
-  &.white {
-    background: #ffffff;
-  }
-
-  @media (max-width: 767.98px) {
-    margin: 0;
-    border-radius: 20px;
-
-    @include toRem("padding-top", 30);
-    @include toRem("padding-bottom", 30);
-    @include toRem("padding-left", 23);
-    @include toRem("padding-right", 23);
-
-    @include toRem("margin-bottom", 20);
-    @include toRem("margin-left", 10);
-    @include toRem("margin-right", 10);
-  }
-
-  img {
-    display: block;
-    width: 192px;
-    height: 192px;
-    @include toRem("margin-bottom", 42);
-
-    @media (max-width: 767.98px) {
-      width: 100px;
-      height: 100px;
-      @include toRem("margin-bottom", 28);
-    }
-  }
-
-  &_title {
-    font-weight: 600;
-    @include toRem("font-size", 35);
-    line-height: 110%;
-    text-align: center;
-    @include toRem("margin-bottom", 25);
-
-    @media (max-width: 767.98px) {
-      @include toRem("margin-bottom", 20);
-      @include toRem("font-size", 22);
-    }
-
-    .blue & {
-      color: var(--white);
-    }
-
-    .white & {
-      color: var(--primary);
-    }
-  }
-
-  &_list {
+  &_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include property("padding-top", 70, 30);
+    @include property("padding-bottom", 70, 30);
+    @include property("padding-left", 55, 20);
+    @include property("padding-right", 55, 20);
+    border: 7px solid #e1edfc;
+    box-shadow: 10px 20px 50px rgba(0, 0, 0, 0.05);
+    border-radius: 50px;
+    @include toRem("margin", 20);
+    margin-top: 0;
+    max-width: 533px;
     width: 100%;
-    @include toRem("margin-bottom", 15);
 
-    @media (max-width: 767.98px) {
-      @include toRem("margin-bottom", 30);
-    }
-  }
-}
+    &.blue {
+      background: linear-gradient(89.02deg, #367bff 1.68%, #26bff7 97.37%);
 
-.item {
-  display: flex;
-  align-items: center;
-  font-weight: 600;
-  @include toRem("font-size", 25);
-  line-height: 160%;
+      h3 {
+        color: var(--white);
+      }
 
-  @media (max-width: 767.98px) {
-    @include toRem("font-size", 18);
-    line-height: 150%;
-  }
+      li {
+        color: var(--white);
 
-  &:not(:last-child) {
-    @include toRem("margin-bottom", 20);
-
-    @media (max-width: 767.98px) {
-      @include toRem("margin-bottom", 12);
-    }
-  }
-
-  &:last-child {
-    .white & {
-      &::before {
-        background-image: url("./static/bullet-3.svg");
+        &::before {
+          background-image: url("./static/bullet-1.svg");
+        }
       }
     }
-  }
 
-  .blue & {
-    color: var(--white);
+    &.white {
+      background: var(--white);
 
-    &::before {
-      background-image: url("./static/bullet-1.svg");
+      h3 {
+        color: var(--primary);
+      }
+
+      li {
+        color: var(--secondary);
+
+        &::before {
+          background-image: url("./static/bullet-2.svg");
+        }
+      }
     }
-  }
 
-  .white & {
-    color: var(--secondary);
-
-    &::before {
-      background-image: url("./static/bullet-2.svg");
+    @media (max-width: 1023.98px) {
+      margin: 0;
+      border-radius: 20px;
+      border-width: 5px;
+      @include toRem("margin-bottom", 20);
+      @include toRem("margin-left", 10);
+      @include toRem("margin-right", 10);
     }
-  }
 
-  &::before {
-    content: "";
-    width: 36px;
-    height: 36px;
-    flex: 0 0 auto;
-    @include toRem("margin-right", 20);
-    background-size: contain;
+    > div {
+      width: 100%;
+    }
 
-    @media (max-width: 767.98px) {
-      width: 20px;
-      height: 20px;
-      @include toRem("margin-right", 0);
+    img {
+      display: flex;
+      margin: 0 auto;
+      @include property("width", 192, 100);
+      @include property("height", 192, 100);
+      @include property("margin-bottom", 42, 28);
+    }
+
+    h3 {
+      font-weight: 600;
+      @include property("font-size", 35, 20);
+      @include property("margin-bottom", 25, 20);
+      line-height: 110%;
+      text-align: center;
+    }
+
+    ul,
+    ol {
+      width: 100%;
+      @include property("margin-bottom", 45, 30);
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+      line-height: 160%;
+      @include property("font-size", 25, 16);
+
+      @media (max-width: 1023.98px) {
+        line-height: 150%;
+      }
+
+      &:not(:last-child) {
+        @include property("margin-bottom", 20, 12);
+      }
+
+      &::before {
+        content: "";
+        @include property("width", 36, 20);
+        @include property("height", 36, 20);
+        @include property("margin-right", 20, 10);
+        flex: 0 0 auto;
+        background-size: contain;
+      }
+
+      &.none {
+        &::before {
+          background-image: url("./static/bullet-3.svg");
+        }
+      }
     }
   }
 }

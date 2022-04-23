@@ -1,20 +1,39 @@
 <template>
   <section class="everyone white-block">
     <div class="everyone_container">
-      <h2 class="everyone_title">{{ slice.primary.title }}</h2>
-      <p class="everyone_subtitle">{{ slice.primary.subtitle }}</p>
+      <PrismicRichText
+        v-if="$prismic.asText(slice.primary.title)"
+        :field="slice.primary.title"
+        class="everyone_title"
+      />
+
+      <PrismicRichText
+        v-if="$prismic.asText(slice.primary.subTitle)"
+        :field="slice.primary.subTitle"
+        class="everyone_subtitle"
+      />
+
       <div class="everyone_btns">
-        <PrismicLink class="link orangeBg" :field="slice.primary.linkBg">{{
-          slice.primary.linkBgTitle
-        }}</PrismicLink>
         <PrismicLink
-          class="link orangeBorder"
+          v-if="$prismic.asLink(slice.primary.linkBg)"
+          :field="slice.primary.linkBg"
+          class="link orangeBg"
+          >{{ slice.primary.linkBgTitle }}</PrismicLink
+        >
+        <PrismicLink
+          v-if="$prismic.asLink(slice.primary.linkBorder)"
           :field="slice.primary.linkBorder"
+          class="link orangeBorder"
           >{{ slice.primary.linkBorderTitle }}</PrismicLink
         >
       </div>
       <div class="everyone_wrap">
-        <PrismicImage :field="slice.primary.img" width="1411" height="766" />
+        <PrismicImage
+          v-if="slice.primary.img.url"
+          :field="slice.primary.img"
+          width="1411"
+          height="766"
+        />
       </div>
     </div>
   </section>
@@ -30,17 +49,12 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "@/assets/scss/mixins";
 
 .everyone {
-  @include toRem("padding-top", 150);
-  @include toRem("padding-bottom", 160);
-
-  @media (max-width: 767.98px) {
-    @include toRem("padding-top", 80);
-    @include toRem("padding-bottom", 80);
-  }
+  @include property('padding-top', 150, 80);
+  @include property('padding-bottom', 160, 80);
 
   &_container {
     display: flex;
@@ -55,45 +69,34 @@ export default {
 
   &_title {
     font-weight: 600;
-    @include toRem("font-size", 50);
+    @include property('font-size', 50, 24);
+    @include property('margin-bottom', 30, 20);
     line-height: 110%;
     text-align: center;
     color: var(--primary);
-    @include toRem("margin-bottom", 30);
     max-width: 546px;
-
-    @media (max-width: 767.98px) {
-      @include toRem("font-size", 24);
-      @include toRem("margin-bottom", 20);
-    }
   }
 
   &_subtitle {
     font-weight: 600;
-    @include toRem("font-size", 20);
+    @include property('font-size', 20, 18);
     line-height: 160%;
     text-align: center;
     color: var(--secondary);
-    @include toRem("margin-bottom", 50);
+    @include property('margin-bottom', 50, 30);
     max-width: 588px;
-
-    @media (max-width: 767.98px) {
-      @include toRem("font-size", 18);
-      @include toRem("margin-bottom", 30);
-    }
   }
 
   &_wrap {
     border: 7px solid #ededff;
     box-shadow: 13.4163px 22.3604px 49.193px rgba(0, 56, 97, 0.1);
     border-radius: 50px;
-    @include toRem("padding", 25);
+    @include property('padding', 25, 5);
     padding-bottom: 0;
-    @include toRem("margin-top", 55);
+    @include property('margin-top', 55, 30);
+    max-height: 800px;
 
     @media (max-width: 767.98px) {
-      @include toRem("margin-top", 30);
-      @include toRem("padding", 5);
       border-width: 5px;
       box-shadow: 11.6224px 19.3707px 42.6156px rgba(0, 0, 0, 0.1);
       border-radius: 5px 5px 0;

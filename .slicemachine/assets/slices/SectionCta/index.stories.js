@@ -18,7 +18,7 @@ export const _Default = () => ({
   },
   data() {
     return {
-      mock: {"variation":"default","name":"Default","slice_type":"section_cta","items":[],"primary":{"title":"synergize efficient methodologies","link":{"link_type":"Web","url":"https://slicemachine.dev"},"linkTitle":"optimize end-to-end paradigms"},"id":"_Default"}
+      mock: {"variation":"default","name":"Default","slice_type":"section_cta","items":[],"primary":{"title":[{"type":"paragraph","text":"Occaecat cupidatat qui sunt minim officia officia deserunt mollit est id laborum officia. Aliqua cupidatat laborum eiusmod.","spans":[]}],"link":{"link_type":"Web","url":"https://slicemachine.dev"},"linkTitle":"incubate leading-edge models"},"id":"_Default"}
     }
   },
   template: '<SliceZone :slices="[mock]" :resolver="resolve" />'

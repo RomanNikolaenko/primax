@@ -1,0 +1,131 @@
+{
+  "id": "helpCard",
+  "label": "HelpCard",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "Uid",
+          "placeholder": ""
+        }
+      },
+      "lists1Img": {
+        "type": "Image",
+        "config": {
+          "label": "Lists1Img",
+          "constraint": {
+            "width": 192,
+            "height": 192
+          },
+          "thumbnails": []
+        }
+      },
+      "listsTitle1": {
+        "type": "Text",
+        "config": {
+          "label": "Lists Title1",
+          "placeholder": ""
+        }
+      },
+      "lists1": {
+        "type": "Group",
+        "config": {
+          "label": "Lists1",
+          "fields": {
+            "title": {
+              "type": "Text",
+              "config": {
+                "label": "Title",
+                "placeholder": ""
+              }
+            },
+            "boolean": {
+              "type": "Boolean",
+              "config": {
+                "label": "Boolean",
+                "placeholder_false": "false",
+                "placeholder_true": "true",
+                "default_value": true
+              }
+            }
+          }
+        }
+      },
+      "linkBg": {
+        "type": "Link",
+        "config": {
+          "label": "Link Bg",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "linkBgTitle": {
+        "type": "Text",
+        "config": {
+          "label": "Link Bg Title",
+          "placeholder": ""
+        }
+      },
+      "lists2Img": {
+        "type": "Image",
+        "config": {
+          "label": "Lists2Img",
+          "constraint": {
+            "width": 192,
+            "height": 192
+          },
+          "thumbnails": []
+        }
+      },
+      "listsTitle2": {
+        "type": "Text",
+        "config": {
+          "label": "Lists Title2",
+          "placeholder": ""
+        }
+      },
+      "lists2": {
+        "type": "Group",
+        "config": {
+          "label": "Lists2",
+          "fields": {
+            "title": {
+              "type": "Text",
+              "config": {
+                "label": "Title",
+                "placeholder": ""
+              }
+            },
+            "boolean": {
+              "type": "Boolean",
+              "config": {
+                "label": "Boolean",
+                "placeholder_false": "false",
+                "placeholder_true": "true",
+                "default_value": true
+              }
+            }
+          }
+        }
+      },
+      "linkBorder": {
+        "type": "Link",
+        "config": {
+          "label": "Link Border",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "linkBorderTitle": {
+        "type": "Text",
+        "config": {
+          "label": "Link Border Title",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

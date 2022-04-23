@@ -4,9 +4,11 @@ import SectionAbout from './SectionAbout';
 import SectionAdvantage from './SectionAdvantage';
 import SectionCta from './SectionCta';
 import SectionEveryone from './SectionEveryone';
-import SectionHeader from './SectionHeader';
+import SectionForm from './SectionForm';
 import SectionHelp from './SectionHelp';
 import SectionHeroHome from './SectionHeroHome';
+import SectionHeroPage from './SectionHeroPage';
+import SectionMaxResults from './SectionMaxResults';
 import SectionResults from './SectionResults';
 
 export {
@@ -14,9 +16,11 @@ export {
 	SectionAdvantage,
 	SectionCta,
 	SectionEveryone,
-	SectionHeader,
+	SectionForm,
 	SectionHelp,
 	SectionHeroHome,
+	SectionHeroPage,
+	SectionMaxResults,
 	SectionResults,
 };
 
@@ -25,8 +29,10 @@ export const components = {
 	section_advantage: SectionAdvantage,
 	section_cta: SectionCta,
 	section_everyone: SectionEveryone,
-	section_header: SectionHeader,
+	section_form: SectionForm,
 	section_help: SectionHelp,
 	section_hero_home: SectionHeroHome,
+	section_hero_page: SectionHeroPage,
+	section_max_results: SectionMaxResults,
 	section_results: SectionResults,
 };

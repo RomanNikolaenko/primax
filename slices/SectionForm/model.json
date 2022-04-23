@@ -1,0 +1,111 @@
+{
+  "id": "section_form",
+  "type": "SharedSlice",
+  "name": "SectionForm",
+  "description": "SectionForm",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "SectionForm",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "cabinetModeTitle": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Cabinet Mode Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading3,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl,heading4,heading5,heading6"
+          }
+        },
+        "radioTitle1": {
+          "type": "Text",
+          "config": {
+            "label": "Radio Title1",
+            "placeholder": ""
+          }
+        },
+        "radioTitle2": {
+          "type": "Text",
+          "config": {
+            "label": "Radio Title2",
+            "placeholder": ""
+          }
+        },
+        "aboutYouTitle": {
+          "type": "StructuredText",
+          "config": {
+            "label": "About You Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "name": {
+          "type": "Text",
+          "config": {
+            "label": "Name",
+            "placeholder": ""
+          }
+        },
+        "surname": {
+          "type": "Text",
+          "config": {
+            "label": "Surname",
+            "placeholder": ""
+          }
+        },
+        "email": {
+          "type": "Text",
+          "config": {
+            "label": "Email",
+            "placeholder": ""
+          }
+        },
+        "phone": {
+          "type": "Text",
+          "config": {
+            "label": "Phone",
+            "placeholder": ""
+          }
+        },
+        "message": {
+          "type": "Text",
+          "config": {
+            "label": "Message",
+            "placeholder": ""
+          }
+        },
+        "privacyPolicy": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Privacy Policy",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,strong,em,hyperlink,embed,rtl,preformatted"
+          }
+        },
+        "submitTitle": {
+          "type": "Text",
+          "config": {
+            "label": "Submit Title",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {},
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

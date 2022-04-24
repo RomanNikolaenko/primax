@@ -1,5 +1,5 @@
 <template>
-  <section class="hero">
+  <section class="hero" @mousemove="mousemove">
     <div class="hero_container">
       <div class="hero_left">
         <ul class="list">
@@ -144,6 +144,30 @@ export default {
       return this.$store.state.prismic.navigation;
     },
   },
+
+  methods: {
+    mousemove(e) {
+      let mouseX = e.clientX;
+      let mouseY = e.clientY;
+      let products = document.querySelectorAll(".images .images_block");
+      for (let i = 0; i < products.length; i++) {
+        let product = products[i];
+        let img_x = mouseX - product.getBoundingClientRect().left / 2;
+        let img_y = mouseY - product.getBoundingClientRect().top / 2;
+
+        if (img_x < 15) img_x = Math.floor(Math.random() * 60) + 25;
+        if (img_y < 15) img_y = Math.floor(Math.random() * 60) + 25;
+
+        if (window.innerWidth >= 1024) {
+          product.style.transform = `translateY(-${
+            img_x / ((i + 2) * 15)
+          }px) translateX(-${img_y / ((i + 2) * 15)}px) translateZ(100px)`;
+        } else {
+          product.style.transform = null;
+        }
+      }
+    },
+  },
 };
 </script>
 
@@ -237,7 +261,7 @@ export default {
 
   @media (max-width: 1399.98px) {
     max-width: 730px;
-    margin: 70px auto;
+    margin: 70px auto calc(70px + (0 - 70) * ((100vw - 320px) / (1024 - 320)));
     padding: 0;
   }
 
@@ -293,13 +317,12 @@ export default {
     }
 
     &:nth-of-type(1) {
-      top: 0;
+      top: -33px;
       left: -10%;
-      transform: translateY(-29.8%);
 
       @media (max-width: 1023.98px) {
         left: -17px;
-        transform: translateY(-50%);
+        top: -29px;
       }
 
       .images_block-img {
@@ -318,13 +341,12 @@ export default {
     }
 
     &:nth-of-type(2) {
-      top: 0;
+      bottom: calc(100% - 14px);
       right: -4%;
-      transform: translateY(-85%);
 
       @media (max-width: 1023.98px) {
         right: -17px;
-        transform: translateY(-50%);
+        bottom: calc(100% - 31px);
       }
 
       .images_block-img {
@@ -342,9 +364,8 @@ export default {
     }
 
     &:nth-of-type(3) {
-      bottom: 0;
+      bottom: 32px;
       left: -6%;
-      transform: translateY(31.5%);
       max-width: 220px;
 
       @media (max-width: 1023.98px) {
@@ -367,14 +388,12 @@ export default {
     }
 
     &:nth-of-type(4) {
-      bottom: 0;
+      top: calc(100% - 26px);
       right: -11.7%;
-      transform: translateY(71.7%);
 
       @media (max-width: 1023.98px) {
         right: 18px;
-        bottom: -20px;
-        transform: translateY(100%);
+        top: calc(100% + 20px);
       }
 
       .images_block-img {

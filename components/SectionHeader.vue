@@ -384,7 +384,7 @@ export default {
     right: 0;
     background-image: linear-gradient(89.02deg, #367bff 1.68%, #26bff7 97.37%);
     width: 100%;
-    height: 100vh;
+    height: var(--vh);
     @include toRem("padding-top", 110);
 
     @media (min-height: 620px) {

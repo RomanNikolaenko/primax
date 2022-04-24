@@ -67,6 +67,11 @@ export default {
         }
       }
     },
+
+    changeHeight() {
+      let vh = window.innerHeight;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    },
   },
 
   mounted() {
@@ -74,11 +79,13 @@ export default {
 
     this.$nextTick(function () {
       window.addEventListener("scroll", this.scrollHandle);
+      window.addEventListener("resize", this.changeHeight);
     });
   },
 
   beforeDestroy() {
     window.removeEventListener("scroll", this.scrollHandle);
+    window.removeEventListener("resize", this.changeHeight);
   },
 };
 </script>

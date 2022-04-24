@@ -80,6 +80,106 @@
             },
             "thumbnails": []
           }
+        },
+        "imgBlock1": {
+          "type": "Image",
+          "config": {
+            "label": "Img Block1",
+            "constraint": {
+              "width": 25,
+              "height": 25
+            },
+            "thumbnails": []
+          }
+        },
+        "blockTitle1": {
+          "type": "Text",
+          "config": {
+            "label": "Block Title1",
+            "placeholder": ""
+          }
+        },
+        "blockSubtitle1": {
+          "type": "Text",
+          "config": {
+            "label": "BlockSubtitle1",
+            "placeholder": ""
+          }
+        },
+        "imgBlock2": {
+          "type": "Image",
+          "config": {
+            "label": "Img Block2",
+            "constraint": {
+              "width": 31,
+              "height": 31
+            },
+            "thumbnails": []
+          }
+        },
+        "blockTitle2": {
+          "type": "Text",
+          "config": {
+            "label": "Block Title2",
+            "placeholder": ""
+          }
+        },
+        "blockSubtitle2": {
+          "type": "Text",
+          "config": {
+            "label": "Block Subtitle2",
+            "placeholder": ""
+          }
+        },
+        "imgBlock3": {
+          "type": "Image",
+          "config": {
+            "label": "Img Block3",
+            "constraint": {
+              "width": 23,
+              "height": 23
+            },
+            "thumbnails": []
+          }
+        },
+        "blockTitle3": {
+          "type": "Text",
+          "config": {
+            "label": "Block Title3",
+            "placeholder": ""
+          }
+        },
+        "blockSubtitle3": {
+          "type": "Text",
+          "config": {
+            "label": "Block Subtitle3",
+            "placeholder": ""
+          }
+        },
+        "imgBlock4": {
+          "type": "Image",
+          "config": {
+            "label": "Img Block4",
+            "constraint": {
+              "width": 23,
+              "height": 21
+            },
+            "thumbnails": []
+          }
+        },
+        "blockTitle4": {
+          "type": "Text",
+          "config": {
+            "label": "Block Title4",
+            "placeholder": ""
+          }
+        },
+        "blockSubtitle4": {
+          "type": "Text",
+          "config": {
+            "label": "Block Subtitle4",
+            "placeholder": ""
+          }
         }
       },
       "items": {},

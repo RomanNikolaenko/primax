@@ -149,10 +149,10 @@ export default {
     max-width: 1540px;
     width: 100%;
     margin: 0 auto;
-    @include property('padding-top', 150, 80);
-    @include property('padding-bottom', 60, 40);
-    @include property('padding-left', 30, 20);
-    @include property('padding-right', 30, 20);
+    @include property("padding-top", 150, 80);
+    @include property("padding-bottom", 60, 40);
+    @include property("padding-left", 30, 20);
+    @include property("padding-right", 30, 20);
   }
 
   &_wrap {
@@ -160,7 +160,7 @@ export default {
     justify-content: space-between;
     grid-template-columns: 345px 1fr;
     @include property("gap", 140, 40, true, 1640, 1200);
-    @include property('margin-bottom', 60, 40);
+    @include property("margin-bottom", 60, 40);
     color: var(--tertiary);
 
     @media (max-width: 1199.98px) {
@@ -184,10 +184,10 @@ export default {
 
   &_copy {
     display: grid;
-    grid-template-columns: 215px 1fr 215px;
+    grid-template-columns: 230px 1fr 230px;
     @include toRem("gap", 20);
     align-items: center;
-    @include property('padding-top', 60, 40);
+    @include property("padding-top", 60, 40);
     border-top: 1px solid #778ab9;
 
     @media (max-width: 1023.98px) {
@@ -201,11 +201,15 @@ export default {
     > span {
       color: #abafc7;
       font-weight: 600;
-      @include property('font-size', 20, 16);
+      @include property("font-size", 20, 16);
       line-height: 160%;
 
       @media (max-width: 767.98px) {
         line-height: 150%;
+      }
+
+      @media (min-width: 576px) and (max-width: 767.98px) {
+        text-align: center;
       }
     }
   }
@@ -214,9 +218,9 @@ export default {
 .column {
   &_title {
     font-weight: 600;
-    @include property('font-size', 28, 18);
+    @include property("font-size", 28, 18);
     line-height: 160%;
-    @include property('margin-bottom', 20, 15);
+    @include property("margin-bottom", 20, 15);
   }
 
   &_list {
@@ -228,7 +232,7 @@ export default {
 
     &-link {
       font-weight: 600;
-      @include property('font-size', 20, 16);
+      @include property("font-size", 20, 16);
       line-height: 160%;
       word-break: break-all;
 
@@ -255,7 +259,7 @@ export default {
 
   &-link {
     font-weight: 600;
-    @include property('font-size', 20, 16);
+    @include property("font-size", 20, 16);
     line-height: 160%;
     word-break: break-all;
 
@@ -296,9 +300,17 @@ export default {
 .designed {
   display: flex;
   align-items: center;
-  
+
+  @media (min-width: 768px) {
+    justify-content: flex-end;
+  }
+
   @media (max-width: 767.98px) {
-    @include toRem("margin-top", 10)
+    @include toRem("margin-top", 10);
+  }
+
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    justify-content: center;
   }
 
   span {
@@ -345,7 +357,7 @@ export default {
 
   &-text {
     font-weight: 700;
-    @include property('font-size', 18, 16);
+    @include property("font-size", 18, 16);
     line-height: 150%;
   }
 }
@@ -358,11 +370,7 @@ export default {
   @include toRem("margin-left", -7);
   @include toRem("margin-right", -7);
 
-  @media (max-width: 767.98px) {
-    justify-content: flex-start;
-  }
-
-  @media (max-width: 767.98px) {
+  @media (max-width: 575.98px) {
     justify-content: space-between;
   }
 

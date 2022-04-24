@@ -313,13 +313,11 @@ export default {
     justify-content: center;
   }
 
-  span {
-    display: inline-block;
-    @include toRem("margin-right", 10);
-  }
-
   &-link {
-    display: inline-flex;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    gap: 10px;
 
     @media (hover) {
       &:hover {

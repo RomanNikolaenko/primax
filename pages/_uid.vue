@@ -87,6 +87,14 @@ export default {
     window.removeEventListener("scroll", this.scrollHandle);
     window.removeEventListener("resize", this.changeHeight);
   },
+
+  head() {
+    return {
+      htmlAttrs: {
+        lang: this.$i18n.locale,
+      },
+    };
+  },
 };
 </script>
 

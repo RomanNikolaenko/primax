@@ -223,7 +223,11 @@ export default {
       border-bottom: 2px solid;
       border-image-slice: 1;
       border-width: 2px;
-      border-image-source: #dedddb;
+      border-image-source: linear-gradient(
+          89.02deg,
+          #dedddb 1.68%,
+          #dedddb 97.37%
+        );
 
       &:valid,
       &:focus,

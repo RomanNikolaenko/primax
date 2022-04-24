@@ -184,6 +184,13 @@ export default {
   background-size: cover;
   background-position-y: center;
 
+  @media (max-width: 575.98px) {
+    background-size: contain;
+    background-position-y: calc(
+      100% - calc(250px + (330 - 250) * ((100vw - 320px) / (576 - 320)))
+    );
+  }
+
   &_container {
     display: grid;
     align-items: center;

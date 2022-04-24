@@ -88,7 +88,7 @@ export default {
     @media (max-width: 575.98px) {
       width: 100%;
       min-width: auto;
-      max-width: 310px;
+      max-width: 335px;
     }
 
     h3 {

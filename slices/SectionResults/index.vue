@@ -77,10 +77,10 @@ export default {
 
     @media (max-width: 1023.98px) {
       border: 5px solid #eef6ff;
-    }
 
-    @media (max-width: 575.98px) {
-      min-width: 280px;
+      max-width: 335px;
+      width: 100%;
+      min-width: initial;
     }
 
     .block-img {

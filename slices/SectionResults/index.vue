@@ -3,7 +3,6 @@
     <div class="results_container container">
       <PrismicRichText
         v-if="$prismic.asText(slice.primary.title)"
-        wrapper="h2"
         :field="slice.primary.title"
         class="results_title"
       />

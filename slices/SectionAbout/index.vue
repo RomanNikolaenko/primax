@@ -4,14 +4,12 @@
       <div class="about_content">
         <PrismicRichText
           v-if="$prismic.asText(slice.primary.title)"
-          wrapper="h2"
           :field="slice.primary.title"
           class="about_title"
         />
         <PrismicRichText
           v-if="$prismic.asText(slice.primary.subTitle)"
           :field="slice.primary.subTitle"
-          wrapper="div"
           class="about_subtitle"
         />
         <div class="about_btns">

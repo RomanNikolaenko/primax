@@ -34,7 +34,7 @@
             class="form_form-title"
           />
 
-          <label for="">
+          <label>
             <input
               type="text"
               name="name"
@@ -42,7 +42,7 @@
               required
             />
           </label>
-          <label for="">
+          <label>
             <input
               type="text"
               name="surname"
@@ -50,7 +50,7 @@
               required
             />
           </label>
-          <label for="">
+          <label>
             <input
               type="email"
               name="email"
@@ -58,7 +58,7 @@
               required
             />
           </label>
-          <label for="">
+          <label>
             <input
               type="tel"
               name="phone"
@@ -66,7 +66,7 @@
               required
             />
           </label>
-          <label for="">
+          <label>
             <textarea
               name="message"
               :placeholder="slice.primary.message"

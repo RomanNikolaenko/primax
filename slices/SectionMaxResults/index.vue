@@ -59,7 +59,7 @@ export default {
     right: 0;
     top: 100%;
     z-index: -1;
-    background: radial-gradient(
+    background-image: radial-gradient(
       33.99% 24.36% at 57.38% 54.8%,
       rgba(54, 195, 255, 0.12) 0%,
       rgba(45, 185, 249, 0.008) 100%
@@ -76,7 +76,7 @@ export default {
     left: 0;
     top: 116px;
     z-index: -1;
-    background: radial-gradient(
+    background-image: radial-gradient(
         41.58% 29.82% at 64.98% 54.56%,
         rgba(54, 98, 255, 0.12) 0%,
         rgba(45, 185, 249, 0.008) 100%

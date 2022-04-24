@@ -15,7 +15,6 @@
           <div class="column">
             <PrismicRichText
               v-if="$prismic.asText(footer.data.listTitle1)"
-              wrapper="h3"
               :field="footer.data.listTitle1"
               class="column_title"
             />
@@ -39,7 +38,6 @@
           <div class="column">
             <PrismicRichText
               v-if="$prismic.asText(footer.data.listTitle2)"
-              wrapper="h3"
               :field="footer.data.listTitle2"
               class="column_title"
             />
@@ -59,7 +57,6 @@
           <div class="column">
             <PrismicRichText
               v-if="$prismic.asText(footer.data.listTitle3)"
-              wrapper="h3"
               :field="footer.data.listTitle3"
               class="column_title"
             />
@@ -273,7 +270,6 @@ export default {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-fill-color: transparent;
 
     &[href^="mailto:"] {
       background-image: linear-gradient(

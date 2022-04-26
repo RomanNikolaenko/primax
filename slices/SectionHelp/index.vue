@@ -235,6 +235,10 @@ export default {
       width: 100%;
     }
 
+    .link {
+      margin-top: auto;
+    }
+
     img {
       display: flex;
       margin: 0 auto;
@@ -269,7 +273,7 @@ export default {
       }
 
       &:not(:last-child) {
-        @include property("margin-bottom", 20, 12);
+        @include property("margin-bottom", 22, 17);
       }
 
       &::before {

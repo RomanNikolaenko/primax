@@ -9,7 +9,7 @@
       :class="{ active: areOptionsVisible }"
       @click="areOptionsVisible = !areOptionsVisible"
     >
-      {{ language.slice(0, 2) }} <i>&#9654;</i>
+      {{ language.slice(0, 2) }} <i></i>
     </p>
     <div class="options" :class="{ active: areOptionsVisible }">
       <PrismicLink
@@ -110,9 +110,10 @@ export default {
 
     i {
       font-style: normal;
-      @include toRem("font-size", 10);
+      width: 8px;
+      height: 5px;
       @include toRem("margin-left", 4);
-      transform: rotate(90deg);
+      background-image: url('./static/Polygon.svg');
     }
 
     &.active {

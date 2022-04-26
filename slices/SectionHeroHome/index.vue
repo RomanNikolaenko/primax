@@ -152,16 +152,13 @@ export default {
       let products = document.querySelectorAll(".images .images_block");
       for (let i = 0; i < products.length; i++) {
         let product = products[i];
-        let img_x = mouseX - product.getBoundingClientRect().left / 2;
-        let img_y = mouseY - product.getBoundingClientRect().top / 2;
-
-        if (img_x < 15) img_x = Math.floor(Math.random() * 60) + 25;
-        if (img_y < 15) img_y = Math.floor(Math.random() * 60) + 25;
+        let img_x = mouseX - product.getBoundingClientRect().left / 7;
+        let img_y = mouseY - product.getBoundingClientRect().top / 7;
 
         if (window.innerWidth >= 1024) {
           product.style.transform = `translateY(-${
-            img_x / ((i + 2) * 15)
-          }px) translateX(-${img_y / ((i + 2) * 15)}px) translateZ(100px)`;
+            img_x / ((i + 2) * 10)
+          }px) translateX(-${img_y / ((i + 2) * 10)}px)`;
         } else {
           product.style.transform = null;
         }

@@ -1,12 +1,12 @@
 <template>
   <header class="header" :class="burger ? 'activeBurger' : ''">
     <div class="header_container">
-      <a href="/" class="header_logo">
+      <nuxt-link to="/" class="header_logo" exact-active-class="active">
         <BaseIcon name="logoWhite" viewBox="0 0 137 25" />
-      </a>
+      </nuxt-link>
 
       <button class="header_burger" v-if="device" @click="burgerToggle">
-        <i></i><i></i><i></i>
+        <div class="header_burger-wrap"><i></i><i></i><i></i></div>
       </button>
 
       <div v-if="!device" class="header_auth">
@@ -171,6 +171,10 @@ export default {
     display: block;
     @include property("width", 127, 114);
     @include property("height", 27, 21);
+
+    &.active {
+      pointer-events: none;
+    }
   }
 
   &_auth {
@@ -282,10 +286,6 @@ export default {
   &_burger {
     position: relative;
     z-index: 3;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
     @include toRem("padding", 12);
     width: 48px;
     height: 48px;
@@ -332,8 +332,8 @@ export default {
         }
 
         &:nth-child(1) {
-          top: 9px;
-          transform: rotate(45deg);
+          top: 50%;
+          transform: translate(0, -50%) rotate(45deg);
         }
 
         &:nth-child(2) {
@@ -341,14 +341,18 @@ export default {
         }
 
         &:nth-child(3) {
-          top: -11px;
-          transform: rotate(-45deg);
+          top: 50%;
+          transform: translate(0, -50%) rotate(-45deg);
         }
       }
     }
 
-    i {
+    &-wrap {
       position: relative;
+    }
+
+    i {
+      position: absolute;
       top: 0;
       height: 2px;
       background-color: var(--white);
@@ -365,15 +369,21 @@ export default {
 
       &:nth-of-type(1) {
         width: 12px;
+        left: 0;
+        top: calc(50% - 10px);
       }
 
       &:nth-of-type(2) {
         width: 24px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
       }
 
       &:nth-of-type(3) {
         width: 12px;
-        margin-left: auto;
+        right: 0;
+        top: calc(50% + 8px);
       }
     }
   }
@@ -384,7 +394,7 @@ export default {
     right: 0;
     background-image: linear-gradient(89.02deg, #367bff 1.68%, #26bff7 97.37%);
     width: 100%;
-    height: var(--vh);
+    height: var(--vh, 100%);
     @include toRem("padding-top", 110);
 
     @media (min-height: 620px) {

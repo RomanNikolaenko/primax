@@ -102,8 +102,16 @@ export default {
     @include property("padding-top", 200, 120, true, 1640, 576);
     @include property("padding-bottom", 300, 80);
     padding-left: max(calc((20 / 18) * 1rem), calc(100% - 1840px) / 2);
-    @include property('padding-right', 130, 20, true, 1840, 1024);
-    width: min(100%, 1100px);
+    @include property("padding-right", 130, 20, true, 1840, 1024);
+    width: calc(880px + (1100 - 880) * ((100vw - 880px) / (1640 - 880)));
+
+    @media (min-width: 1640px) {
+      width: 1100px;
+    }
+    
+    @media (max-width: 1100px) {
+      width: 100%;
+    }
 
     &::before {
       content: "";
@@ -166,16 +174,16 @@ export default {
   &_content {
     &-title {
       font-weight: 600;
-      @include property('font-size', 64, 34);
+      @include property("font-size", 64, 34);
       line-height: 110%;
-      @include property('margin-bottom', 40, 20);
+      @include property("margin-bottom", 40, 20);
     }
 
     &-subtitle {
       font-weight: 600;
-      @include property('font-size', 20, 16);
+      @include property("font-size", 20, 16);
       line-height: 160%;
-      @include property('margin-bottom', 30, 10);
+      @include property("margin-bottom", 30, 10);
 
       @media (max-width: 767.98px) {
         line-height: 150%;
@@ -268,6 +276,10 @@ export default {
       @media (max-width: 1099.98px) {
         white-space: nowrap;
         width: max-content;
+      }
+
+      &.nuxt-link-active {
+        cursor: default;
       }
 
       &:hover,

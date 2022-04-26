@@ -220,8 +220,8 @@ export default {
       width: 100%;
       color: var(--secondary);
 
-      border-bottom: 2px solid;
-      border-image-slice: 1;
+      border: 2px solid;
+      border-image-slice: 2;
       border-width: 2px;
       border-image-source: linear-gradient(
           89.02deg,

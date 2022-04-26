@@ -23,10 +23,7 @@
       </div>
 
       <div class="about_image">
-        <PrismicImage
-          v-if="slice.primary.img.url"
-          :field="slice.primary.img"
-        />
+        <PrismicImage v-if="slice.primary.img.url" :field="slice.primary.img" />
       </div>
     </div>
   </section>
@@ -55,16 +52,22 @@ export default {
     padding-left: max(calc((20 / 18) * 1rem), calc((100% - 1640px) / 2));
 
     @media (min-width: 1024px) {
-      grid-template-columns: calc(530px + (681 - 530) * ((100vw - 1024px) / (1640 - 1024))) 1fr;
+      grid-template-columns: calc(
+          570px + (681 - 570) * ((100vw - 1024px) / (1440 - 1024))
+        ) 1fr;
     }
 
-    @media (min-width: 1640px) {
+    @media (min-width: 1440px) {
       grid-template-columns: 681px 1fr;
     }
 
     @media (max-width: 1023.98px) {
       padding: 0 calc((20 / 18) * 1rem);
     }
+  }
+
+  &_content {
+    @include property("padding-left", 40, 0, true, 1440, 1024);
   }
 
   &_title {
@@ -76,7 +79,9 @@ export default {
 
     strong {
       font-weight: inherit;
-      color: #367bff;
+      background: linear-gradient(89.02deg, #367bff 1.68%, #26bff7 97.37%);
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
   }
 

@@ -77,9 +77,9 @@ export default {
   },
 
   mounted() {
-    this.scrollHandle();
-
     this.$nextTick(function () {
+      this.scrollHandle();
+      this.changeHeight();
       window.addEventListener("scroll", this.scrollHandle);
       window.addEventListener("resize", this.changeHeight);
     });

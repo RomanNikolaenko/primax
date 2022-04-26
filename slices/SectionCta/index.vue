@@ -7,7 +7,6 @@
         class="cta_title"
       />
       <PrismicLink
-        v-if="$prismic.asLink(slice.primary.link)"
         :field="slice.primary.link"
         class="link orangeBg"
         >{{ slice.primary.linkTitle }}</PrismicLink

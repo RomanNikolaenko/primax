@@ -383,10 +383,13 @@ export default {
 
   &_group {
     position: relative;
-    @include toRem("margin-bottom", 40);
 
     &:first-of-type {
       @include toRem("margin-top", 40);
+    }
+
+    &:not(:last-child) {
+      @include toRem("margin-bottom", 40);
     }
 
     &-label {

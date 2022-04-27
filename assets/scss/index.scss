@@ -138,3 +138,7 @@
 .small {
     fill: var(--orange);
 }
+
+.main > div {
+    overflow: hidden;
+}

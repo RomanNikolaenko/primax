@@ -1,5 +1,5 @@
 <template>
-  <section class="white-block form">
+  <section class="section white-block form">
     <div class="form_container container">
       <PrismicRichText
         v-if="$prismic.asText(slice.primary.title)"

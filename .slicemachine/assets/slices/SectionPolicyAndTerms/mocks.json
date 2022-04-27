@@ -1,0 +1,17 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "section_policy_and_terms",
+    "items": [],
+    "primary": {
+      "text": [
+        {
+          "type": "paragraph",
+          "text": "Deserunt laborum ex esse eiusmod culpa reprehenderit dolor in ipsum ullamco qui excepteur.",
+          "spans": []
+        }
+      ]
+    }
+  }
+]

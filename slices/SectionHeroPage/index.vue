@@ -1,5 +1,5 @@
 <template>
-  <section class="hero">
+  <section class="section hero">
     <PrismicImage
       v-if="slice.primary.background.url"
       :field="slice.primary.background"

@@ -1258,6 +1258,62 @@
           }
         }
       },
+      "section_policy_and_terms": {
+        "library": "slices",
+        "id": "section_policy_and_terms",
+        "name": "SectionPolicyAndTerms",
+        "description": "SectionPolicyAndTerms",
+        "model": {
+          "id": "section_policy_and_terms",
+          "type": "SharedSlice",
+          "name": "SectionPolicyAndTerms",
+          "description": "SectionPolicyAndTerms",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "SectionPolicyAndTerms",
+              "primary": {
+                "text": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Text",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "section_policy_and_terms",
+            "items": [],
+            "primary": {
+              "text": [
+                {
+                  "type": "paragraph",
+                  "text": "Deserunt laborum ex esse eiusmod culpa reprehenderit dolor in ipsum ullamco qui excepteur.",
+                  "spans": []
+                }
+              ]
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "vue"
+        },
+        "screenshotPaths": {}
+      },
       "section_results": {
         "library": "slices",
         "id": "section_results",
@@ -1384,6 +1440,62 @@
             "height": 297
           }
         }
+      },
+      "section_seo": {
+        "library": "slices",
+        "id": "section_seo",
+        "name": "SectionSeo",
+        "description": "SectionSeo",
+        "model": {
+          "id": "section_seo",
+          "type": "SharedSlice",
+          "name": "SectionSeo",
+          "description": "SectionSeo",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "SectionSeo",
+              "primary": {
+                "text": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Text",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "section_seo",
+            "items": [],
+            "primary": {
+              "text": [
+                {
+                  "type": "paragraph",
+                  "text": "Incididunt incididunt veniam officia culpa consectetur duis commodo dolore aliqua exercitation mollit aute dolor excepteur et.",
+                  "spans": []
+                }
+              ]
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "vue"
+        },
+        "screenshotPaths": {}
       }
     }
   }

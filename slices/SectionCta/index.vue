@@ -1,5 +1,5 @@
 <template>
-  <section class="cta">
+  <section class="section cta">
     <div class="cta_wrap">
       <PrismicRichText
         v-if="$prismic.asText(slice.primary.title)"

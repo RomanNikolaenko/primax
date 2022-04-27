@@ -42,7 +42,7 @@ export default {
   methods: {
     scrollHandle() {
       const body = document.body;
-      const sections = document.querySelectorAll("section");
+      const sections = document.querySelectorAll(".section");
 
       if (window.scrollY > 0) {
         body.classList.add("fix");
@@ -55,7 +55,7 @@ export default {
         const element = sections[index];
 
         if (
-          window.scrollY > element.offsetTop &&
+          window.scrollY >= element.offsetTop &&
           element.classList.contains("white-block")
         ) {
           body.classList.add("scroll");

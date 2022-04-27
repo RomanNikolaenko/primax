@@ -26,34 +26,37 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "section_cta": {
-              "type": "SharedSlice"
-            },
             "section_about": {
-              "type": "SharedSlice"
-            },
-            "section_results": {
-              "type": "SharedSlice"
-            },
-            "section_everyone": {
               "type": "SharedSlice"
             },
             "section_advantage": {
               "type": "SharedSlice"
             },
-            "section_help": {
+            "section_cta": {
               "type": "SharedSlice"
             },
-            "section_max_results": {
+            "section_help": {
               "type": "SharedSlice"
             },
             "section_form": {
               "type": "SharedSlice"
             },
-            "section_hero_page": {
+            "section_everyone": {
               "type": "SharedSlice"
             },
             "section_hero_home": {
+              "type": "SharedSlice"
+            },
+            "section_hero_page": {
+              "type": "SharedSlice"
+            },
+            "section_max_results": {
+              "type": "SharedSlice"
+            },
+            "section_results": {
+              "type": "SharedSlice"
+            },
+            "section_policy_and_terms": {
               "type": "SharedSlice"
             }
           }

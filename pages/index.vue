@@ -95,6 +95,7 @@ export default {
       htmlAttrs: {
         lang: this.$i18n.locale,
       },
+      // title: this.page.data.meta_title,
     };
   },
 };

@@ -1,0 +1,17 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "section_seo",
+    "items": [],
+    "primary": {
+      "text": [
+        {
+          "type": "paragraph",
+          "text": "Incididunt incididunt veniam officia culpa consectetur duis commodo dolore aliqua exercitation mollit aute dolor excepteur et.",
+          "spans": []
+        }
+      ]
+    }
+  }
+]

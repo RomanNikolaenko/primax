@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer class="section footer">
     <div class="footer_container">
       <div class="footer_wrap">
         <div class="primax">

@@ -1,5 +1,5 @@
 <template>
-  <section class="hero" @mousemove="mousemove">
+  <section class="section hero" @mousemove="mousemove">
     <div class="hero_container">
       <div class="hero_left">
         <ul class="list">

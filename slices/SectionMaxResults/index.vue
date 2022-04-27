@@ -1,5 +1,5 @@
 <template>
-  <section class="white-block max-results">
+  <section class="section white-block max-results">
     <div class="max-results_container">
       <PrismicImage
         v-if="slice.primary.img.url"

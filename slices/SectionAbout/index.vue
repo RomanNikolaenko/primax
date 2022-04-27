@@ -1,5 +1,5 @@
 <template>
-  <section class="about white-block">
+  <section class="section about white-block">
     <div class="about_container">
       <div class="about_content">
         <PrismicRichText

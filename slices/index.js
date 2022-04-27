@@ -9,7 +9,9 @@ import SectionHelp from './SectionHelp';
 import SectionHeroHome from './SectionHeroHome';
 import SectionHeroPage from './SectionHeroPage';
 import SectionMaxResults from './SectionMaxResults';
+import SectionPolicyAndTerms from './SectionPolicyAndTerms';
 import SectionResults from './SectionResults';
+import SectionSeo from './SectionSeo';
 
 export {
 	SectionAbout,
@@ -21,7 +23,9 @@ export {
 	SectionHeroHome,
 	SectionHeroPage,
 	SectionMaxResults,
+	SectionPolicyAndTerms,
 	SectionResults,
+	SectionSeo,
 };
 
 export const components = {
@@ -34,5 +38,7 @@ export const components = {
 	section_hero_home: SectionHeroHome,
 	section_hero_page: SectionHeroPage,
 	section_max_results: SectionMaxResults,
+	section_policy_and_terms: SectionPolicyAndTerms,
 	section_results: SectionResults,
+	section_seo: SectionSeo,
 };

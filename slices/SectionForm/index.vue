@@ -398,12 +398,12 @@ export default {
       transition: all 0.2s;
 
       .invalid & {
-        top: -15px;
+        top: -7px;
         color: #ff3737;
       }
 
       .valid & {
-        top: -15px;
+        top: -7px;
         color: var(--primary);
       }
     }
@@ -414,7 +414,7 @@ export default {
       width: 100%;
       color: var(--primary);
       line-height: 40px;
-      border: 2px solid;
+      border-bottom: 2px solid;
       border-image-slice: 2;
       border-image-source: linear-gradient(
         89.02deg,

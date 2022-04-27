@@ -9,7 +9,8 @@
       :class="{ active: areOptionsVisible }"
       @click="areOptionsVisible = !areOptionsVisible"
     >
-      {{ language.slice(0, 2) }} <i></i>
+      {{ language.slice(0, 2) }}
+      <BaseIcon class="arrow" name="selectArrow" viewBox="0 0 8 6" />
     </p>
     <div class="options" :class="{ active: areOptionsVisible }">
       <PrismicLink
@@ -24,7 +25,9 @@
 </template>
 
 <script>
+import BaseIcon from "./BaseIcon.vue";
 export default {
+  components: { BaseIcon },
   data() {
     return {
       defaultValue: null,
@@ -108,12 +111,16 @@ export default {
       }
     }
 
-    i {
+    .arrow {
       font-style: normal;
       width: 8px;
-      height: 5px;
+      height: 6px;
       @include toRem("margin-left", 4);
-      background-image: url('./static/Polygon.svg');
+      fill: var(--white);
+
+      .scroll & {
+        fill: #367bff;
+      }
     }
 
     &.active {

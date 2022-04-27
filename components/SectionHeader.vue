@@ -115,9 +115,9 @@ export default {
   },
 
   mounted() {
-    this.resizeHandle();
-
     this.$nextTick(function () {
+      this.resizeHandle();
+
       window.addEventListener("resize", this.resizeHandle);
     });
   },

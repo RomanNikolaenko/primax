@@ -306,7 +306,7 @@ export default {
     grid-template-columns: 53px 1fr;
     align-items: center;
     @include property("gap", 20, 10, true, 1920, 1024);
-    @include property("padding", 25, 15, true, 1920, 1024);
+    @include property("padding", 25, 15, true, 1920, 1440);
     background: var(--white);
     box-shadow: 11.6224px 19.3707px 42.6156px rgba(0, 0, 0, 0.1);
     border-radius: 8.64233px;
@@ -368,7 +368,7 @@ export default {
     }
 
     &:nth-of-type(3) {
-      bottom: 32px;
+      bottom: -25px;
       left: -6%;
       max-width: 220px;
 
@@ -432,14 +432,14 @@ export default {
 
     &-title {
       font-weight: 700;
-      font-size: 16px;
+      @include property("font-size", 16, 14, true, 1920, 1024);
       line-height: 100%;
       margin-bottom: 5px;
     }
 
     &-subtitle {
       font-weight: 400;
-      font-size: 14px;
+      @include property("font-size", 14, 12, true, 1920, 1024);
       line-height: 114%;
     }
   }

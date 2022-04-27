@@ -59,10 +59,24 @@
             "placeholder": ""
           }
         },
+        "nameError": {
+          "type": "Text",
+          "config": {
+            "label": "Name Error",
+            "placeholder": ""
+          }
+        },
         "surname": {
           "type": "Text",
           "config": {
             "label": "Surname",
+            "placeholder": ""
+          }
+        },
+        "surnameError": {
+          "type": "Text",
+          "config": {
+            "label": "Surname Error",
             "placeholder": ""
           }
         },
@@ -73,10 +87,24 @@
             "placeholder": ""
           }
         },
+        "emailError": {
+          "type": "Text",
+          "config": {
+            "label": "Email Error",
+            "placeholder": ""
+          }
+        },
         "phone": {
           "type": "Text",
           "config": {
             "label": "Phone",
+            "placeholder": ""
+          }
+        },
+        "phoneError": {
+          "type": "Text",
+          "config": {
+            "label": "Phone Error",
             "placeholder": ""
           }
         },

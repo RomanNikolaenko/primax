@@ -121,6 +121,10 @@ export default {
       .scroll & {
         fill: #367bff;
       }
+
+      .lock & {
+        fill: var(--white);
+      }
     }
 
     &.active {

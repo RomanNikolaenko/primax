@@ -7,7 +7,7 @@
         class="form_title"
       />
 
-      <form class="form_form">
+      <form class="form_form" @submit.prevent="handleSubmit">
         <PrismicRichText
           v-if="$prismic.asText(slice.primary.cabinetModeTitle)"
           :field="slice.primary.cabinetModeTitle"
@@ -34,49 +34,146 @@
             class="form_form-title"
           />
 
-          <label>
-            <input
-              type="text"
-              name="name"
-              :placeholder="slice.primary.name"
-              required
-            />
-          </label>
-          <label>
-            <input
-              type="text"
-              name="surname"
-              :placeholder="slice.primary.surname"
-              required
-            />
-          </label>
-          <label>
-            <input
-              type="email"
-              name="email"
-              :placeholder="slice.primary.email"
-              required
-            />
-          </label>
-          <label>
-            <input
-              type="tel"
-              name="phone"
-              :placeholder="slice.primary.phone"
-              required
-            />
-          </label>
-          <label>
-            <textarea
-              name="message"
-              :placeholder="slice.primary.message"
-              required
-            ></textarea>
-          </label>
+          <div class="form_group-wrap">
+            <div
+              class="form_group"
+              :class="{
+                invalid: $v.form.name.$dirty && !$v.form.name.required,
+                valid: $v.form.name.required,
+              }"
+            >
+              <label class="form_group-label" for="firstName">{{
+                slice.primary.name
+              }}</label>
+              <input
+                type="text"
+                v-model="form.name"
+                id="firstName"
+                name="firstName"
+                class="form_group-input"
+              />
+              <span
+                v-if="$v.form.name.$dirty && !$v.form.name.required"
+                class="form_group-error"
+              >
+                {{ slice.primary.nameError }}
+              </span>
+            </div>
+
+            <div
+              class="form_group"
+              :class="{
+                invalid: $v.form.surname.$dirty && !$v.form.surname.required,
+                valid: $v.form.surname.required,
+              }"
+            >
+              <label class="form_group-label" for="surname">{{
+                slice.primary.surname
+              }}</label>
+              <input
+                type="text"
+                v-model="form.surname"
+                id="surname"
+                name="surname"
+                class="form_group-input"
+              />
+              <span
+                v-if="$v.form.surname.$dirty && !$v.form.surname.required"
+                class="form_group-error"
+              >
+                {{ slice.primary.surnameError }}
+              </span>
+            </div>
+
+            <div
+              class="form_group"
+              :class="{
+                invalid:
+                  ($v.form.email.$dirty && !$v.form.email.required) ||
+                  ($v.form.email.$dirty && !$v.form.email.email),
+                valid: $v.form.email.required && $v.form.email.email,
+              }"
+            >
+              <label class="form_group-label" for="email">{{
+                slice.primary.email
+              }}</label>
+              <input
+                type="text"
+                v-model="form.email"
+                id="email"
+                name="email"
+                class="form_group-input"
+              />
+              <span
+                v-if="
+                  ($v.form.email.$dirty && !$v.form.email.required) ||
+                  ($v.form.email.$dirty && !$v.form.email.email)
+                "
+                class="form_group-error"
+              >
+                {{ slice.primary.emailError }}
+              </span>
+            </div>
+
+            <div
+              class="form_group"
+              :class="{
+                invalid: $v.form.phone.$dirty && !$v.form.phone.required,
+                valid: $v.form.phone.required,
+              }"
+            >
+              <label class="form_group-label" for="phone">{{
+                slice.primary.phone
+              }}</label>
+              <input
+                type="number"
+                v-model="form.phone"
+                id="phone"
+                name="phone"
+                class="form_group-input"
+              />
+              <span
+                v-if="$v.form.phone.$dirty && !$v.form.phone.required"
+                class="form_group-error"
+              >
+                {{ slice.primary.phoneError }}
+              </span>
+            </div>
+
+            <div
+              class="form_group"
+              :class="{
+                valid: form.message.length > 0,
+              }"
+            >
+              <label class="form_group-label" for="message">{{
+                slice.primary.message
+              }}</label>
+              <textarea
+                v-model="form.message"
+                id="message"
+                name="message"
+                class="form_group-textarea"
+                :maxlength="num"
+              ></textarea>
+              <span class="length"
+                >{{ form.message.length || 0 }} / {{ num }}</span
+              >
+            </div>
+          </div>
         </div>
 
-        <div class="form_checkbox">
-          <input type="checkbox" id="checkbox" required />
+        <div
+          class="form_checkbox"
+          :class="{ invalid: $v.form.checkbox.$error }"
+        >
+          <input
+            type="checkbox"
+            id="checkbox"
+            name="checkbox"
+            v-model="form.checkbox"
+            @change="$v.form.checkbox.$touch()"
+          />
           <PrismicRichText
             v-if="$prismic.asText(slice.primary.privacyPolicy)"
             wrapper="label"
@@ -96,10 +193,50 @@
 <script>
 import { getSliceComponentProps } from "@prismicio/vue/components";
 
+import { required, email } from "vuelidate/lib/validators";
+
 export default {
   name: "SectionForm",
   // The array passed to `getSliceComponentProps` is purely optional and acts as a visual hint for you
   props: getSliceComponentProps(["slice", "index", "slices", "context"]),
+
+  data() {
+    return {
+      form: {
+        name: "",
+        surname: "",
+        email: "",
+        phone: "",
+        message: "",
+        checkbox: "",
+      },
+      num: 300,
+    };
+  },
+
+  validations: {
+    form: {
+      name: { required },
+      surname: { required },
+      email: { required, email },
+      phone: { required },
+      checkbox: {
+        required(val) {
+          return val;
+        },
+      },
+    },
+  },
+
+  methods: {
+    handleSubmit() {
+      // stop here if form is invalid
+      this.$v.$touch();
+      if (this.$v.$invalid) {
+        return;
+      }
+    },
+  },
 };
 </script>
 
@@ -203,46 +340,123 @@ export default {
   }
 
   &_fields {
-    display: grid;
-    gap: 40px;
     @include toRem("margin-top", 20);
 
-    textarea {
-      @include toRem("min-height", 150);
+    // textarea {
+    //   @include toRem("min-height", 150);
+    // }
+
+    // input {
+    //   line-height: 40px;
+    // }
+
+    // input,
+    // textarea {
+    //   width: 100%;
+    //   color: var(--secondary);
+
+    //   border: 2px solid;
+    //   border-image-slice: 2;
+    //   border-width: 2px;
+    //   border-image-source: linear-gradient(
+    //     89.02deg,
+    //     #dedddb 1.68%,
+    //     #dedddb 97.37%
+    //   );
+
+    //   &:valid,
+    //   &:focus,
+    //   &:hover {
+    //     border-image-source: linear-gradient(
+    //       89.02deg,
+    //       #377dff 1.68%,
+    //       #2cb7f9 97.37%
+    //     );
+    //   }
+
+    //   &:valid,
+    //   &:focus {
+    //     color: var(--primary);
+    //   }
+    // }
+  }
+
+  &_group {
+    position: relative;
+    @include toRem("margin-bottom", 40);
+
+    &:first-of-type {
+      @include toRem("margin-top", 40);
     }
 
-    input {
-      line-height: 40px;
-    }
-
-    input,
-    textarea {
-      width: 100%;
+    &-label {
+      position: absolute;
+      top: 27px;
+      left: 5px;
+      transform: translateY(-50%);
       color: var(--secondary);
+      transition: all 0.2s;
 
+      .invalid & {
+        top: -15px;
+        color: #ff3737;
+      }
+
+      .valid & {
+        top: -15px;
+        color: var(--primary);
+      }
+    }
+
+    &-input,
+    &-textarea {
+      padding: 5px;
+      width: 100%;
+      color: var(--primary);
+      line-height: 40px;
       border: 2px solid;
       border-image-slice: 2;
-      border-width: 2px;
       border-image-source: linear-gradient(
-          89.02deg,
-          #dedddb 1.68%,
-          #dedddb 97.37%
-        );
+        89.02deg,
+        #dedddb 1.68%,
+        #dedddb 97.37%
+      );
 
-      &:valid,
-      &:focus,
-      &:hover {
+      .invalid & {
+        border-image-source: linear-gradient(
+          89.02deg,
+          #ff3737 1.68%,
+          #f92c2c 97.37%
+        );
+      }
+
+      .valid & {
         border-image-source: linear-gradient(
           89.02deg,
           #377dff 1.68%,
           #2cb7f9 97.37%
         );
       }
+    }
 
-      &:valid,
-      &:focus {
-        color: var(--primary);
-      }
+    &-textarea {
+      min-height: 150px;
+      padding-bottom: 20px;
+      resize: vertical;
+    }
+
+    .length {
+      position: absolute;
+      bottom: 13px;
+      width: fit-content;
+      right: 15px;
+      font-size: 12px;
+      line-height: 1;
+      color: var(--secondary);
+    }
+
+    &-error {
+      color: #ff3737;
     }
   }
 
@@ -252,12 +466,20 @@ export default {
     @include toRem("margin-bottom", 40);
     user-select: none;
 
+    &.invalid {
+      label {
+        &::before {
+          background-image: url("./static/Checkmark-error.svg");
+        }
+      }
+    }
+
     input {
       display: none;
       &:checked {
         + label {
           &::before {
-            background: url("./static/Checkmark-active.svg");
+            background-image: url("./static/Checkmark-active.svg");
           }
         }
       }
@@ -279,7 +501,7 @@ export default {
         left: 0;
         width: 20px;
         height: 20px;
-        background: url("./static/Checkmark.svg");
+        background-image: url("./static/Checkmark.svg");
         background-size: 100% 100%;
       }
     }

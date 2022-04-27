@@ -244,8 +244,32 @@ export default {
 @import "@/assets/scss/mixins";
 
 .form {
+  position: relative;
+  z-index: 1;
   @include property("padding-top", 160, 80);
   @include property("padding-bottom", 160, 80);
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 982px;
+    height: 973px;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    background-image: radial-gradient(
+      41.58% 29.82% at 64.98% 54.56%,
+      rgba(54, 98, 255, 0.12) 0%,
+      rgba(45, 185, 249, 0.008) 100%
+    );
+    filter: blur(10px);
+    transform: translate(-50%, 0);
+  }
+
+  >* {
+    position: relative;
+    z-index: 2;
+  }
 
   &_title {
     font-weight: 600;
@@ -259,7 +283,6 @@ export default {
   }
 
   &_form {
-    background: var(--white);
     border: 7px solid #ededff;
     box-shadow: 13.4163px 22.3604px 49.193px rgba(0, 56, 97, 0.1),
       10px 20px 50px rgba(0, 0, 0, 0.05);

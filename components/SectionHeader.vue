@@ -138,8 +138,8 @@ export default {
   right: 0;
   z-index: 20;
   width: 100%;
-  @include property("padding-top", 40, 20);
-  @include property("padding-bottom", 40, 20);
+  @include property("padding-top", 30, 20);
+  @include property("padding-bottom", 30, 20);
   @include toRem("padding-left", 20);
   @include toRem("padding-right", 20);
   transition: padding 0.2s linear;

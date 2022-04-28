@@ -21,41 +21,57 @@ export default {
 @import "@/assets/scss/mixins";
 
 .policy-term {
-  @include property('padding-top', 170, 120, true, 1024, 576);
+  @include property("padding-top", 150, 120, true, 1024, 576);
   padding-bottom: 30px;
   color: var(--primary);
 
+  &_container {
+    max-width: 940px;
+  }
+
+  h1 {
+    font-weight: 600;
+    @include property("font-size", 64, 40);
+  }
+
   h2 {
-    font-size: 2rem;
+    font-weight: 600;
+    @include property("font-size", 40, 32);
     margin-bottom: 1em;
   }
 
   h2 {
-    font-size: 1.6rem;
+    font-weight: 600;
+    @include property("font-size", 34, 28);
     margin-bottom: 1em;
   }
 
   h3 {
-    font-size: 1.4rem;
+    font-weight: 600;
+    @include property("font-size", 28, 24);
     margin-bottom: 1em;
   }
 
   h4 {
-    font-size: 1.2rem;
+    font-weight: 600;
+    @include property("font-size", 24, 20);
     margin-bottom: 1em;
   }
 
   h5 {
+    font-weight: 600;
     font-size: 1.1rem;
     margin-bottom: 1em;
   }
 
   h6 {
+    font-weight: 600;
     font-size: 1rem;
     margin-bottom: 1em;
   }
 
-  ul, ol {
+  ul,
+  ol {
     margin: 1rem 0;
     list-style-type: initial;
     padding-left: 20px;

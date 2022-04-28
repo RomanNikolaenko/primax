@@ -21,7 +21,7 @@ export default {
 @import "@/assets/scss/mixins";
 
 .policy-term {
-  @include property("padding-top", 150, 120, true, 1024, 576);
+  padding-top: 110px;
   padding-bottom: 30px;
   color: var(--primary);
 

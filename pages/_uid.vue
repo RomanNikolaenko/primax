@@ -58,6 +58,7 @@ export default {
           window.scrollY >= element.offsetTop &&
           element.classList.contains("white-block")
         ) {
+          body.classList.add("fix");
           body.classList.add("scroll");
         } else if (
           window.scrollY > element.offsetTop &&

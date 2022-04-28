@@ -128,7 +128,7 @@
               }}</label>
               <input
                 type="text"
-                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');"
                 v-model="form.phone"
                 id="phone"
                 name="phone"

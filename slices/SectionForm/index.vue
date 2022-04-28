@@ -88,6 +88,7 @@
             <div
               class="form_group"
               :class="{
+                active: $v.form.email.$model != '',
                 invalid:
                   ($v.form.email.$dirty && !$v.form.email.required) ||
                   ($v.form.email.$dirty && !$v.form.email.email),
@@ -230,6 +231,7 @@ export default {
 
   methods: {
     handleSubmit() {
+      console.log(this.$v.form.email);
       // stop here if form is invalid
       this.$v.$touch();
       if (this.$v.$invalid) {
@@ -266,7 +268,7 @@ export default {
     transform: translate(-50%, 0);
   }
 
-  >* {
+  > * {
     position: relative;
     z-index: 2;
   }
@@ -431,6 +433,10 @@ export default {
       .valid & {
         top: -7px;
         color: var(--primary);
+      }
+
+      .active & {
+        top: -7px;
       }
     }
 

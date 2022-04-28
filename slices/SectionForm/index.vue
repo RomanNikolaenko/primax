@@ -127,7 +127,8 @@
                 slice.primary.phone
               }}</label>
               <input
-                type="number"
+                type="text"
+                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
                 v-model="form.phone"
                 id="phone"
                 name="phone"

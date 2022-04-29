@@ -481,7 +481,9 @@ export default {
       }
 
       img {
-        display: none;
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
       }
     }
   }

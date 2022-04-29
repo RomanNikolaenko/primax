@@ -367,44 +367,6 @@ export default {
 
   &_fields {
     @include toRem("margin-top", 20);
-
-    // textarea {
-    //   @include toRem("min-height", 150);
-    // }
-
-    // input {
-    //   line-height: 40px;
-    // }
-
-    // input,
-    // textarea {
-    //   width: 100%;
-    //   color: var(--secondary);
-
-    //   border: 2px solid;
-    //   border-image-slice: 2;
-    //   border-width: 2px;
-    //   border-image-source: linear-gradient(
-    //     89.02deg,
-    //     #dedddb 1.68%,
-    //     #dedddb 97.37%
-    //   );
-
-    //   &:valid,
-    //   &:focus,
-    //   &:hover {
-    //     border-image-source: linear-gradient(
-    //       89.02deg,
-    //       #377dff 1.68%,
-    //       #2cb7f9 97.37%
-    //     );
-    //   }
-
-    //   &:valid,
-    //   &:focus {
-    //     color: var(--primary);
-    //   }
-    // }
   }
 
   &_group {
@@ -447,6 +409,7 @@ export default {
       width: 100%;
       color: var(--primary);
       line-height: 40px;
+      border: 0;
       border-bottom: 2px solid;
       border-image-slice: 2;
       border-image-source: linear-gradient(

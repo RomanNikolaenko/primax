@@ -37,7 +37,7 @@
                   :field="item.link"
                   class="list_link"
                 >
-                  <!-- <PrismicImage v-if="item.img.url" :field="item.img" /> -->
+                  <PrismicImage v-if="item.img.url" :field="item.img" />
                   <span v-bind:style="{'mask-image': 'url(' + item.img.url + ')'}"></span>
                   {{ item.linkTitle }}
                 </PrismicLink>
@@ -480,12 +480,9 @@ export default {
         }
       }
 
-      // img {
-      //   display: block;
-      //   width: 20px;
-      //   height: 20px;
-      //   @include toRem("margin-right", 15);
-      // }
+      img {
+        display: none;
+      }
     }
   }
 }

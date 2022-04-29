@@ -1,0 +1,55 @@
+{
+  "id": "general_card",
+  "type": "SharedSlice",
+  "name": "GeneralCard",
+  "description": "GeneralCard",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "GeneralCard",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "type": {
+          "type": "Text",
+          "config": {
+            "label": "Type",
+            "placeholder": ""
+          }
+        },
+        "url": {
+          "type": "Text",
+          "config": {
+            "label": "Url",
+            "placeholder": ""
+          }
+        },
+        "description": {
+          "type": "Text",
+          "config": {
+            "label": "Description",
+            "placeholder": ""
+          }
+        },
+        "img": {
+          "type": "Image",
+          "config": {
+            "label": "Img",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {},
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

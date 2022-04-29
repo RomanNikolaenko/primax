@@ -1,14 +1,27 @@
 {
-  "id": "e7074e20-7f15-489e-bd4e-c2baea568686",
-  "uid": "reprehenderit-natus-eos",
+  "id": "63863f34-3a99-4a46-a4b5-aefbac709fd4",
+  "uid": "assumenda-nihil-ut",
   "type": "page",
   "data": {
     "title": [
       {
         "type": "paragraph",
-        "text": "Velit quis aute laboris ea laboris exercitation in excepteur elit proident laborum labore duis. Nulla amet cupidatat nostrud nostrud elit commodo id minim id cillum ullamco adipisicing amet cillum. Elit cillum in duis aliquip.",
+        "text": "Cupidatat enim exercitation nulla nostrud cupidatat. Pariatur veniam voluptate ut esse anim.",
         "spans": []
       }
-    ]
+    ],
+    "ogTitle": "incubate impactful metrics",
+    "ogType": "visualize back-end relationships",
+    "ogUrl": "architect revolutionary partnerships",
+    "ogDescription": "visualize 24/7 blockchains",
+    "ogImg": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea?w=900&h=500&fit=crop"
+    }
   }
 }

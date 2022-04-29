@@ -95,7 +95,28 @@ export default {
       htmlAttrs: {
         lang: this.$i18n.locale,
       },
-      // title: this.page.data.meta_title,
+      meta: [
+        {
+          property: "og:title",
+          content: this.page.data.ogTitle
+        },
+        {
+          property: "og:type",
+          content: this.page.data.ogType
+        },
+        {
+          property: "og:url",
+          content: this.page.data.ogUrl
+        },
+        {
+          property: "og:description",
+          content: this.page.data.ogDescription
+        },
+        {
+          property: "og:image",
+          content: this.page.data.ogImg.url
+        }
+      ]
     };
   },
 };

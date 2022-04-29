@@ -58,8 +58,56 @@
             },
             "section_policy_and_terms": {
               "type": "SharedSlice"
+            },
+            "general_card": {
+              "type": "SharedSlice"
             }
           }
+        }
+      }
+    },
+    "Social Cards": {
+      "ogTitle": {
+        "type": "Text",
+        "config": {
+          "label": "Og Title",
+          "placeholder": ""
+        }
+      },
+      "ogType": {
+        "type": "Text",
+        "config": {
+          "label": "Og Type",
+          "placeholder": ""
+        }
+      },
+      "ogUrl": {
+        "type": "Text",
+        "config": {
+          "label": "Og Url",
+          "placeholder": ""
+        }
+      },
+      "ogDescription": {
+        "type": "Text",
+        "config": {
+          "label": "Og Description",
+          "placeholder": ""
+        }
+      },
+      "ogImg": {
+        "type": "Image",
+        "config": {
+          "label": "Og Img",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "slices1": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {}
         }
       }
     }

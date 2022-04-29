@@ -73,7 +73,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "@/assets/scss/mixins";
 
 .hero {
@@ -108,7 +108,7 @@ export default {
     @media (min-width: 1640px) {
       width: 1100px;
     }
-    
+
     @media (max-width: 1100px) {
       width: 100%;
     }
@@ -208,32 +208,16 @@ export default {
       }
     }
   }
-}
 
-.list {
-  .header_collapse & {
-    overflow: auto;
-  }
-
-  .hero & {
+  .list {
     @media (max-width: 1099.98px) {
       display: flex;
       align-items: center;
       overflow-x: auto;
     }
-  }
 
-  &_item {
-    &:not(:first-child) {
-      .list_link {
-        .header_collapse & {
-          border-top: 2px solid rgba(255, 255, 255, 0.3);
-        }
-      }
-    }
-
-    &:not(:first-child) {
-      .hero & {
+    &_item {
+      &:not(:first-child) {
         @include toRem("margin-top", 12);
 
         @media (max-width: 1099.98px) {
@@ -242,23 +226,15 @@ export default {
         }
       }
     }
-  }
 
-  &_link {
-    display: flex;
-    align-items: center;
-    font-weight: 700;
-    @include toRem("font-size", 16);
-    line-height: 150%;
-    color: var(--white);
+    &_link {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      @include toRem("font-size", 16);
+      line-height: 150%;
+      color: var(--white);
 
-    .header_collapse & {
-      padding: 0;
-      @include toRem("padding-top", 20);
-      @include toRem("padding-bottom", 20);
-    }
-
-    .hero & {
       @include toRem("padding-top", 12);
       @include toRem("padding-bottom", 12);
       @include toRem("padding-left", 18);
@@ -291,13 +267,13 @@ export default {
           rgba(255, 255, 255, 0.15) 103.92%
         );
       }
-    }
 
-    img {
-      display: block;
-      width: 20px;
-      height: 20px;
-      @include toRem("margin-right", 15);
+      img {
+        display: block;
+        width: 20px;
+        height: 20px;
+        @include toRem("margin-right", 15);
+      }
     }
   }
 }

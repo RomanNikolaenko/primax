@@ -37,7 +37,8 @@
                   :field="item.link"
                   class="list_link"
                 >
-                  <PrismicImage v-if="item.img.url" :field="item.img" />
+                  <!-- <PrismicImage v-if="item.img.url" :field="item.img" /> -->
+                  <span v-bind:style="{'mask-image': 'url(' + item.img.url + ')'}"></span>
                   {{ item.linkTitle }}
                 </PrismicLink>
               </li>
@@ -128,7 +129,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "@/assets/scss/mixins";
 
 .header {
@@ -413,6 +414,80 @@ export default {
     margin-left: auto;
     @include toRem("padding", 20);
   }
+
+  .list {
+    overflow: auto;
+    @include toRem("margin-bottom", 20);
+
+    &_item {
+      &:not(:first-child) {
+        .list_link {
+          border-top: 2px solid rgba(255, 255, 255, 0.3);
+        }
+      }
+
+      span {
+        display: block;
+        width: 20px;
+        height: 20px;
+        @include toRem("margin-right", 15);
+        background-color: var(--white);
+        mask-position: center;
+        mask-repeat: no-repeat;
+        mask-size: contain;
+      }
+    }
+
+    &_link {
+      position: relative;
+      z-index: 2;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      @include toRem("font-size", 16);
+      line-height: 150%;
+      color: var(--white);
+      text-decoration: none;
+
+      padding: 0;
+      @include toRem("padding-top", 20);
+      @include toRem("padding-bottom", 20);
+
+      &.nuxt-link-active {
+        color: #ffd862;
+
+        span {
+          background-color: #ffd862;
+        }
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: -1;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background-color: rgba(250, 250, 250, 0.2);
+      }
+
+      &:focus {
+        &::before {
+          animation: clickLink 0.5s linear 0s forwards;
+        }
+      }
+
+      // img {
+      //   display: block;
+      //   width: 20px;
+      //   height: 20px;
+      //   @include toRem("margin-right", 15);
+      // }
+    }
+  }
 }
 
 .burger-enter-active {
@@ -424,90 +499,6 @@ export default {
 .burger-enter,
 .burger-leave-to {
   opacity: 0;
-}
-
-.list {
-  .header_collapse & {
-    overflow: auto;
-    @include toRem("margin-bottom", 20);
-  }
-
-  .hero & {
-    @media (max-width: 1365.98px) {
-      display: flex;
-      align-items: center;
-      overflow-x: auto;
-    }
-  }
-
-  &_item {
-    &:not(:first-child) {
-      .list_link {
-        .header_collapse & {
-          border-top: 2px solid rgba(255, 255, 255, 0.3);
-        }
-      }
-    }
-
-    &:not(:first-child) {
-      .hero & {
-        @include toRem("margin-top", 12);
-
-        @media (max-width: 1365.98px) {
-          margin-top: 0;
-          @include toRem("margin-left", 20);
-        }
-      }
-    }
-  }
-
-  &_link {
-    position: relative;
-    z-index: 2;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    font-weight: 700;
-    @include toRem("font-size", 16);
-    line-height: 150%;
-    color: var(--white);
-    text-decoration: none;
-
-    .header_collapse & {
-      padding: 0;
-      @include toRem("padding-top", 20);
-      @include toRem("padding-bottom", 20);
-    }
-
-    &.nuxt-link-active {
-      color: #ffd862;
-    }
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      z-index: -1;
-      width: 0;
-      height: 0;
-      border-radius: 50%;
-      background-color: rgba(250, 250, 250, 0.2);
-    }
-
-    &:focus {
-      &::before {
-        animation: clickLink 0.5s linear 0s forwards;
-      }
-    }
-
-    img {
-      display: block;
-      width: 20px;
-      height: 20px;
-      @include toRem("margin-right", 15);
-    }
-  }
 }
 
 @keyframes clickLink {

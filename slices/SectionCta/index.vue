@@ -30,7 +30,7 @@ export default {
 
 .cta {
   display: flex;
-  background-image: url("./static/ctaBg.svg"),
+  background-image: url("./static/ctaBg.png"),
     linear-gradient(89.02deg, #367bff 1.68%, #26bff7 97.37%);
   background-repeat: no-repeat, repeat;
   background-size: cover;
@@ -41,7 +41,7 @@ export default {
   @include property("padding-right", 30, 0);
 
   @media (orientation: portrait) {
-    background-image: url("./static/ctaBgMob.svg"),
+    background-image: url("./static/ctaBgMob.png"),
       linear-gradient(89.02deg, #367bff 1.68%, #26bff7 97.37%);
     background-position: bottom center;
   }
@@ -52,7 +52,7 @@ export default {
     align-items: center;
     flex: 1;
     border: 7px solid rgba(255, 255, 255, 0.3);
-    filter: drop-shadow(10px 20px 60px rgba(47, 128, 237, 0.2));
+    // filter: drop-shadow(10px 20px 60px rgba(47, 128, 237, 0.2));
     border-radius: 50px;
     @include property("padding-top", 140, 100);
     @include property("padding-bottom", 140, 100);

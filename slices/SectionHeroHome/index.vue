@@ -175,7 +175,7 @@ export default {
   @include property("padding-top", 200, 110);
   @include property("padding-bottom", 300, 80);
 
-  background-image: url("./static/resultsBg.svg"),
+  background-image: url("./static/resultsBg.png"),
     linear-gradient(89.02deg, #367bff 1.68%, #26bff7 97.37%);
   background-repeat: no-repeat, repeat;
   background-size: cover;

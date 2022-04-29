@@ -38,7 +38,6 @@
                   class="list_link"
                 >
                   <PrismicImage v-if="item.img.url" :field="item.img" />
-                  <span v-bind:style="{'mask-image': 'url(' + item.img.url + ')'}"></span>
                   {{ item.linkTitle }}
                 </PrismicLink>
               </li>
@@ -425,17 +424,6 @@ export default {
           border-top: 2px solid rgba(255, 255, 255, 0.3);
         }
       }
-
-      span {
-        display: block;
-        width: 20px;
-        height: 20px;
-        @include toRem("margin-right", 15);
-        background-color: var(--white);
-        mask-position: center;
-        mask-repeat: no-repeat;
-        mask-size: contain;
-      }
     }
 
     &_link {
@@ -456,10 +444,6 @@ export default {
 
       &.nuxt-link-active {
         color: #ffd862;
-
-        span {
-          background-color: #ffd862;
-        }
       }
 
       &::before {
@@ -481,9 +465,10 @@ export default {
       }
 
       img {
-        position: absolute;
-        opacity: 0;
-        visibility: hidden;
+        display: block;
+        width: 20px;
+        height: 20px;
+        @include toRem("margin-right", 15);
       }
     }
   }

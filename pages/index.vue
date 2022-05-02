@@ -1,5 +1,6 @@
 <template>
   <main class="main">
+    <Preloader />
     <SectionHeader v-if="header.data" :header="header" />
     <SliceZone :slices="page.data.slices" :components="components" />
     <SectionFooter v-if="footer.data" :footer="footer" />
@@ -9,11 +10,16 @@
 <script>
 import { components } from "~/slices";
 
+import Preloader from "../components/Preloader.vue";
 import SectionFooter from "../components/SectionFooter.vue";
 import SectionHeader from "../components/SectionHeader.vue";
 
 export default {
-  components: { SectionHeader, SectionFooter },
+  components: {
+    SectionHeader,
+    SectionFooter,
+    Preloader,
+  },
 
   data() {
     return {
@@ -98,25 +104,25 @@ export default {
       meta: [
         {
           property: "og:title",
-          content: this.page.data.ogTitle
+          content: this.page.data.ogTitle,
         },
         {
           property: "og:type",
-          content: this.page.data.ogType
+          content: this.page.data.ogType,
         },
         {
           property: "og:url",
-          content: this.page.data.ogUrl
+          content: this.page.data.ogUrl,
         },
         {
           property: "og:description",
-          content: this.page.data.ogDescription
+          content: this.page.data.ogDescription,
         },
         {
           property: "og:image",
-          content: this.page.data.ogImg.url
-        }
-      ]
+          content: this.page.data.ogImg.url,
+        },
+      ],
     };
   },
 };

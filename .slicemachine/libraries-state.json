@@ -399,7 +399,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "D:\\primax\\.slicemachine\\assets\\slices\\SectionCta\\default\\preview.png",
+            "path": "D:\\work\\primax\\.slicemachine\\assets\\slices\\SectionCta\\default\\preview.png",
             "width": 800,
             "height": 640
           }
@@ -1341,7 +1341,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "D:\\primax\\.slicemachine\\assets\\slices\\SectionMaxResults\\default\\preview.png",
+            "path": "D:\\work\\primax\\.slicemachine\\assets\\slices\\SectionMaxResults\\default\\preview.png",
             "width": 800,
             "height": 2032
           }
@@ -1524,7 +1524,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "D:\\primax\\.slicemachine\\assets\\slices\\SectionResults\\default\\preview.png",
+            "path": "D:\\work\\primax\\.slicemachine\\assets\\slices\\SectionResults\\default\\preview.png",
             "width": 800,
             "height": 297
           }

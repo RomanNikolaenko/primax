@@ -178,8 +178,7 @@ export default {
   }
 
   &_auth {
-    display: grid;
-    grid-auto-flow: column;
+    display: flex;
     justify-content: space-between;
     gap: 18px;
     margin-top: auto;
@@ -266,7 +265,6 @@ export default {
     &-line {
       display: block;
       width: 2px;
-      height: 100%;
       background-color: rgba(255, 255, 255, 0.3);
 
       .scroll & {

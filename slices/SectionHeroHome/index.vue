@@ -1,5 +1,5 @@
 <template>
-  <section class="section heroHome" @mousemove="mousemove">
+  <section class="section heroHome">
     <div class="heroHome_container">
       <div class="heroHome_left">
         <ul class="list">
@@ -142,27 +142,6 @@ export default {
   computed: {
     navigation() {
       return this.$store.state.prismic.navigation;
-    },
-  },
-
-  methods: {
-    mousemove(e) {
-      let mouseX = e.clientX;
-      let mouseY = e.clientY;
-      let products = document.querySelectorAll(".images .images_block");
-      for (let i = 0; i < products.length; i++) {
-        let product = products[i];
-        let img_x = mouseX - product.getBoundingClientRect().left / 7;
-        let img_y = mouseY - product.getBoundingClientRect().top / 7;
-
-        if (window.innerWidth >= 1024) {
-          product.style.transform = `translateY(-${
-            img_x / ((i + 2) * 10)
-          }px) translateX(-${img_y / ((i + 2) * 10)}px)`;
-        } else {
-          product.style.transform = null;
-        }
-      }
     },
   },
 };
